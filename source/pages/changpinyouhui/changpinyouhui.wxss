@@ -1,0 +1,57 @@
+/* pages/changpinyouhui/changpinyouhui.wxss */
+
+.active {
+  font-size: 34rpx !important;
+  font-family: PingFang SC;
+  font-weight: 600;
+  line-height: 48rpx;
+  color: rgba(22, 22, 22, 1);
+  opacity: 1;
+}
+
+.line {
+  width: 100vw;
+  height: 2rpx;
+  background: rgba(238, 238, 238, 1);
+  opacity: 1;
+}
+.chenshi {
+  margin-top: -40rpx;
+  position: absolute;
+  width: 200rpx;
+  height: 32rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-size: 16rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 0 0 8rpx 8rpx;
+}
+.fcimgs {
+  width: 208rpx;
+  height: 172rpx;
+}
+.tag {
+  color: #bda179;
+  font-size: 16rpx;
+  padding: 6rpx 10rpx 4rpx 10rpx;
+  background: rgba(190, 161, 116, 0.2);
+  border-radius: 8rpx;
+}
+.typeimg {
+  width: 108rpx;
+  height: 48rpx;
+  line-height: 32rpx;
+  position: absolute;
+  left: -5%;
+  top: 12rpx;
+}
+
+.tag2 {
+  color: #83a7cf;
+  font-size: 16rpx;
+  padding: 6rpx 12rpx 4rpx 12rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  border: 2rpx solid #83a7cf;
+}

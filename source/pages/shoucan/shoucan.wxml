@@ -1,0 +1,143 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">我的收藏</view>
+</cu-custom>
+
+
+<view class="margin-top">
+  <view class="flex-row flex-center padding-left-32">
+    <view wx:for='{{type}}' wx:key="k" wx:for-index="idx" data-current="{{item.seq}}" bindtap="switchnav" class="txt-59 flex-1 text-center h5 margin-right-32 {{seq==item.seq?'active':''}}">{{item.name}}</view>
+  </view>
+
+
+  <view class="line"></view>
+
+  <!-- 房产 -->
+  <view class="padding-left-32 padding-top-32" wx:if="{{seq==0}}" wx:for="{{list}}" wx:key='k' data-current="{{item.houseproject_id}}" bindtap="fcdetail">
+    <view wx:for="{{item.fang}}" wx:key='k' class="flex-row flex-center">
+      <view class="imgs" wx:if='{{item.advertisement!=""}}' style="background-image:url({{uploadpath}}houseproject/{{item.advertisement}});background-size:100% 100%">
+        <view style="height:118rpx;"></view>
+        <view class="h16 txt-white text-center">{{item.conname}}·{{item.cityname}}</view>
+      </view>
+
+      <view class="imgs" wx:if='{{item.advertisement==""}}' style="background-image:url({{uploadpath}}houseproject/{{item.img}});background-size:100% 100%">
+        <view style="height:118rpx;"></view>
+        <view class="h16 txt-white text-center">{{item.conname}}·{{item.cityname}}</view>
+      </view>
+
+      <view class="padding-left-32">
+        <view class="txt-bold h5" style="color:#161616;">{{item.name}}</view>
+        <view class="h7 flex-row flex-center" style="color:#595959;">{{item.housewear}}
+          <view class="lines"></view>{{item.areacovered}}</view>
+        <view class="flex-row flex-center " style="margin:12rpx 0">
+          <view class="h16 txt-b fang">近一年房价均涨{{item.priceincrease}}%</view>
+          <view class="h16 txt-b fang">年均租金{{item.annualrent}}%</view>
+          <view class="h16 txt-b fang">佣金{{item.commissionrate}}%</view>
+        </view>
+        <view class="flex-row flex-center ">
+          <view class="flex-row flex-center ">
+            <view class="h6 txt-bold" style="color:#FF4466;">￥</view>
+            <view class="h6 txt-bold" style="color:#FF4466;">{{item.pricename}}</view>
+            <view class="h7" style="color:#FF4466;margin-right: 46rpx;">万起</view>
+          </view>
+          <view class="h7" style="color: #777777;margin-right:16rpx;">{{item.propertytype}}</view>
+          <view class="h7" style="color: #777777;">{{item.duration}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="bore"></view>
+  </view>
+  <!-- 移民 -->
+  <view class="padding-left-32 padding-top-32" wx:if="{{seq==1 && item.yimin.length>0}}" wx:for="{{list}}" wx:key='k' data-current="{{item.immigrantproject_id}}" bindtap="ymdetail">
+    <view wx:for="{{item.yimin}}" wx:key='k' class="flex-row flex-center">
+      <view class="imgs" style="background-image:url({{uploadpath}}immigrantproject/{{item.advertisement}});background-size:100% 100%">
+        <view style="height:118rpx;"></view>
+        <view class="h16 txt-white text-center">{{item.conname}}·{{item.cityname}}</view>
+      </view>
+
+      <view class="padding-left-32">
+        <view class="txt-bold h5" style="color:#161616;">{{item.name}}</view>
+        <!-- <view class="h7 flex-row flex-center" style="color:#595959;">{{item.housewear}}
+          <view class="lines"></view>{{item.areacovered}}</view> -->
+        <view class="flex-row flex-center " style="margin:12rpx 0">
+          <view class="h16 txt-b fang">近一年房价均涨{{item.priceincrease}}%</view>
+          <view class="h16 txt-b fang">年均租金{{item.annualrent}}%</view>
+          <view class="h16 txt-b fang">佣金{{item.commissionrate}}%</view>
+        </view>
+        <view class="flex-row flex-center ">
+          <view class="flex-row flex-center ">
+            <view class="h6 txt-bold" style="color:#FF4466;">￥</view>
+            <view class="h6 txt-bold" style="color:#FF4466;">{{item.yiminfeiyon}}</view>
+          </view>
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <view class="bore" wx:if='{{item.yimin>0}}'></view>
+  </view>
+
+  <!-- 保险 -->
+  <view class="padding-left-32 padding-top-32" wx:if="{{seq==2}}" wx:for="{{list}}" wx:key='k' data-current="{{item.insuranceproject_id}}" bindtap="bxdetail">
+    <view wx:for="{{item.baoxian}}" wx:key='k' class="flex-row flex-center">
+      <view class="imgs" style="background-image:url({{uploadpath}}insuranceproject/{{item.advertisement}});background-size:100% 100%">
+        <!-- <view style="height:118rpx;"></view> -->
+        <!-- <view class="h16 txt-white text-center">{{item.conname}}·{{item.cityname}}</view> -->
+      </view>
+
+      <view class="padding-left-32" style="height:144rpx;">
+        <view class="txt-bold h5" style="color:#161616;">{{item.name}}</view>
+        <!-- <view class="h7 flex-row flex-center" style="color:#595959;">{{item.housewear}}
+          <view class="lines"></view>{{item.areacovered}}</view> -->
+        <view class="flex-row flex-center " style="margin:10rpx 0">
+          <view class="h16 txt-b fang">自有佣金{{item.ziyoukehu}}%</view>
+          <view class="h16 txt-b fang">平台佣金{{item.pintaikehu}}%</view>
+          <view class="h16 txt-b fang">佣金比例{{item.tigonkehu}}%</view>
+        </view>
+
+        <!-- <view> -->
+        <view class="h7　flex-row flex-center" style="color:#161616;">{{item.baozhannianxian}} | {{item.baoxianleixin}}</view>
+        <!-- </view> -->
+        <!-- <view>{{item.fanxintext}}</view> -->
+        <view class="flex-row flex-center ">
+          <view class="flex-row flex-center ">
+            <view class="h6 txt-bold" style="color:#FF4466;">￥</view>
+            <view class="h6 txt-bold" style="color:#FF4466;">{{item.price}}</view>
+            <view class="h7" style="color: #777777;margin-left:20rpx;">{{item.toubaonianlin}}</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view class="bore"></view>
+  </view>
+
+
+  <!-- 活动 -->
+  <view wx:if="{{seq==3}}" class="padding-left-32 padding-top-32" wx:for="{{list}}" wx:key='k' data-current="{{item.activity_id}}" bindtap="acdetail">
+    <view wx:for="{{item.activity}}" wx:key='k' class="flex-row flex-center">
+      <view style="height:146rpx;">
+        <image src="{{uploadpath}}activity/{{item.cover}}" class="imgs"></image>
+      </view>
+      <view class="margin-left-24 ">
+        <!-- <view style="height:10rpx;"></view> -->
+        <view class="h5 txt-bold" style="color#161616;">{{item.name}}</view>
+        <view class="h7" style="height:58rpx;color:#777777;margin-top:8rpx;margin-bottom:10rpx;">{{item.introduction}}</view>
+        <view class="f-22 padding-bottom-32" style="color:#CCCCCC;">{{item.apply_startTime}}</view>
+
+      </view>
+
+    </view>
+     
+    <view class="bore"></view>
+     
+  </view>
+  <view style="height:32rpx;"></view>
+<view class="flex-row flex-column meiyou" wx:if='{{list.length>0}}'>~~ 没有更多内容 ~~</view>
+</view>
+
+  <view class="flex-row flex-column" wx:if='{{list.length==0}}'>
+    <view style="height:10vh"></view>
+    <image src="{{uploadpath}}resource/{{res.mieyou}}" class="icon-200"></image>
+    <view style="height:10rpx;"></view>
+    <view>暂无内容</view>
+  </view>

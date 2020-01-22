@@ -1,0 +1,40 @@
+page{
+
+  background: #F7F8FA;
+}
+.xian{
+
+
+width: 48rpx;
+height: 4rpx;
+background: #161616;
+margin-top:20rpx;
+}
+.black{
+  color: #161616;
+
+}
+.k{
+  margin-top:24rpx;
+}
+
+.bom{
+
+  height:142rpx;
+  width: 100vw;
+  
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.queren{
+
+  width:686rpx;
+  height: 76rpx;
+  background: #07264A;
+  border-radius: 50rpx;
+  color:#FFFFFF;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  text-align: center;
+}

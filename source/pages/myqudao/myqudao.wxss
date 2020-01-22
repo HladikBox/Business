@@ -1,0 +1,44 @@
+page{
+
+  background: #F7F8FA;
+}
+.xian {
+  width: 48rpx;
+  height: 4rpx;
+  background: #161616;
+  margin-top: 20rpx;
+}
+.balckbg {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 888;
+  width: 100vw;
+  height: 100vh;
+}
+.gudin{
+
+  position: absolute;
+z-index: 999;
+width: 100vw;
+}
+.qudaoxia{
+
+  width: 12rpx;
+  height: 8rpx;
+  margin-left:20rpx;
+}
+
+.black {
+  color: #161616;
+}
+
+.k {
+  margin-top: 24rpx;
+}
+.sousuo {
+  margin-top: 30rpx;
+  width: 688rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}

@@ -1,0 +1,89 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+</cu-custom>
+
+<view style="background:#F7F8FA;height:100%;">
+
+  <view style='padding-bottom:26rpx;background:#ffffff;'>
+    <image src="{{uploadpath}}activity/{{detail.cover}}" style="width:100vw;height:320rpx;"></image>
+    <view class="txt-bold padding-left-32 padding-top-24" style="color:#161616">{{detail.name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='课程'?'kec':''}}" wx:if="{{detail.activitytype_id_name=='课程'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='会展'?'huizhan':''}}" wx:if="{{detail.activitytype_id_name=='会展'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='培训'?'peixun':''}}" wx:if="{{detail.activitytype_id_name=='培训'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='考察'?'kaocha':''}}" wx:if="{{detail.activitytype_id_name=='考察'}}">{{detail.activitytype_id_name}}</view>
+  </view>
+
+  <view class="padding-left-32 padding-top-32 bg-white" style="color:#595959;">
+
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name=='培训'}}">主讲:
+      <text class="xinxi h6">{{detail.teacher}}</text>
+    </view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name!='会展'}}">费用:
+      <text class="xinxi h6" wx:if='{{detail.price>0}}'>{{detail.price}}</text>
+      <text class="xinxi h6" wx:if='{{detail.price<=0}}'>免费</text>
+    </view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name!='培训'}}">地点:
+      <text class="xinxi h6">{{detail.activitysite}}</text>
+    </view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name!='课程'}}">时间:
+      <text class="xinxi h6">{{detail.activitytime}}</text>
+    </view>
+
+  </view>
+
+  <view class="margin-top-32 bg-white ">
+    <view class="padding-left-32 h5 txt-bold padding-top-20 padding-bottom-20 " style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+    <view style="width:100vw;height:2rpx;background:#404858;margin-bottom:16rpx;"></view>
+
+    <view class="padding-left-32 padding-right-30 padding-bottom-34">
+      <view class="h5 padding-bottom-16">{{detail.name}}</view>
+      <view class="h6">{{detail.content}}</view>
+    </view>
+
+
+    <import src="../../wxParse/wxParse.wxml" />
+
+    <view class='nostyle padding-28 h5'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+
+    <view>{{detail.acfile}}</view>
+
+  </view>
+
+
+  <view class="en  ">
+
+    <view class=" padding-left-32 padding-right-32">
+      <view class="flex-row flex-center">
+        <view>客户姓名</view>
+        <view class="flex-1"></view>
+        <view>{{baomingxinfo.name}}</view>
+      </view>
+      <view class="flex-row flex-center margin-top-20 margin-bottom-20">
+        <view>电话号码</view>
+        <view class="flex-1"></view>
+        <view>{{baomingxinfo.moblie}}</view>
+      </view>
+      <view class="flex-row flex-center">
+        <view>考察人数</view>
+        <view class="flex-1"></view>
+        <view>{{baomingxinfo.pernum}}</view>
+      </view>
+    </view>
+    <view class="flex-row flex-column text-center flex-2 padding-right-30 margin-top">
+
+      <view class="tijiao" wx:if='{{quxiao=="A"}}' bindtap="baomin"> 取消报名</view>
+      <view class="tijiao" style="background: #e4e4e4" wx:if='{{quxiao=="B"}}'> 已取消报名</view>
+      <view class="tijiaos" wx:if='{{quxiao=="C"}}'> 已结束</view>
+    </view>
+
+    <view style="height:30rpx;"></view>
+  </view>
+
+</view>
+
+<view>
+
+</view>

@@ -1,0 +1,23 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">邀请理财师</view>
+</cu-custom>
+
+<view class="yao">
+  <view style="height: 144rpx;"></view>
+  <view class="flex-row flex-column txt-white margin-bottom-48">
+    <view class="h3 margin-bottom-12">理财师邀请奖励</view>
+    <view class="h3">规则说明</view>
+  </view>
+  <view class="cont txt-white">
+    <view class="txt-bold">1.邀请理财师永久绑定关系</view>
+    <view class="txt-bold margin-top-32">2.推荐奖励</view>
+    <view class="margin-top-8 margin-bottom-4 h5">一级推荐理财师奖励金=被推荐人佣金×10%</view>
+    <view class="h5">二级推荐理财师奖励金=被推荐人佣金×2%</view>
+  </view>
+  <view class="txt-white text-center h6" style="padding: 26rpx 92rpx 70rpx;">注：A推荐B，B推荐C，则A为B的一级推荐理财师，A为C的二级推荐理财师</view>
+  <button open-type="share" class="clear-button">
+  <view class="btns" >立即邀请</view>
+  </button>
+  <!-- <view style="height: 150rpx"></view> -->
+</view>

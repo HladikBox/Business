@@ -1,0 +1,54 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">我的银行卡</view>
+</cu-custom>
+<view style="background:#F7F8FA;height:100vh">
+  <view class="flex-row flex-column" wx:if="{{mybank.length==0}}">
+
+    <view style="height:230rpx;"></view>
+    <view class="text-center">
+      <image src="{{uploadpath}}resource/{{res.bank}}" class="imgs"></image>
+    </view>
+    <view class="h5" style="color:#777777;margin:54rpx 0 66rpx;">您还未绑定银行卡</view>
+
+    <view class="bang" bindtap="bang">添加银行卡</view>
+
+  </view>
+  <view style="height:32rpx;"></view>
+  <view class="flex-row flex-column" wx:if="{{mybank.length>0}}">
+    <view wx:for="{{mybank}}" wx:key="k">
+      <view class="ka padding-right-32 txt-white" style="background:{{item.background}}">
+        <view class="flex-row flex-center" style="height:124rpx;padding: 32rpx 0 0 32rpx;">
+          <view class="icon-img">
+            <image src="{{uploadpath}}resource/{{res.jianshe}}" style="width:46rpx;height:48rpx;vertical-align: middle;"></image>
+          </view>
+
+          <view class="flex-1 ">
+            <view class="h34 txt-bold">{{item.banktype}}</view>
+            <view class="f-22 margin-top-5">{{item.banklei}}</view>
+          </view>
+          <view>
+          <view class="flex-row flex-center padding-top-20" data-current="{{item.id}}" bindtap="detail">
+            <view class="h5">管理</view>
+            <view class="jian">
+              <image src="{{uploadpath}}resource/{{res.yinleft}}" style="width:90%;height:90%;vertical-align: middle;"></image>
+            </view>
+          </view>
+          <view class="flex-row flex-center padding-top" data-current="{{item.id}}" bindtap="deletes">
+            <view class="h5">删除</view>
+            <view class="jian">
+              <image src="{{uploadpath}}resource/{{res.shanchu}}" style="width:90%;height:90%;vertical-align: middle;"></image>
+            </view>
+          </view>
+          </view>
+        </view>
+        <view style="height:116rpx;background-image:url({{uploadpath}}resource/{{res.yinhangka}});background-size:100% 100%;">
+        <view style="padding-top:42rpx; padding-left:128rpx;" >****  ****  ****  {{item.lastnum}}</view>
+        </view>
+      </view>
+      <view style="height:16rpx"></view>
+    </view>
+    <view style="height:44rpx;"></view>
+    <view class="bang" bindtap="bang">绑定银行卡</view>
+  </view>
+</view>

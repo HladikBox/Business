@@ -1,0 +1,21 @@
+page{
+
+  background: #F7F8FA;
+}
+.renzhenimg{
+  width: 344rpx;
+  height: 236rpx;
+}
+.lijirenzhen{
+
+
+width: 560rpx;
+height: 96rpx;
+border-radius: 74rpx;
+background: #07264A;
+color:#FFFFFF;
+font-size: 28rpx;
+line-height: 96rpx;
+text-align: center;
+
+}

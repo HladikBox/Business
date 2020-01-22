@@ -1,0 +1,112 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">我的客户</view>
+</cu-custom>
+
+
+
+<view class="padding-30 flex-row flex-center bg-white" style="padding-bottom:0rpx">
+	<view bindtap="switchtab" id='0' class="flex-row flex-column flex-1">
+
+		<view class="{{tab==0?'black':''}} h5 text-center">自有客户</view>
+		<view wx:if="{{tab==0}}" class="xian"></view>
+		<view wx:if="{{tab!=0}}" class="k"></view>
+	</view>
+	<view bindtap="switchtab" id='1' class="flex-row flex-column flex-1">
+
+		<view class="{{tab==1?'black':''}} h5 text-center">平台客户</view>
+		<view wx:if="{{tab==1}}" class="xian"></view>
+		<view wx:if="{{tab!=1}}" class="k"></view>
+	</view>
+</view>
+
+<!-- 客户列表 -->
+
+
+<view wx:if="{{tab==0}}">
+
+	<view wx:for="{{ziyoukehu}}" data-id="{{item.id}}" bindtap="kehuziliao" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
+
+		<view>
+			<view class="h5 txt-bold" style="color:#404858">{{item.name}}</view>
+			<view class="h6 margin-top-20" style="color:#404858;  opacity: 0.8">手机：{{item.shouji}}</view>
+			<view class="h6" style="color:#404858;  opacity: 0.8">微信：{{item.weixin}} </view>
+			<view class="h6" style="color:#404858;  opacity: 0.8">邮箱：{{item.youxian}}</view>
+
+		</view>
+		<view class="flex-1"></view>
+
+		<view wx:if="{{item.leixin=='0'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.fanchan}}"></image>
+			<view class="h6 margin-top-10" style="color:#D8B66E">房产</view>
+
+		</view>
+		<view wx:if="{{item.leixin=='1'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.yimin}}"></image>
+			<view class="h6 margin-top-10" style="color:#FF8C8B">移民</view>
+
+		</view>
+		<view wx:if="{{item.leixin=='2'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.baoxian}}"></image>
+			<view class="h6 margin-top-10" style="color:#5FADFE">保险</view>
+
+		</view>
+
+
+	</view>
+
+
+
+</view>
+
+<view wx:if="{{tab==1}}">
+
+	<view wx:for="{{pintaikehu}}" data-id="{{item.id}}"  bindtap="kehuziliao" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
+		<view>
+			<view class="h5 txt-bold" style="color:#404858">{{item.name}}</view>
+			<view class="h6 margin-top-20" style="color:#404858;  opacity: 0.8">手机：{{item.shouji}}</view>
+			<view class="h6" style="color:#404858;  opacity: 0.8">微信：{{item.weixin}} </view>
+			<view class="h6" style="color:#404858;  opacity: 0.8">邮箱：{{item.youxian}}</view>
+
+		</view>
+		<view class="flex-1"></view>
+
+		<view wx:if="{{item.leixin=='0'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.fanchan}}"></image>
+			<view class="h6 margin-top-10" style="color:#D8B66E">房产</view>
+
+		</view>
+		<view wx:if="{{item.leixin=='1'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.yimin}}"></image>
+			<view class="h6 margin-top-10" style="color:#FF8C8B">移民</view>
+
+		</view>
+		<view wx:if="{{item.leixin=='2'}}" class="flex-row flex-column">
+			<image class="imga" src="{{uploadpath}}resource/{{res.baoxian}}"></image>
+			<view class="h6 margin-top-10" style="color:#5FADFE">保险</view>
+
+		</view>
+
+
+
+	</view>
+
+
+
+</view>
+
+
+
+
+<view style="height:150rpx"></view>
+<view class="bom bg-white ">
+	<view class="flex-row flex-center padding-20">
+
+		<view class="flex-1"></view>
+
+		<view class="queren" bindtap="addkehu">添加客户</view>
+		<view class="flex-1"></view>
+
+	</view>
+
+</view>

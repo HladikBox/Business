@@ -1,0 +1,110 @@
+<view class='cu-custom'>
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+			<text class='cuIcon-back' style="color:#ffffff"></text>
+		</navigator>
+		<view class='content' style='top:{{StatusBar}}px;color:#ffffff'>房产详情</view>
+	</view>
+</view>
+
+<image class="topimg"   src="{{uploadpath}}country/{{guojiainfo.covor}}"></image>
+
+<import src="../../wxParse/wxParse.wxml" />
+
+<view  class='nostyle padding-40'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>
+
+
+<view class="padding-40">
+  <view class="flex-row flex-center">
+    <view>
+      <view style="color:#161616" class="txt-bold">项目推荐</view>
+      <view class="lantiao"></view>
+    </view>
+    <view class="flex-1"></view>
+  </view>
+
+</view>
+
+
+	<view wx:for="{{houselist}}" data-id="{{item.id}}" wx:key='k' bindtap="productinfo" class="padding-40 divx  flex-row flex-center">
+		<view>
+			<image class="icon-100" src="{{uploadpath}}houseproject/{{item.cover}}"></image>
+			<view class="chenshi">{{item.country_name}}·{{item.city_name}}</view>
+		</view>
+		<view class="flex-1">
+			<view class=" flex-1 flex-row flex-center margin-left-20">
+				<view>
+					<view class="h5" style="color:#161616">
+						{{item.name}}
+					</view>
+					<view class="h7" style="color:#595959">
+						{{item.housewear}} | {{item.areacovered}}
+					</view>
+				</view>
+				<view class="flex-1"></view>
+				<view class="txt-bold" style="color:#FF4466">
+
+					￥{{item.pricesection_num}}
+
+
+
+
+
+
+
+					<text class="h7" style="color:#FF4466">万起</text>
+				</view>
+			</view>
+			<view class="flex-row flex-1 flex-center margin-top-15  margin-left-20">
+				<view class="tag">近一年房价均涨{{item.priceincrease}}%</view>
+				<view class="flex-1"></view>
+				<view class="tag">年均租金{{item.annualrent}}%</view>
+				<view class="flex-1"></view>
+				<view class="tag">首付比例{{item.downpayments}}%</view>
+			</view>
+			<view class="flex-row flex-1 flex-center margin-top-15  margin-left-20">
+				<view class="h7" style="color:#777777">{{item.fanxintext}}</view>
+				<view class="h7 margin-left-10" style="color:#777777">{{item.duration}}</view>
+			</view>
+			<view class="flex-row flex-1 flex-center margin-top-15  margin-left-20">
+				<view class="tag2">佣金比例{{item.commissionrate}}%</view>
+				<view class="flex-1"></view>
+				<view class="tag2">佣金收入{{item.commissionincome}}万</view>
+				<view class="flex-1"></view>
+				<view class="tag2">结佣时间{{item.settlementdate}}天</view>
+			</view>
+		</view>
+	</view>
+
+
+  <view class="padding-40">
+  <view class="flex-row flex-center">
+    <view>
+      <view style="color:#161616" class="txt-bold">相关推荐</view>
+      <view class="lantiao"></view>
+    </view>
+    <view class="flex-1"></view>
+  </view>
+
+	<view bindtap="gotozixun"  data-id="{{item.id}}" wx:for="{{zixunlist}}" wx:key='k' class=" margin-top-20 flex-row flex-center">
+
+		<image class="zixunimg" src="{{uploadpath}}consultation/{{item.cover}}"></image>
+		<view class="margin-left-20">
+
+			<view class="h5" style="color:#161616">{{item.title}}</view>
+			<view class="h7 margin-top-5 chaochu" style="color:#595959;width:400rpx">{{item.content}}</view>
+			<view class="flex-row margin-top-5 flex-center">
+				<view class="biaoqian" >#{{item.consultationtype_name}}</view>
+				<view class="h7 margin-left-40" style="color:#A0A0A0">{{item.publictime_dateformat}} </view>
+			</view>
+
+
+
+		</view>
+
+
+	</view>
+</view>
+

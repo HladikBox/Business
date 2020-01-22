@@ -1,0 +1,19 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">提现记录</view>
+</cu-custom>
+
+<view wx:for="{{tixianjilu}}" wx:key='k' class="flex-row margin-top-20 flex-center padding-30 bg-white">
+
+  <view>
+    <view class="h5 txt-bold" style="color:#404858">{{item.tixian_time_formatting}}</view>
+    <view class="h6 margin-top-20" style="color:#404858">银行账号：{{item.yinhanzhanhao}}</view>
+    <view class="h6 margin-top-20 txt-bold" style="color:#404858">开户行：{{item.kaihuhan}}</view>
+
+  </view>
+  <view class="flex-1"></view>
+
+  <view class="h4" style="color:#66CC99">-{{item.amount}}</view>
+
+
+</view>

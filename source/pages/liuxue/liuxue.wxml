@@ -1,0 +1,64 @@
+<!--增值服务-留学申请-->
+<cu-custom  isBack="{{true}}"  bgColor="bg-gradual-pink">
+  <view slot="content">留学申请</view>
+</cu-custom>
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" type="number" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">申请人</view>
+      <view class="input-right">
+        <input class="input-txt" name="sqr" type="text" placeholder="请输入申请人" />
+      </view>
+    </view>
+    <view class="input-item">
+      <view class="input-left">申请人年龄</view>
+      <view class="input-right">
+        <input class="input-txt" name="nianling" type="number" placeholder="请输入年龄" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">教育程度</view>
+      <view class="input-right">
+        <input class="input-txt" type="text" name="jiaoyu" type="number" placeholder="请输入教育程度" />
+      </view>
+    </view>
+
+       <view class="input-item">
+      <view class="input-left">意向国家</view>
+      <view class="input-right">
+        <input class="input-txt" type="text" name="guojia" type="text" placeholder="请输入意向国家" />
+      </view>
+    </view>
+
+           <view class="input-item">
+      <view class="input-left">意向学校</view>
+      <view class="input-right">
+        <input class="input-txt" type="text" name="xuexiao" type="text" placeholder="请输入意向学校" />
+      </view>
+    </view>
+
+<view class="input-item">
+      <view class="input-left">外语水平</view>
+      <view class="input-right">
+        <input class="input-txt" type="text" name="yuyan" type="text" placeholder="请填写外语水平" />
+      </view>
+    </view>
+    
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

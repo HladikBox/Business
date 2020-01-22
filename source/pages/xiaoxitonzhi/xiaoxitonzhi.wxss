@@ -1,0 +1,23 @@
+page{
+
+  background: #F7F8FA;
+}
+.bf-icon{
+  height: 80rpx;
+  width: 80rpx;
+}
+.hondian{
+  margin-top:-30rpx;
+  position: absolute;
+  margin-left:50rpx;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  font-size: 18rpx;
+  color:white;
+  background: red;
+  line-height: 24rpx;
+  text-align: center;
+
+
+}

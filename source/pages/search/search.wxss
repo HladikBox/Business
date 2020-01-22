@@ -1,0 +1,54 @@
+/* pages/search/search.wxss */
+
+.sousuo {
+  width: 688rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}
+
+.jilu {
+    min-width: 60rpx;
+    /* max-width: 230rpx; */
+    height: 64rpx;
+    border: 2rpx solid #DDDDDD;
+    background: #F7F8FA;
+    color:#595959;
+    border-radius: 30rpx;
+    line-height: 64rpx;
+    text-align: center;
+    font-size: 26rpx;
+    margin-right:16rpx;
+    margin-bottom: 16rpx;
+    padding: 0 20rpx;
+}
+
+.line {
+  width: 100vw;
+  height: 2rpx;
+  background: #DDDDDD;
+  margin-top: 64rpx;
+}
+
+
+.margin-48 {
+  margin: 0 45rpx;
+}
+
+.active {
+ color: #000000;
+ font-weight: bold;
+ position: relative;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 40rpx;
+  background: #000000;
+  position: absolute;
+  bottom: -16rpx;
+  left: 6rpx;
+  border-radius: 16rpx;
+}

@@ -1,0 +1,60 @@
+page{
+
+  background: #F7F8FA;
+}
+.tianjia{
+
+margin:14rpx;
+ 
+}
+.hondian{
+
+  position: absolute;
+  margin-left:30rpx;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  font-size: 18rpx;
+  color:white;
+  background: red;
+  line-height: 24rpx;
+  text-align: center;
+
+
+}
+.konzhi-block {
+  width: 25vw;
+  background: rgba(255, 255, 255, 1);
+margin-top: 60rpx;
+
+}
+.icon-24 {
+  width: 25rpx;
+  height: 30rpx;
+}
+.bom{
+
+  height:142rpx;
+  width: 100vw;
+  
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.queren{
+
+  width:686rpx;
+  height: 76rpx;
+  background: #07264A;
+  border-radius: 50rpx;
+  color:#FFFFFF;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  text-align: center;
+}.gou{
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  margin-left:40rpx;
+  margin-top:-30rpx;
+}

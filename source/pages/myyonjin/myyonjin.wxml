@@ -1,0 +1,85 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">我的佣金</view>
+</cu-custom>
+
+
+<view class="bg-top">
+
+	<view class="flex-row padding-20">
+
+		<view class="flex-1"></view>
+		<view bindtap="tixianjilu" class="f-22" style="color:#FFFFFF;opacity:0.8">提现记录</view>
+	</view>
+
+	<view class="margin-top flex-row flex-center">
+		<view class="flex-1 flex-row  flex-column">
+			<view class="h1-2" style="color:#FFFFFF">{{yonjin.leiji}}</view>
+			<view class="h5 margin-top-20" style="color:#FFFFFF;opacity:0.8">累计佣金</view>
+		</view>
+		<view class="xian1"></view>
+		<view class="flex-1 flex-row  flex-column">
+			<view class="h1-2" style="color:#FFFFFF">{{yonjin.ketixian-jiner}}</view>
+			<view class="h5 margin-top-20" style="color:#FFFFFF;opacity:0.8">可提取佣金</view>
+		</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top">
+		<view class="flex-1"></view>
+		<view bindtap="tixian" class="tx">提现</view>
+		<view class="flex-1"></view>
+	</view>
+
+</view>
+
+<view class="padding-30 flex-row flex-center bg-white" style="padding-bottom:0rpx;border-bottom:1rpx solid #F5F5F5">
+	<view bindtap="switchtab" id='0' class="flex-row flex-column flex-1">
+
+		<view class="{{tab==0?'black':''}} h5 text-center">个人佣金</view>
+		<view wx:if="{{tab==0}}" class="xian"></view>
+		<view wx:if="{{tab!=0}}" class="k"></view>
+	</view>
+	<view bindtap="switchtab" id='1' class="flex-row flex-column flex-1">
+
+		<view class="{{tab==1?'black':''}} h5 text-center">渠道佣金</view>
+		<view wx:if="{{tab==1}}" class="xian"></view>
+		<view wx:if="{{tab!=1}}" class="k"></view>
+	</view>
+</view>
+
+<view class="bg-white" wx:if="{{tab==0}}">
+
+	<view bindtap="yonjinxianqin" id="{{item.id}}" wx:for="{{ziyoukehu}}" wx:key='k' class="flex-row flex-center bg-white bolc">
+
+		<view>
+
+			<view class="h5" style="color:#404858">{{item.salesorder_projectname}}</view>
+			<view wx:if="{{item.salesorder_category=='A'}}" class="h6 margin-top-20" style="color:#777777">项目类型：移民</view>
+			<view wx:if="{{item.salesorder_category=='B'}}" class="h6 margin-top-20" style="color:#777777">项目类型：房产</view>
+			<view wx:if="{{item.salesorder_category=='C'}}" class="h6 margin-top-20" style="color:#777777">项目类型：理财</view>
+		</view>
+		<view class="flex-1"></view>
+		<view class="h4" style="color:#66CC99">+{{item.amount}}</view>
+	</view>
+
+
+</view>
+
+
+<view class="bg-white" wx:if="{{tab==1}}">
+
+	<view bindtap="yonjinxianqin" id="{{item.id}}" wx:for="{{pintaikehu}}" wx:key='k' class="flex-row flex-center bg-white bolc">
+
+		<view>
+
+			<view class="h5" style="color:#404858">{{item.salesorder_projectname}}</view>
+			<view wx:if="{{item.salesorder_category=='A'}}" class="h6 margin-top-20" style="color:#777777">项目类型：移民</view>
+			<view wx:if="{{item.salesorder_category=='B'}}" class="h6 margin-top-20" style="color:#777777">项目类型：房产</view>
+			<view wx:if="{{item.salesorder_category=='C'}}" class="h6 margin-top-20" style="color:#777777">项目类型：理财</view>
+		</view>
+		<view class="flex-1"></view>
+		<view class="h4" style="color:#66CC99">+{{item.amount}}</view>
+	</view>
+
+
+</view>

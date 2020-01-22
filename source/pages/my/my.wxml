@@ -1,0 +1,109 @@
+<!-- 个人资料 -->
+<view class="gerenziliao  " style='background-image:url({{uploadpath}}resource/{{res.gerenziliao}});background-size:100% 100%;'>
+
+  <view class="flex-row flex-center padding-top-180 ">
+
+    <view class="margin-left-20">
+
+      <image class="icon-75 border-raidus-50" wx:if='{{memberinfo.avatarUrl!=""}}' src="{{uploadpath}}member/{{memberinfo.avatarUrl}}"></image>
+       <image class="icon-75 border-raidus-50" wx:if='{{memberinfo.avatarUrl==""}}' src="{{uploadpath}}resource/{{res.morentouxiang}}"></image>
+
+    </view>
+    <view class="margin-left-30">
+      <view class="h4" style="color:#FFFFFF" wx:if='{{memberinfo.nickName!=""}}'>{{memberinfo.nickName}}</view>
+      <view class="h4" style="color:#FFFFFF" wx:if='{{memberinfo.nickName==""}}'>{{memberinfo.id}}</view>
+      <view class="h5" style="color:#FFFFFF;opacity:0.5">{{memberinfo.mobile}}</view>
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h6" style="color:#FFFFFF;opacity:0.3" bindtap="xiugai">查看个人资料</view>
+    <view class="padding-20" bindtap="xiugai">
+      <image class="you" src="{{uploadpath}}resource/{{res.you}}" ></image>
+    </view>
+
+
+  </view>
+
+
+</view>
+<!-- 控制台-->
+<view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 ">
+
+
+  <view wx:for="{{gonzuotailist}}" wx:key="k" class="konzhi-block flex-row flex-column" data-current="{{item.name}}" bindtap="detail">
+    <view wx:if="{{item.name!='微信客服'}}">
+      <image class="icon-25" src="{{uploadpath}}gonzuotai/{{item.photo}}"></image>
+    </view>
+ <button class="clear-button" open-type="contact">
+    <view wx:if="{{item.name=='微信客服'}}">
+      <image class="icon-25" src="{{uploadpath}}gonzuotai/{{item.photo}}"></image>
+    </view>
+ </button>
+    <view wx:if="{{item.name=='通知中心'&&memberinfo.weiduxiaoxi>0}}" class="hondian">{{memberinfo.weiduxiaoxi}}</view>
+    <view wx:if="{{item.name!='微信客服'}}" class="margin-top-20 f-22" style="color:#404858">{{item.name}}</view>
+    <button class="clear-button" open-type="contact">
+     <view wx:if="{{item.name=='微信客服'}}"  class="margin-top-20 f-22" style="color:#404858">{{item.name}}</view>
+        </button>
+  </view>
+
+</view>
+<!-- 底部跳转 -->
+<view class="margin-top-20 bg-white">
+
+ <view  bindtap="myyuyue"  class='flex-row flex-center  xx'>
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.zxyy}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>在线预约</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+  <view bindtap="myorder" class='flex-row flex-center  xx'>
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.gerendindan}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>个人订单</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+  <view class='flex-row flex-center  xx' bindtap="xiugai">
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.wodeziliao}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>我的资料</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+  <view bindtap="myrenzhen" class='flex-row flex-center  xx'>
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.woderenzhen}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>我的认证</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+  <view  bindtap="myyaoqinma" class='flex-row flex-center  xx'>
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.wodeyaoqinma}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>我的邀请码</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+</view>
+<!-- 设置 -->
+<view class="margin-top-20 bg-white">
+
+  <view class='flex-row flex-center  xx' bindtap="shezhi">
+    <image class='icon-24' src='{{uploadpath}}resource/{{res.shezhi}}'></image>
+    <view class='margin-left-20  txt-black  flex-1 h'>设置</view>
+    <image class='you1' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+</view>
+<!-- 联系我们 -->
+<view class="margin-top flex-row ">
+
+  <view class="flex-1"></view>
+
+  <view bindtap="lianxi" class="flex-row flex-center bg-white lianxiwomen">
+    <view class="flex-1"></view>
+
+    <image class='icon-10' src='{{uploadpath}}resource/{{res.lianxiwomen}}'></image>
+
+    <view class="h6 margin-left-10" style="color:#595959">联系我们</view>
+    <view class="flex-1"></view>
+  </view>
+
+
+  <view class="flex-1"></view>
+</view>
+
+<view class="height-50"></view>
+<view class="height-150"></view>
+
+<custom-tab-bar></custom-tab-bar>

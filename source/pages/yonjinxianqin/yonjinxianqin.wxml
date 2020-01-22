@@ -1,0 +1,87 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">佣金详情</view>
+</cu-custom>
+
+<view class="bg-white flex-row flex-center padding-30" style="border-bottom:1rpx solid #F7F8FA">
+
+	<view>
+		<view class="h5" style="color:#000000">
+			{{salesorder_projectname}}
+		</view>
+
+		<view class="h6 margin-top-20" style="color:#A0A0A0">
+			项目类型：<block  wx:if="{{yonjinxianqin.salesorder_category=='A'}}">移民</block>
+      <block  wx:if="{{yonjinxianqin.salesorder_category=='B'}}">房产</block>
+      <block  wx:if="{{yonjinxianqin.salesorder_category=='C'}}">理财</block>
+		</view>
+   
+
+	</view>
+	<view class="flex-1"></view>
+	<view class="h4" style="color:#66CC99">+{{yonjinxianqin.releaseamount}}</view>
+
+</view>
+
+<view class="bg-white padding-30">
+
+	<view>佣金属性：{{yonjinxianqin.sendtype_name}}</view>
+	<view  class="flex-row margin-top-20">
+		<view class="h6" style="color:#777777">应发佣金：{{yonjinxianqin.allamount}}</view>
+		<view class="flex-1"></view>
+		<view  class="h6" style="color:#777777">本期结算佣金：{{yonjinxianqin.releaseamount}}</view>
+	</view>
+  	<view class="flex-row margin-top-10 ">
+		<view  class="h6" style="color:#777777">未发佣金：{{yonjinxianqin.notreleaseamount}}</view>
+		<view class="flex-1"></view>
+		<view  class="h6" style="color:#777777">累计已发佣金：{{yonjinxianqin.allreleaseamount}}</view>
+	</view>
+
+</view>
+<view class="bg-white padding-20">
+<view class="  flex-row flex-center margin-top-20">
+
+<view class="flex-1 text-center h6">期数</view>
+<view class="flex-1 text-center h6">金额</view>
+<view class="flex-1 text-center h6">结算节点</view>
+<view class="flex-1 text-center h6">已发放佣金</view>
+
+</view>
+<view class="  flex-row flex-center margin-top-20">
+<view class="flex-1 text-center h6">一期佣金</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[0].amount}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[0].countsummary}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[0].releaseamount}}</view>
+
+</view>
+<view class="  flex-row flex-center margin-top-20">
+
+<view class="flex-1 text-center h6">二期佣金</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[1].amount}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[1].countsummary}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[1].releaseamount}}</view>
+
+</view>
+
+
+<view class="  flex-row flex-center margin-top-20">
+
+<view class="flex-1 text-center h6">三期佣金</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[2].amount}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[2].countsummary}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[2].releaseamount}}</view>
+
+</view>
+
+
+<view class="  flex-row flex-center margin-top-20">
+
+<view class="flex-1 text-center h6">四期佣金</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[3].amount}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[3].countsummary}}</view>
+<view class="flex-1 text-center h6">{{yonjinxianqin.releasedetail[3].releaseamount}}</view>
+
+</view>
+
+
+</view>

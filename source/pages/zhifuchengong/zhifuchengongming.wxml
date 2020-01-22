@@ -1,0 +1,16 @@
+
+<cu-custom  bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">报名成功</view>
+</cu-custom>
+
+<view class="flex-row flex-column margin-top">
+      <image src="{{uploadpath}}resource/{{res.zhifu}}" class="imgs"></image>
+      <view class="margin-top-37 f-36 txt-bold">报名成功</view>
+      <view class="h26" style="color:#999999;margin: 16rpx 0 76rpx;">{{instinfo.acsuccess}}</view>
+      <view class="flex-row flex-center ">
+        <view class="box2" bindtap="fanhui">返回活动页面</view>
+        <view style="width:10rpx;"></view>
+        <view class="box" bindtap="chakan">查看报名详情</view>
+      </view>
+</view>

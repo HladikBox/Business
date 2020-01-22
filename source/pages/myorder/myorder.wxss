@@ -1,0 +1,37 @@
+page{
+
+  background: #F7F8FA;
+}
+.xian{
+
+width: 100vw;
+height: 2rpx;
+background: rgba(64, 72, 88, 0.05);
+
+}
+.quzhifu{
+
+
+background: #07264A;
+border-radius: 32rpx;
+width: 144rpx;
+height: 48rpx;
+line-height: 48rpx;
+text-align: center;
+color:#FFFFFF;
+font-size: 26rpx;
+
+}
+.yiwanchen{
+
+background: #FFFFFF;
+border-radius: 32rpx;
+width: 144rpx;
+height: 48rpx;
+line-height: 48rpx;
+text-align: center;
+color:#07264A;
+font-size: 26rpx;
+border:1rpx solid #07264A;
+
+}

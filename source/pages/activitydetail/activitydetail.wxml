@@ -1,0 +1,115 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+</cu-custom>
+
+<view style="background:#F7F8FA;;height:100vh">
+
+  <view style='background:#ffffff;'>
+    <image src="{{uploadpath}}activity/{{detail.cover}}" style="width:100vw;height:320rpx;"></image>
+
+    <view class="txt-bold padding-left-32 padding-top-30" style="color:#161616">{{detail.name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='课程'?'kec':''}}" wx:if="{{detail.activitytype_id_name=='课程'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='会展'?'huizhan':''}}" wx:if="{{detail.activitytype_id_name=='会展'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='培训'?'peixun':''}}" wx:if="{{detail.activitytype_id_name=='培训'}}">{{detail.activitytype_id_name}}</view>
+    <view class=" h7  box {{detail.activitytype_id_name=='考察'?'kaocha':''}}" wx:if="{{detail.activitytype_id_name=='考察'}}">{{detail.activitytype_id_name}}</view>
+    <view style="height:26rpx;"></view>
+  </view>
+     <view style="width:100vw;height:2rpx;background:#404858;"></view>
+    
+  <view class="padding-left-32  bg-white" style="color:#595959;">
+ <view style="height:34rpx;"></view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name=='培训'}}">主讲:
+      <text class="xinxi h6">{{detail.teacher}}</text>
+    </view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name!='会展'}}">费用:
+      <text class="xinxi h6" wx:if='{{detail.price>0}}'>{{detail.price}}</text>
+      <text class="xinxi h6" wx:if='{{detail.price<=0}}'>免费</text>
+    </view>
+    <view class="padding-bottom-10 h6" wx:if="{{detail.activitytype_id_name!='培训'}}">地点:
+      <text class="xinxi h6">{{detail.activitysite}}</text>
+    </view>
+    <view class=" h6" wx:if="{{detail.activitytype_id_name!='课程'}}">时间:
+      <text class="xinxi h6">{{detail.activitytime}} {{detail.durtime}}</text>
+    </view>
+      <view style="height:32rpx;"></view>
+  </view>
+ <view style="width:100vw;height:16rpx;background:#F7F8FA;"></view>
+  <view class=" bg-white ">
+    <view class="padding-left-32 h5 txt-bold padding-top-20 padding-bottom-20 " style="color:#161616;">{{detail.activitytype_id_name}}详情</view>
+    <view style="width:100vw;height:2rpx;background:#404858;margin-bottom:16rpx;"></view>
+
+    <view class="padding-left-32 padding-right-30 padding-bottom-34">
+      <view class="h5 padding-bottom-16">{{detail.name}}</view>
+      <!-- <view class="h6">{{detail.content}}</view> -->
+    </view>
+
+
+    <import src="../../wxParse/wxParse.wxml" />
+
+    <view class='nostyle padding-28 h5'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+
+
+    <view wx:for='{{detail.acfile}}' wx:key='k' id="{{uploadpath}}activity/{{item.file}}" bindtap="downloadwenjian" class="padding-left-30 flex-row flex-center">
+      <view class="margin-left-20">
+
+        <view wx:if="{{item.filetype=='A'}}" class="wenjian">
+          <image class="wenjianimg" src="{{uploadpath}}resource/{{res.word}}"></image>
+        </view>
+
+        <view wx:if="{{item.filetype=='B'}}" class="wenjian">
+          <image class="wenjianimg" src="{{uploadpath}}resource/{{res.excel}}"></image>
+        </view>
+
+        <view wx:if="{{item.filetype=='C'}}" class="wenjian">
+          <image class="wenjianimg" src="{{uploadpath}}resource/{{res.pdf}}"></image>
+        </view>
+
+
+      </view>
+      <view class="h5 text-center margin-left-20 margin-top-5" style="color:#777777">{{item.name}}</view>
+    </view>
+
+    <view style="height: 200rpx;"></view>
+
+  </view>
+
+    <view style="width:100vw;height:164rpx;background:#F7F8FA;"></view>
+  <view class="en flex-row flex-center">
+    <button class='text-center flex-1  clear-button' hover-class='bg_gray' open-type='contact' style='border-radius:0;border:0;'>
+      <!-- <view class=""  > -->
+      <image src="{{uploadpath}}resource/{{res.xianmuzixun}}" class="icon-16"></image>
+      <view class="h7">咨询</view>
+      <!-- </view> -->
+    </button>
+    <view class="line"></view>
+
+
+    <button class='text-center flex-1  clear-button' hover-class='bg_gray' open-type="share" style='border-radius:0;border:0;'>
+      <view class="text-center flex-1 ">
+        <image src="{{uploadpath}}resource/{{res.xianmufenixan}}" class="icon-16"></image>
+        <view class="h7">分享</view>
+      </view>
+    </button>
+
+    <view class="line"></view>
+
+    <view class="text-center flex-1" bindtap="shoucan">
+      <image src="{{uploadpath}}resource/{{res.shoucan}}" wx:if="{{shoucan==false}}" class="icon-16"></image>
+      <image src="{{uploadpath}}resource/{{res.shoucan2}}" wx:if="{{shoucan==true}}" class="icon-16"></image>
+      <view class="h7">收藏</view>
+
+    </view>
+
+    <view class="text-center flex-2 padding-right-30" wx:if="{{detail.activitytype_id_name!='课程'}}" bindtap="baomin">
+      <view class=" btns"> 立即报名</view>
+    </view>
+  </view>
+
+</view>
+
+<view>
+
+</view>

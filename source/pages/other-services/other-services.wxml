@@ -1,0 +1,107 @@
+<!--增值服务-->
+<cu-custom isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">增值服务</view>
+</cu-custom>
+
+<view class="zengzhi">
+  <view class="zengzhi-items" bindtap="chuzu">
+   
+      <view class="pad">
+        <view>
+          <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.chuzu}}"></image>
+        </view>
+        <view class="zengzhi-item-t">房产出租</view>
+      </view>
+    
+  </view>
+  <view class="zengzhi-items" bindtap="zhuanrang">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.zhuanrang}}"></image>
+      </view>
+      <view class="zengzhi-item-t">楼花转让</view>
+    
+  </view>
+  <view class="zengzhi-items" bindtap="ershou">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.ershou}}"></image>
+      </view>
+      <view class="zengzhi-item-t">二手房出售</view>
+    
+  </view>
+  <view class="zengzhi-items" bindtap="daikuan">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.daikuan}}"></image>
+      </view>
+      <view class="zengzhi-item-t">贷款申请</view>
+    
+  </view>
+  <view class="zengzhi-items" bindtap="qianzheng">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.qianzheng}}"></image>
+      </view>
+      <view class="zengzhi-item-t">代办签证</view>
+    
+  </view>
+
+  <view class="zengzhi-items" bindtap="jipiao">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.jiudian}}"></image>
+      </view>
+      <view class="zengzhi-item-t">代办机酒预订</view>
+    
+  </view>
+
+  <view class="zengzhi-items"  bindtap="jieji">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.songji}}"></image>
+      </view>
+      <view class="zengzhi-item-t">代办接送机</view>
+    
+  </view>
+
+  <view class="zengzhi-items" bindtap="anjia">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.anjia}}"></image>
+      </view>
+      <view class="zengzhi-item-t">代办安家服务</view>
+    
+  </view>
+
+
+  <view class="zengzhi-items" bindtap="qiandan">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.qiandan}}"></image>
+      </view>
+      <view class="zengzhi-item-t">签单陪同</view>
+    
+  </view>
+
+
+  <view class="zengzhi-items" bindtap="liuxue">
+    
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.liuxue}}"></image>
+      </view>
+      <view class="zengzhi-item-t">留学申请</view>
+    
+  </view>
+
+  <view class="zengzhi-items">
+   
+      <view>
+        <image class="zengzhi-item-img" src="{{uploadpath}}resource/{{res.kaocha}}"></image>
+      </view>
+      <view class="zengzhi-item-t">海外考察定制</view>
+    
+  </view>
+</view>
+
+ 

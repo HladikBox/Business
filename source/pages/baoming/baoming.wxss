@@ -1,0 +1,26 @@
+/* pages/baoming/baoming.wxss */
+
+.padding-left-68 {
+  padding-left: 34rpx;
+}
+
+.padding-right-64 {
+  padding-right: 32rpx;
+}
+
+.line {
+  width: 100vw;
+  height: 2rpx;
+  border: 2rpx solid rgba(239, 240, 241, 1);
+  margin: 28rpx 0 15rpx;
+}
+
+.tijiao {
+  width: 693rpx;
+  height: 76rpx;
+  background: rgba(7, 38, 74, 1);
+  border-radius: 38rpx;
+  text-align: center;
+  color: #ffffff;
+  line-height: 76rpx;
+}

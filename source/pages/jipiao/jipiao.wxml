@@ -1,0 +1,64 @@
+<!--增值服务-代办机酒预定-->
+<cu-custom  isBack="{{true}}"  bgColor="bg-gradual-pink">
+  <view slot="content">代办机酒预定</view>
+</cu-custom>
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">护照/身份证</view>
+      <view class="input-right">
+        <input class="input-txt" name="zhengjianhao" placeholder="请输入证件号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">出行日期</view>
+      <view class="input-right">
+        <picker name="riqi" mode="date" value="{{date}}" start="2015-09-01" end="2090-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">国家</view>
+      <view class="input-right">
+        <input class="input-txt" name="guojia" placeholder="请输入国家 " />
+      </view>
+    </view>
+
+
+    <view class="input-item">
+      <view class="input-left">城市</view>
+      <view class="input-right">
+        <input class="input-txt" name="chengshi" placeholder="请输入城市" />
+      </view>
+    </view>
+
+    <view class="input-item" style="flex-flow: column;">
+      <view class="input-left">行程安排</view>
+      <view class="input-right">
+        <textarea class="input-tet" name="xingcheng" placeholder="您的具体行程" auto-focus />
+      </view>
+    </view>
+
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

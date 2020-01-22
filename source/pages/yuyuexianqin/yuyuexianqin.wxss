@@ -1,0 +1,49 @@
+page{
+
+  background: #F7F8FA;
+}
+.xbk{
+border-bottom: 1rpx solid #F7F8FA;
+margin-left:30rpx;
+margin-right: 30rpx;
+padding-top:20rpx;
+padding-bottom: 20rpx;
+}
+.pdd{
+
+padding:30rpx;
+ border:1rpx dashed  #E0E0E0;
+
+}
+.queren{
+  
+    width:316rpx;
+    height: 76rpx;
+    background: #07264A;
+    border-radius: 50rpx;
+    color:#FFFFFF;
+    font-size: 28rpx;
+    line-height: 76rpx;
+    text-align: center;
+  }
+ .bom{
+
+    height:142rpx;
+    width: 100vw;
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+  }
+  .queren1{
+  
+    width:316rpx;
+    height: 76rpx;
+    background: #FFFFFF;
+    border-radius: 50rpx;
+    color:#07264A;
+    border:1rpx solid #07264A;
+    font-size: 28rpx;
+    line-height: 76rpx;
+    text-align: center;
+  }

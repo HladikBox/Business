@@ -1,0 +1,17 @@
+
+<cu-custom  bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">产品认购</view>
+</cu-custom>
+
+<view class="flex-row flex-column margin-top">
+      <image src="{{uploadpath}}resource/{{res.zhifu}}" class="imgs"></image>
+      <view class="margin-top-37 f-36 txt-bold">支付成功</view>
+      <view class="h26" style="color:#999999;margin: 16rpx 0 76rpx;">您已成功支付订金，请核对订购表信息</view>
+      <view class="flex-row flex-center ">
+        <view class="box2" bindtap="fanhui">查看订购表</view>
+        <view style="width:10rpx;"></view>
+        <view class="box" bindtap="chakan">返回首页</view>
+      </view>
+</view>
+

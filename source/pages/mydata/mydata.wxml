@@ -1,0 +1,40 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">我的资料</view>
+</cu-custom>
+<view style="height:20rpx;"></view>
+<view class="padding-left-68 padding-right-64" style="color:#404858;">
+  <view class="flex-row flex-center">
+    <view class="h5">头像</view>
+    <view class="flex-1"></view>
+   <image src='{{uploadpath}}resource/{{res.morentouxiang}}' wx:if='{{memberinfo.avatarUrl==""}}' mode='aspectFill' class='icon-56 radius-50' style='' bindtap='bindpic'></image>
+   <image src='{{uploadpath}}member/{{memberinfo.avatarUrl}}' wx:if='{{memberinfo.avatarUrl!=""}}' mode='aspectFill' class='icon-56 radius-50' style='' bindtap='bindpic'></image>
+  </view>
+  <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">用户名</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindname" placeholder="无" value="{{memberinfo.nickName || memberinfo.id}}" maxlength="11"></input>
+  </view>
+  <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">密码</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" type="password" bindinput="bindpwd"  placeholder=""></input>
+  </view>
+  <view class="line"></view>
+<view class="flex-row flex-center">
+    <view class="h5">手机</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" disabled="true" bindinput="bindmobile" value="{{memberinfo.mobile}}" placeholder="无"></input>
+  </view>
+    <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">邮箱</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindemail" value="{{memberinfo.email}}" placeholder="无"></input>
+  </view>
+    <view class="line"></view>
+  <view style="height:600rpx;"></view>
+  <view class="tijiao" bindtap="tijiao">确定</view>
+</view>

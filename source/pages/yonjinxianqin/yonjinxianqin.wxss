@@ -1,0 +1,9 @@
+.yjsb{
+
+  width: 688rpx;
+  height: 480rpx;
+}
+page{
+
+  background: #F7F8FA;
+}

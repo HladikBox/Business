@@ -1,0 +1,107 @@
+<!--增值服务-贷款申请-->
+<cu-custom  isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">贷款申请</view>
+</cu-custom>
+<view class="input-items">
+  <view class="input-item">
+    <view class="input-left">客户姓名</view>
+    <view class="input-right">
+      <input class="input-txt" auto-focus placeholder="请输入客户姓名" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">手机号码</view>
+    <view class="input-right">
+      <input class="input-txt" placeholder="请输入手机号码" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">家庭住址</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入家庭住址" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">联系地址</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入联系地址" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">房产地址</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入国家、城市、街道、门牌房号" />
+    </view>
+  </view>
+
+
+
+  <view class="input-item">
+    <view class="input-left">项目名称</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入项目名称" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">贷款比例%</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入贷款比例%" />
+    </view>
+  </view>
+
+  <view class="input-item">
+    <view class="input-left">房价（RMB）</view>
+    <view class="input-right">
+      <input class="input-txt"  placeholder="请输入房价" />
+    </view>
+  </view>
+
+  <view class="input-item" style="display: block;">
+    <view class="input-image-t">收入证明</view>
+    <view class="input-image-c">
+      <!-- <include src="../up-image/up-image.wxml" /> -->
+      
+    </view>
+  </view>
+
+  <view class="input-item" style="display: block;">
+    <view class="input-image-t">资金证明</view>
+    <view class="input-image-c">
+      
+    </view>
+  </view>
+
+  <view class="input-item" style="display: block;">
+    <view class="input-image-t">身份证</view>
+    <view class="input-image-c">
+      
+    </view>
+  </view>
+
+  <view class="input-item" style="display: block;">
+    <view class="input-image-t">征信文件</view>
+    <view class="input-image-c">
+      
+    </view>
+  </view>
+    <view class="input-item" style="display: block;">
+    <view class="input-image-t">征信文件</view>
+    <view class="input-image-c">
+      
+    </view>
+  </view>
+    <view class="input-item" style="display: block;">
+    <view class="input-image-t">征信文件</view>
+    <view class="input-image-c">
+      
+    </view>
+  </view>
+
+  <button bindtap='uploadimage' class='sub'>提交</button>
+
+</view>

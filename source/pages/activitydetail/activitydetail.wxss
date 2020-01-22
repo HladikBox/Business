@@ -1,0 +1,114 @@
+/* pages/activitydetail/activitydetail.wxss */
+
+page {
+  height: 100%;
+}
+
+.padding-left-32 {
+  padding-left: 32rpx;
+}
+
+.padding-top-24 {
+  padding-left: 24rpx;
+}
+
+.margin-top-32 {
+  margin-top: 32rpx;
+}
+.padding-top-30 {
+  padding-top: 26rpx;
+}
+
+.box {
+  width: 96rpx;
+  height: 36rpx;
+  border-radius: 30rpx;
+  /* line-height: 36rpx; */
+  text-align: center;
+  margin-left: 32rpx;
+  margin-top: 20rpx;
+}
+
+.kec {
+  color: #72d4a9;
+  border: 2rpx solid #72d4a9;
+}
+
+.kaocha {
+  color: #88CCE2;
+  border: 2rpx solid #88CCE2;
+}
+
+.peixun {
+  color: #F37474;
+  border: 2rpx solid #F37474;
+}
+
+.huizhan {
+  color: #D8B66E;
+  border: 2rpx solid #D8B66E;
+}
+
+.xinxi {
+  margin-left: 15rpx;
+  color: #777;
+}
+
+.padding-bottom-16 {
+  padding-bottom: 16rpx;
+}
+
+.padding-bottom-34 {
+  padding-bottom: 34rpx;
+}
+
+.en {
+  width: 100vw;
+  height: 144rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+}
+
+.icon-16 {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.btns {
+  width: 312rpx;
+  height: 76rpx;
+  background: #07264a;
+  color: #fff;
+  border-radius: 40rpx;
+  line-height: 76rpx;
+}
+
+.line {
+  width: 2rpx;
+  height: 40rpx;
+  background: #707070;
+  /* position: relative;
+  bottom: 30rpx; */
+}
+
+.vid {
+  width: 1078rpx;
+  height: 460rpx;
+}
+.nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+}
+
+.padding-28 {
+  padding: 28rpx 40rpx 
+}
+.wenjianimg{
+  width: 40rpx;
+  height: 40rpx;
+  
+}

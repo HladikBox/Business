@@ -1,0 +1,12 @@
+/* pages/shuikanlewo/shuikanlewo.wxss */
+.nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+}
+
+.padding-28 {
+  padding: 28rpx 40rpx 
+}

@@ -1,0 +1,31 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">设置</view>
+</cu-custom>
+
+<view style="background:#F7F8FA;height:100vh;">
+  <view class="bg-white flex-center padding-left-32 padding-right-30">
+
+    <view class="flex-row " style="padding: 20rpx 0;" bindtap="feedback">
+      <view class="h5">意见反馈</view>
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{res.arrowleft}}" class="imgs"></image>
+    </view>
+    <view class="line"></view>
+    <view class="flex-row " style="padding: 20rpx 0;" bindtap="guanyu">
+      <view class="h5">关于邦拓</view>
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{res.arrowleft}}" class="imgs"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view style="height:16rpx;"></view>
+  <view class="bg-white padding-left-32 padding-right-30">
+  <view class="flex-row flex-center " style="padding: 20rpx 0;" bindtap="logouts">
+    <view class="h5">退出当前账号</view>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.arrowleft}}" class="imgs"></image>
+  </view>
+  </view>
+  
+</view>

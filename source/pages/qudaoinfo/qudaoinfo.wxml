@@ -1,0 +1,72 @@
+
+
+
+
+
+
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">渠道详情</view>
+</cu-custom>
+
+<view class="padding-40 bg-white flex-row ">
+
+	<image src='{{uploadpath}}member/{{qudaoxianqin.p_member_id_avatarUrl}}' class="icon-60 radius-50"></image>
+
+	<view class="flex-row flex-center">
+		<view style="color:#404858" class="margin-left-20">{{qudaoxianqin.p_member_id_name}}</view>
+		<view style="color:#A0A0A0" class="margin-left-20 h6">{{qudaoxianqin.p_member_id_mobile}}</view>
+	</view>
+</view>
+
+
+
+<view class="bg-white margin-top-20 padding-20 flex-row flex-center">
+
+
+	<view class="h5" style="color:#404858">客户数</view>
+
+	<view class="flex-1"></view>
+
+	<view class="h5" style="color:#404858">{{qudaoxianqin.gerenkehu}}人</view>
+
+
+</view>
+
+
+<view class="bg-white margin-top-20 padding-20 flex-row flex-center">
+
+
+	<view class="h5" style="color:#404858">渠道</view>
+
+	<view class="flex-1"></view>
+
+	<view class="h5" style="color:#404858">{{qudaoxianqin.qudaoshu}}人</view>
+
+
+</view>
+
+<view class="bg-white margin-top-20 padding-20 flex-row flex-center">
+
+
+	<view class="h5" style="color:#404858">订单</view>
+
+	<view class="flex-1"></view>
+
+	<view class="h5" style="color:#404858">{{qudaoxianqin.gerendindan}}</view>
+
+
+</view>
+
+
+<!-- <view class="bg-white margin-top-20 padding-20 flex-row flex-center">
+
+
+	<view class="h5" style="color:#404858">结算</view>
+
+	<view class="flex-1"></view>
+
+	<view class="h5" style="color:#404858">平台结算</view>
+
+
+</view> -->

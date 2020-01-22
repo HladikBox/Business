@@ -1,0 +1,12 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">服务条款</view>
+</cu-custom>
+
+
+ 
+     <import src="../../wxParse/wxParse.wxml" />
+
+    <view  class='nostyle padding-28 h5' >
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>

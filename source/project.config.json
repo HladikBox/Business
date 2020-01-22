@@ -1,0 +1,431 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.5",
+	"appid": "wx06f99223a3585768",
+	"projectname": "%E4%BA%91%E6%98%93%E5%88%9B",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 51,
+			"list": [
+				{
+					"id": -1,
+					"name": "房产详情",
+					"pathName": "pages/productinfo/productinfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activitydetail/activitydetail",
+					"pathName": "pages/activitydetail/activitydetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zixun/zixun",
+					"pathName": "pages/zixun/zixun",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoucan/shoucan",
+					"pathName": "pages/shoucan/shoucan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "开发商介绍",
+					"pathName": "pages/kaifashaninfo/kaifashaninfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "产品认购",
+					"pathName": "pages/chanpinrengou/chanpinrengou",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/myorder/myorder",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的认证",
+					"pathName": "pages/myrenzhen/myrenzhen",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提交认证",
+					"pathName": "pages/tijiaorenzhen/tijiaorenzhen",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shezhi/shezhi",
+					"pathName": "pages/shezhi/shezhi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/feedback/feedback",
+					"pathName": "pages/feedback/feedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/aboutbantop/aboutbantop",
+					"pathName": "pages/aboutbantop/aboutbantop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pengyouquan/pengyouquan",
+					"pathName": "pages/pengyouquan/pengyouquan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zhuanwenzhan/zhuanwenzhan",
+					"pathName": "pages/zhuanwenzhan/zhuanwenzhan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/yaoqing/yaoqing",
+					"pathName": "pages/yaoqing/yaoqing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "房产详情",
+					"pathName": "pages/yimininfo/yimininfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "保险详情",
+					"pathName": "pages/baoxianinfo/baoxianinfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "选择房产",
+					"pathName": "pages/selecthouse/selecthouse",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/baoming/baoming",
+					"pathName": "pages/baoming/baoming",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zhifuchengong/hifuchengongming",
+					"pathName": "pages/zhifuchengong/zhifuchengongming",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zhifuchengong/zhifuchengongming",
+					"pathName": "pages/zhifuchengong/zhifuchengongming",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dingdandetail/dingdandetail",
+					"pathName": "pages/dingdandetail/dingdandetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "录入客户",
+					"pathName": "pages/lurukehu/lurukehu",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的客户",
+					"pathName": "pages/mykehu/mykehu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search2/search2",
+					"pathName": "pages/search2/search2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zixundetail/zixundetail",
+					"pathName": "pages/zixundetail/zixundetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forgetpassword/forgetpassword",
+					"pathName": "pages/forgetpassword/forgetpassword",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "移民认购",
+					"pathName": "pages/yiminrengou/yiminrengou",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的佣金",
+					"pathName": "pages/myyonjin/myyonjin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现记录",
+					"pathName": "pages/tixianjilu/tixianjilu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/tixian/tixian",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的渠道",
+					"pathName": "pages/myqudao/myqudao",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "佣金表",
+					"pathName": "pages/yonjinbiaodan/yonjinbiaodan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "产品支付成功",
+					"pathName": "pages/successfulpayment/successfulpayment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mydata/mydata",
+					"pathName": "pages/mydata/mydata",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addbank/addbank",
+					"pathName": "pages/addbank/addbank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mybank/mybank",
+					"pathName": "pages/mybank/mybank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/product/product",
+					"pathName": "pages/product/product",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息通知",
+					"pathName": "pages/xiaoxitonzhi/xiaoxitonzhi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 44,
+					"name": "渠道详情",
+					"pathName": "pages/qudaoinfo/qudaoinfo",
+					"query": "id=5",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/kehuziliao/kehuziliao",
+					"pathName": "pages/kehuziliao/kehuziliao",
+					"query": "id=10",
+					"scene": null
+				},
+				{
+					"id": 46,
+					"name": "佣金详情",
+					"pathName": "pages/yonjinxianqin/yonjinxianqin",
+					"query": "id=31",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderinfo/orderinfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专题详情",
+					"pathName": "pages/activitysuccess/activitysuccess",
+					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "在线预约",
+					"pathName": "pages/myyuyue/myyuyue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 50,
+					"name": "预约详情",
+					"pathName": "pages/yuyuexianqin/yuyuexianqin",
+					"query": "id=5",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "工作台",
+					"pathName": "pages/gonzuotai/gonzuotai",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/kehuziliao/kehuziliao",
+					"pathName": "pages/kehuziliao/kehuziliao",
+					"scene": null
+				}
+			]
+		}
+	}
+}

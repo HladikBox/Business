@@ -1,0 +1,22 @@
+<!--增值服务-留学申请-->
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" style="color:#161616;">在线预约</view>
+</cu-custom>
+
+<view  wx:for="{{myyuyue}}" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
+
+  <view>
+    <view class="h5" style="color:#404858">{{item.shixian}}</view>
+    <view class="flex-row flex-center margin-top-10">
+
+      <view wx:if="{{item.shifou=='0'}}" class="h6 " style="color:#404858;opacity:0.8">客户陪同</view>
+      <view wx:if="{{item.shifou=='1'}}" class="h6 " style="color:#404858;opacity:0.8">无客户陪同</view>
+      <view class="h6 margin-left-40" style="color:#404858;opacity:0.8">{{item.shijian_formatting}}</view>
+    </view>
+  </view>
+  <view class="flex-1"></view>
+
+  <view id="{{item.id}}" bindtap="yuyuexianqin" class="chakan">查看</view>
+  <view id="{{item.id}}" bindtap="quxiao" class="quxiao">取消</view>
+</view>

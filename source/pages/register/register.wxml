@@ -1,0 +1,50 @@
+<view style="background:#07264A;width:100vw; height:100vh;">
+  <view class="height-200"></view>
+
+  <view class="text-center" >
+    <image src="{{uploadpath}}resource/{{res.loginlogo}}" class="imgs"></image>
+  </view>
+  <view class="height-88"></view>
+  <view class="flex-row flex-column " >
+    <view class="inp flex-row padding-left-32 ">
+       <image src="{{uploadpath}}resource/{{res.loginname}}" style="" class="icon-24"></image>
+      <input class="flex-1" name="mobile" bindblur='bindmoile'  placeholder='请输入手机号' maxlength="11"></input>
+    </view>
+    <view class="inp flex-row padding-left-32 ">
+      <image src="{{uploadpath}}resource/{{res.yanzhengma}}" style="" class="icon-24"></image>
+      <input class="flex-1" name="yanzhengma" bindblur='bindyanzhengma' placeholder='请输入验证码'></input>
+      <view class="h6 padding-right-32 " style="line-height:72rpx;color:#425468;" wx:if="{{send==false}}" bindtap="sendverifycode">发送验证码</view>
+       <view class="h6 padding-right-32 " style="line-height:72rpx;color:#425468;"  wx:if="{{reminder>0}}">{{reminder}}秒后重新发送</view>
+        <view class="h6 txt-primary padding-right-32" style="line-height:72rpx;color:#425468;"  wx:if="{{reminder<=0 && send}}" bindtap="sendverifycode">重新发送验证码</view>
+    </view>
+    <view class="inp flex-row padding-left-32 ">
+      <image src="{{uploadpath}}resource/{{res.loginpwd}}" style="" class="icon-24"></image>
+      <input class="flex-1" name="password" type="password" bindblur='bindpwd' placeholder='请创建密码,密码长度6~20位'></input>
+    </view>
+    <view class="inp flex-row padding-left-32 " style="margin-bottom:0rpx;">
+      <image src="{{uploadpath}}resource/{{res.loginpwd}}" style="" class="icon-24"></image>
+      <input disabled="{{yaoqinma!=''}}" class="flex-1" name="code"    value="{{yaoqinma}}" bindblur='bindcode' placeholder='邀请码（没有可不填）'></input>
+    </view>
+
+  </view>
+
+  <view class="flex-row flex-column" style="background-image:url({{uploadpath}}resource/{{res.loginp}});background-size:100% 100%;height:640rpx;">
+    <view style="height:36rpx;"></view>
+    <view class="">
+      <view class="flex-row flex-center txt-white margin-bottom-20" style="margin-left:14%" >
+        <image src="{{uploadpath}}resource/{{res.weixuan}}"  bindtap="xuanze" wx:if="{{show==false}}" class="icon-24"></image>
+        <image src="{{uploadpath}}resource/{{res.xuanzhong}}"  bindtap="xuanze" wx:if="{{show==true}}"  class="icon-24"></image>
+        <view class="h26 margin-left-16"  bindtap="xuanze">我已阅读并接受</view>
+        <view class="h26" style="color:#268AFF;"  bindtap="tiaokuan">《服务条款》</view>
+      </view>
+      <view class="dl" bindtap="zuce">注册</view>
+      <view class="flex-row txt-white " style="margin-left:26%">
+        <view class="h5">已有账号？</view>
+        <view  class="h5" style="color:#268AFF;" bindtap="denglu">立即登录</view>
+      </view>
+    </view>
+
+    <!-- <image src="{{uploadpath}}resource/{{res.loginp}}" style="width:100vw;height:640rpx;"></image> -->
+  </view>
+
+</view>

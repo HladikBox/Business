@@ -1,0 +1,12 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">系统通知</view>
+</cu-custom>
+
+<view class="padding-left-32 padding-right-30">
+    <view style="height:48rpx;"></view>
+    <view class="h4 txt-bold">{{xiaoxiinfo.content}}</view>
+    <view class="h6" style="color:#CCCCCC;margin:20rpx 0 48rpx;">{{xiaoxiinfo.xiaoxi_date_formatting}}</view>
+  </view>
+    <view class="h5 padding-left-32 padding-right-30">{{xiaoxiinfo.xianxi}}</view> 
+    

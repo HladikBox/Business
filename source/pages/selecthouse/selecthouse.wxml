@@ -1,0 +1,112 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">选择房产</view>
+</cu-custom>
+
+
+<!-- 顶部轮播 -->
+<swiper bindchange="qiehuanlunbo" autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:320rpx;'>
+  <swiper-item wx:for="{{houseinfo.lunbo}}" wx:key="k">
+    <image src='{{uploadpath}}houselunbo/{{item.photo}}' style="width:100vw;height:320rpx; " bindtap='bannerGo' id="{{item.id}}" class=''></image>
+  </swiper-item>
+</swiper>
+
+<view class="index">{{indexcurrent+1}}/{{houseinfo.lunbo.length}}</view>
+<!-- 房产名 -->
+<view class="padding-40 bg-white flex-row flex-center">
+  <view class="txt-bold " style="color:#161616">{{houseinfo.name}}</view>
+  <view class="flex-1"></view>
+  <view>
+    <image class="dinweiicon" src="{{uploadpath}}resource/{{res.dinwei}}"></image>
+  </view>
+  <view class="f-22 " style="#A0A0A0;margin-left:5rpx;">{{houseinfo.name}}</view>
+
+</view>
+
+<!-- 选择规格 -->
+<view class="margin-top-20 bg-white">
+ <picker range-key="name" value="{{loudonindex}}" range="{{loudon}}" bindchange="bindloudon">
+  <view class='flex-row flex-center  xx'>
+
+    <view class='  txt-black  flex-1 h'>楼栋</view>
+    <view wx:if="{{loudonindex!=undefined}}"  class="h5" style="color:#777777">{{loudon[loudonindex].name}}</view>
+    <view wx:if="{{loudonindex==undefined}}" class="h5" style="color:#777777">请选择</view>
+    <image class='you1 margin-left-20' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+    </picker>
+     <picker range-key="name" value="{{loucenindex}}" range="{{loucen}}" bindchange="bindloucen">
+  <view class='flex-row flex-center  xx'>
+
+    <view class='  txt-black  flex-1 h'>楼层</view>
+     <view wx:if="{{loucenindex!=undefined}}"  class="h5" style="color:#777777">{{loucen[loucenindex].name}}</view>
+    <view wx:if="{{loucenindex==undefined}}" class="h5" style="color:#777777">请选择</view>
+    <image class='you1 margin-left-20' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+   </picker>
+      <picker range-key="name" value="{{huxinindex}}" range="{{huxin}}" bindchange="bindhuxin">
+  <view class='flex-row flex-center  xx'>
+
+    <view class='  txt-black  flex-1 h'>户型</view>
+     <view wx:if="{{huxinindex!=undefined}}"  class="h5" style="color:#777777">{{huxin[huxinindex].name}}</view>
+    <view wx:if="{{huxinindex==undefined}}" class="h5" style="color:#777777">请选择</view>
+    <image class='you1 margin-left-20' src='{{uploadpath}}resource/{{res.wodeyou}}'></image>
+  </view>
+  </picker>
+</view>
+<!-- 房产选择 -->
+
+<view wx:if="{{fanchan.length!=0}}" class="margin-top-20 bg-white">
+
+  <view class="padding-40 flex-row flex-center">
+
+    <image class="hxt" src="{{uploadpath}}fanchan/{{fanchaninfo.img}}"></image>
+    <view class="flex-1"></view>
+    <view style="width:300rpx">
+
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">户型：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{fanchaninfo.huxin_name}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">售价：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{fanchaninfo.shoujia}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">面积：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{fanchaninfo.mianji}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">房产编号：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{fanchaninfo.number}}</view>
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+</view>
+<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white">
+  <view bindtap="qiehuanfanchan" id="{{item.id}}"  wx:for="{{fanchan}}" wx:key='k' class="{{item.id==xzid?'fanhao1':'fanhao'}}">{{item.number}}</view>
+
+</view>
+
+<!-- 底部 -->
+<view style="height:150rpx"></view>
+<view class="bom bg-white ">
+  <view class="flex-row flex-center padding-20">
+
+    <view class="h6" style="color:#000000">定金:</view>
+    <view class="h6 margin-left-20" style="color:#FF0027">￥</view>
+    <view class="f-36" style="color:#FF3333">{{houseinfo.dinjin}}</view>
+    <view class="flex-1"></view>
+    <view class="queren" bindtap="chanpinrengou">确认</view>
+
+  </view>
+
+</view>

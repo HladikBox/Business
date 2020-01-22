@@ -1,0 +1,38 @@
+/* pages/other-services/other-services.wxss */
+
+page {
+  background: #f7f8fa;
+}
+
+.zengzhi {
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+}
+
+.zengzhi-items {
+  width: 33.33%;
+  height: 200rpx;
+  border: 1rpx solid #ddd;
+  display: flex;
+  flex-direction:column; 
+  align-items: center;
+  justify-content:center;
+}
+.pad{ padding: 30rpx;}
+.zengzhi-item-img {
+  width: 44rpx;
+  height: 40rpx;
+  margin: 0 auto;
+  display: block;
+
+}
+
+.zengzhi-item-t {
+  margin-top: 34rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #A0A0A0;
+}

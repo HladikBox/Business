@@ -1,0 +1,200 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">佣金表</view>
+</cu-custom>
+
+<view class="bg-white" style="border:1rox solid #F7F8FA">
+<!-- 搜索快 -->
+<view class="flex-row">
+  <view class="flex-1"></view>
+
+  <view class="sousuo  flex-row flex-center">
+
+    <!-- <view class="h6 margin-left-20 flex-1" style="color:#CCCCCC"></view> -->
+    <input class="h6 margin-left-20 flex-1" bindinput="searchtext" placeholder="请输入您要搜索的内容"></input>
+    <view class="margin-right-30 margin-left-20"  bindtap="tijiao">
+      <image class="icon-15" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
+    </view>
+  </view>
+
+  <view class="flex-1"></view>
+</view>
+
+
+
+
+  <view class="padding-30 flex-row flex-center " style="padding-bottom:0rpx;">
+    <view bindtap="switchtab" id='0' class="flex-row flex-column flex-1">
+
+      <view class="{{tab==0?'black':''}} h5 text-center">全部</view>
+      <view wx:if="{{tab==0}}" class="xian"></view>
+      <view wx:if="{{tab!=0}}" class="k"></view>
+    </view>
+    <view bindtap="switchtab" id='1' class="flex-row flex-column flex-1">
+
+      <view class="{{tab==1?'black':''}} h5 text-center">房产</view>
+      <view wx:if="{{tab==1}}" class="xian"></view>
+      <view wx:if="{{tab!=1}}" class="k"></view>
+    </view>
+    <view bindtap="switchtab" id='2' class="flex-row flex-column flex-1">
+
+      <view class="{{tab==2?'black':''}} h5 text-center">移民</view>
+      <view wx:if="{{tab==2}}" class="xian"></view>
+      <view wx:if="{{tab!=2}}" class="k"></view>
+    </view>
+    <view bindtap="switchtab" id='3' class="flex-row flex-column flex-1">
+
+      <view class="{{tab==3?'black':''}} h5 text-center">保险</view>
+      <view wx:if="{{tab==3}}" class="xian"></view>
+      <view wx:if="{{tab!=3}}" class="k"></view>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{tab==0}}">
+  <view wx:for="{{list}}" wx:if="{{list1.length==0&&asd==''}}" data-id="{{idx}}" wx:for-index='idx'  wx:key='k' bindtap="yonjinxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型: <block  wx:if="{{item.baozhannianxian==undefined&&item.developers_id==undefined}}">移民</block >
+        <block  wx:if="{{item.baozhannianxian!=undefined}}">保险</block >
+        <block  wx:if="{{item.developers_id!=undefined}}">房产</block >
+      </view>
+      <view wx:if="{{item.developers_id!=undefined}}" class="h6 margin-top-5" style="color:#404858; opacity: 0.8">
+        房产类型:{{item.fanxintext}}
+      </view>
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+
+    <view wx:for="{{list1}}"  data-id="{{idx}}" wx:for-index='idx'  wx:key='k' bindtap="yonjinxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型: <block  wx:if="{{item.baozhannianxian==undefined&&item.developers_id==undefined}}">移民</block >
+        <block  wx:if="{{item.baozhannianxian!=undefined}}">保险</block >
+        <block  wx:if="{{item.developers_id!=undefined}}">房产</block >
+      </view>
+      <view wx:if="{{item.developers_id!=undefined}}" class="h6 margin-top-5" style="color:#404858; opacity: 0.8">
+        房产类型:{{item.fanxintext}}
+      </view>
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+</view>
+<view wx:if="{{tab==1}}">
+  <view wx:for="{{houselist}}" wx:if="{{fanchanlist1.length==0&&asd==''}}"  data-id="{{item.id}}" wx:key='k' bindtap="fanchanxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:房产
+      </view>
+      <view class="h6 margin-top-5" style="color:#404858; opacity: 0.8">
+        房产类型:{{item.fanxintext}}
+      </view>
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+
+   <view wx:for="{{fanchanlist1}}"  data-id="{{item.id}}" wx:key='k' bindtap="fanchanxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:房产
+      </view>
+      <view class="h6 margin-top-5" style="color:#404858; opacity: 0.8">
+        房产类型:{{item.fanxintext}}
+      </view>
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+</view>
+
+
+<view wx:if="{{tab==2}}">
+  <view wx:for="{{yiminlist}}" wx:if="{{yiminlist1.length==0&&asd==''}}" data-id="{{item.id}}" wx:key='k' bindtap="yiminxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view  class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:移民
+      </view>
+    
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+
+  <view wx:for="{{yiminlist1}}"  data-id="{{item.id}}" wx:key='k' bindtap="yiminxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view  class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:移民
+      </view>
+    
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+</view>
+
+<view wx:if="{{tab==3}}">
+  <view wx:for="{{baoxianlist}}" wx:if="{{baoxianlist1.length==0&&asd==''}}" data-id="{{item.id}}" wx:key='k' bindtap="baoxianxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:保险
+      </view>
+   
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+  <view wx:for="{{baoxianlist1}}"  data-id="{{item.id}}" wx:key='k' bindtap="baoxianxianqin" class="bg-white flex-row flex-center  padding-30" style="margin-top:3rpx;">
+    <view>
+
+      <view class="h5 margin-top-20" style="color:#404858">
+        {{item.name}}
+      </view>
+      <view class="h6 margin-top-5 " style="color:#404858; opacity: 0.8">
+        项目类型:保险
+      </view>
+   
+
+    </view>
+    <view class="flex-1"></view>
+    <view class="h4 txt-bold" style="color:#66CC99">{{item.pintaikehu}}%</view>
+  </view>
+</view>

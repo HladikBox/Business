@@ -1,0 +1,172 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">本月产品优惠</view>
+</cu-custom>
+
+<view class="flex-row flex-bottom ">
+  <view wx:for='{{type}}' style="margin-left:32rpx;" wx:key="k" wx:for-index="idx" id='{{idx}}' bindtap="switchs">
+    <view class="h5 {{seq==idx?'active':''}}">{{item.name}}</view>
+  </view>
+</view>
+<view style="height:24rpx;"></view>
+<view class="line"></view>
+<!-- 海外房产 -->
+<view wx:if='{{seq==0}}'>
+  <view style="height:32rpx;"></view>
+  <view wx:for='{{houselist}}' bindtap="detail" id="{{item.id}}" data-xm='fc' wx:key='k' wx:for-index='idx' wx:if='{{item.changpinyh_value=="Y"}}' style='padding-left:32rpx;'>
+    <view class="flex-row">
+      <view style="position:relative">
+
+        <view class="typeimg h7 txt-white text-center" style="background-image:url({{uploadpath}}resource/{{res.youhuilx}});background-size:100% 100%;">{{item.youhui_id_name}}</view>
+
+        <image class="fcimgs" src="{{uploadpath}}houseproject/{{item.cover}}"></image>
+        <view class="chenshi">{{item.country_name}}·{{item.city_name}}</view>
+      </view>
+      <view style="padding-left:32rpx;width:450rpx;">
+        <view class="h5 txt-bold chaochu">{{item.name}}</view>
+        <view style="height:8rpx;"></view>
+        <view class="flex-row">
+          <view class="h7">{{item.housewear}} | {{item.areacovered}}</view>
+          <view class="h7" style="margin:0 18rpx 0 32rpx;">{{item.fanxintext}}</view>
+          <view class="h7">{{item.duration}}</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <view class="flex-row flex-1 flex-center ">
+          <view class="tag">近一年房价均涨{{item.priceincrease}}%</view>
+          <view class="flex-1"></view>
+          <view class="tag" >年均租金{{item.annualrent}}%</view>
+          <view class="flex-1"></view>
+          <view class="tag">首付比例{{item.downpayments}}%</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <view class="flex-row flex-bottom">
+          <view class="h6 flex-row flex-bottom txt-bold" style="color:#FF4466;">￥{{item.youhuijia}}
+            <view class="h7" style="margin-left:8rpx">万起</view>
+          </view>
+          <view class="h7 flex-row flex-bottom" style="margin-left:20rpx;">
+            <view class="h7" style="text-decoration:line-through;">￥{{item.pricesection_num}}</view>
+            <view style="font-size:16rpx;margin-left:8rpx">万起</view>
+          </view>
+          <view class=""></view>
+          <view class="h7 flex-1 text-right" style="color:#FF4466;">{{item.youhuikk}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height:32rpx;"></view>
+    <view class="line"></view>
+    <view style="height:32rpx;"></view>
+  </view>
+
+</view>
+
+<!-- 海外移民 -->
+<view wx:if='{{seq==1}}'>
+  <view style="height:32rpx;"></view>
+  <view wx:for='{{yiminlist}}' bindtap="detail" id="{{item.id}}" data-xm='ym' wx:key='k' wx:if='{{item.changpinyh_value=="Y"}}' wx:for-index='idx' style='padding-left:32rpx;'>
+    <view class="flex-row">
+      <view style="position:relative">
+
+        <view class="typeimg h7 txt-white text-center" style="background-image:url({{uploadpath}}resource/{{res.youhuilx}});background-size:100% 100%;">{{item.youhui_id_name}}</view>
+
+        <image class="fcimgs" src="{{uploadpath}}immigrantproject/{{item.cover}}"></image>
+        <view class="chenshi">{{item.country_name}}·{{item.city_name}}</view>
+      </view>
+      <view style="width:450rpx;padding-left:32rpx">
+        <view class="h5 txt-bold chaochu">{{item.name}}</view>
+        <view style="height:8rpx;"></view>
+        <view class="flex-row">
+          <view class="h7">	{{item.yiminleixin}} | {{item.shenfenleixin}}</view>
+          <view class="h7" style="margin:0 18rpx 0 32rpx;">{{item.fanxintext}}</view>
+          <view class="h7">{{item.duration}}</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <!-- <view class="flex-row flex-1 flex-center "> -->
+        <!-- <view class="tag">近一年房价均涨{{item.priceincrease}}%</view> -->
+        <!-- <view class="flex-1"></view> -->
+        <!-- <view class="tag" style="margin:0 16rpx;">年均租金{{item.annualrent}}%</view> -->
+        <!-- <view class="flex-1"></view> -->
+        <!-- <view class="tag">首付比例{{item.downpayments}}%</view>
+        </view> -->
+        <view class="flex-row flex-1 flex-center" >
+          <view class="tag2">佣金比例{{item.commissionrate}}%</view>
+          <!-- <view class="flex-1"></view> -->
+          <view class="tag2" style="margin:0 16rpx;">佣金收入{{item.commissionincome}}万</view>
+          <!-- <view class="flex-1"></view> -->
+          <view class="tag2">结佣时间{{item.settlementdate}}天</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <view class="flex-row flex-bottom">
+          <view class="h6 flex-row flex-bottom txt-bold" style="color:#FF4466;">￥{{item.youhuijia}}
+            <view class="h7" style="margin-left:8rpx">万起</view>
+          </view>
+          <view class="h7 flex-row flex-bottom" style="margin-left:20rpx;">
+            <view class="h7" style="text-decoration:line-through;">￥{{item.yiminfeiyon}}</view>
+            <view style="font-size:16rpx;margin-left:8rpx">万起</view>
+          </view>
+          <view class=""></view>
+          <view class="h7 flex-1 text-right" style="color:#FF4466;">{{item.youhuikk}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height:32rpx;"></view>
+    <view class="line"></view>
+    <view style="height:32rpx;"></view>
+  </view>
+
+</view>
+
+<!-- 海外保险 -->
+<view wx:if='{{seq==2}}'>
+  <view style="height:32rpx;"></view>
+  <view wx:for='{{baoxianlist}}' bindtap="detail" id="{{item.id}}" data-xm='bx' wx:key='k' wx:if='{{item.changpinyh_value=="Y"}}' wx:for-index='idx' style='padding-left:32rpx;'>
+    <view class="flex-row">
+      <view style="position:relative">
+
+        <view class="typeimg h7 txt-white text-center" style="background-image:url({{uploadpath}}resource/{{res.youhuilx}});background-size:100% 100%;">{{item.youhui_id_name}}</view>
+
+        <image class="fcimgs" src="{{uploadpath}}insuranceproject/{{item.cover}}"></image>
+        <!-- <view class="chenshi">{{item.country_name}}·{{item.city_name}}</view> -->
+      </view>
+      <view style="padding-left:32rpx;width:450rpx;">
+        <view class="h5 txt-bold chaochu">{{item.name}}</view>
+        <view style="height:8rpx;"></view>
+        <view class="flex-row">
+          <view class="h7">		{{item.baozhannianxian}} | {{item.baoxianleixin}}</view>
+          <view class="h7" style="margin:0 18rpx 0 32rpx;">{{item.fanxintext}}</view>
+          <view class="h7">{{item.duration}}</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <!-- <view class="flex-row flex-1 flex-center "> -->
+        <!-- <view class="tag">近一年房价均涨{{item.priceincrease}}%</view> -->
+        <!-- <view class="flex-1"></view> -->
+        <!-- <view class="tag" style="margin:0 16rpx;">年均租金{{item.annualrent}}%</view> -->
+        <!-- <view class="flex-1"></view> -->
+        <!-- <view class="tag">首付比例{{item.downpayments}}%</view>
+        </view> -->
+        <view class="flex-row flex-1 flex-center" >
+          <view class="tag2">佣金比例{{item.commissionrate}}%</view>
+          <!-- <view class="flex-1"></view> -->
+          <view class="tag2" style="margin:0 16rpx;">佣金收入{{item.commissionincome}}万</view>
+          <!-- <view class="flex-1"></view> -->
+          <view class="tag2">结佣时间{{item.settlementdate}}天</view>
+        </view>
+        <view style="height:16rpx;"></view>
+        <view class="flex-row flex-bottom">
+          <view class="h6 flex-row flex-bottom txt-bold" style="color:#FF4466;">￥{{item.youhuijia}}
+            <view class="h7" style="margin-left:8rpx">万起</view>
+          </view>
+          <view class="h7 flex-row flex-bottom" style="margin-left:20rpx;">
+            <view class="h7" style="text-decoration:line-through;">	￥{{item.price}}</view>
+            <view style="font-size:16rpx;margin-left:8rpx">万起</view>
+          </view>
+          <view class=""></view>
+          <view class="h7 flex-1 text-right" style="color:#FF4466;">{{item.youhuikk}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height:32rpx;"></view>
+    <view class="line"></view>
+    <view style="height:32rpx;"></view>
+  </view>
+
+</view>

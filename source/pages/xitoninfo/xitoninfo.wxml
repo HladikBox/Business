@@ -1,0 +1,37 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content" class="txt-bold" style="color:#161616;">消息通知</view>
+</cu-custom>
+
+<!-- <view class="padding-left-32 padding-right-30">
+    <view style="height:48rpx;"></view>
+    <view class="h4 txt-bold">{{xiaoxiinfo.content}}</view>
+    <view class="h6" style="color:#CCCCCC;margin:20rpx 0 48rpx;">{{xiaoxiinfo.xiaoxi_date_formatting}}</view>
+  </view>
+    <view class="h5 padding-left-32 padding-right-30">{{xiaoxiinfo.xianxi}}</view> 
+     -->
+
+<view  bindtap="xianqin" data-id="{{item.id}}" data-order_id="{{item.order_id}}" data-activity_id="{{item.activity_id}}" wx:for="{{xiaoxilist}}" wx:key='k'>
+
+	<view class="f-22 text-center margin-top-20" style="color:#999999;width:100vw">{{item.xiaoxi_date_formatting}}</view>
+	<view class="padding-30 margin-30 bg-white" style="margin-bottom:0rpx">
+
+		<view class="txt-bold" style="font-size:30rpx;color:#333333 ">{{item.content}}</view>
+		
+	<view class="h6" style="color:#595959 ">{{item.xianxi}}</view>
+	</view>
+  <view  class="margin-30 padding-20 bg-white" style="margin-top:2rpx;">
+  
+  <view  class="tab" style="width:100%;color:#333333">查看详情</view>
+  </view>
+
+
+</view>
+
+
+<view class="flex-row flex-column" wx:if='{{xiaoxilist.length==0}}'>
+    <view style="height:10vh"></view>
+    <image src="{{uploadpath}}resource/{{res.mieyou}}" class="icon-200"></image>
+    <view style="height:10rpx;"></view>
+    <view>暂无内容</view>
+  </view>

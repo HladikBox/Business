@@ -1,0 +1,72 @@
+<cu-custom bgColor="bg-gradual-pink" >
+   
+	<view slot="content">活动</view>
+</cu-custom>
+
+<!-- 搜索快 -->
+<view class="flex-row margin-top-20">
+  <view class="flex-1"></view>
+
+  <view class="sousuo  flex-row flex-center" bindtap="search">
+
+    <view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
+
+    <view class="margin-right-30">
+      <image class="icon-15" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
+    </view>
+  </view>
+
+  <view class="flex-1"></view>
+
+
+</view>
+
+<view class="flex-row flex-center margin-top bg-white" style="width:100vw">
+ 
+  <view  wx:for="{{activitytype}}" class="" wx:key="k" wx:for-index="idx">
+   
+    <view class="margin-48 flex-row flex-center  txt-59  " >
+    <view class="h5 {{idx==seq?'active':''}}" data-current="{{idx}}" data-currentID='{{item.id}}' bindtap="switchnav">{{item.name}}</view>
+    </view>  
+  
+  </view>
+   
+  
+</view>
+
+<view class="flex-row flex-center flex-wrap margin-top"  style="margin-left: 20rpx">
+    <view wx:for="{{bb}}" wx:key="k" wx:for-index="idx" data-current="{{item.days}}" data-currentid='{{idx}}' bindtap="xuanzhong">
+      <view class="bo {{idx==cc?'co': ''}}">{{item.name}}</view>
+    </view>
+</view>
+
+<view style="margin-top:16rpx; margin-left: 20rpx" class="flex-row flex-center flex-wrap">
+
+  <view class="cont" wx:for="{{list}}" data-current="{{item.id}}" bindtap="detail" wx:key="k" wx:for-index="idx">
+      <image src="{{uploadpath}}activity/{{item.cover}}" class="imgs"></image>
+      <view class="padding-left-20 pos" >
+        <view class="h7 type {{item.activitytype_id==2?'txt-2':''}}" wx:if='{{item.activitytype_id==2}}'>#{{item.activitytype_id_name}}</view>
+        <view class="h7 type {{item.activitytype_id==3?'txt-3':''}}" wx:if='{{item.activitytype_id==3}}'>#{{item.activitytype_id_name}}</view>
+        <view class="h7 type {{item.activitytype_id==4?'txt-4':''}}" wx:if='{{item.activitytype_id==4}}'>#{{item.activitytype_id_name}}</view>
+        <view class="h7 type {{item.activitytype_id==5?'txt-5':''}}" wx:if='{{item.activitytype_id==5}}'>#{{item.activitytype_id_name}}</view>
+        <view class="h6 txt-bold chaochu">{{item.name}}</view>
+        <view class="h7 " style="height: 58rpx;color:#777777; margin-top:8rpx;overflow:hidden;">{{item.introduction}}</view>
+      </view>
+  </view>
+
+</view>
+ <view style="height:48rpx;"></view>
+<view class="flex-row flex-column meiyou" wx:if='{{list.length>0}}'>~~ 没有更多内容 ~~</view>
+
+
+  <view class="flex-row flex-column" wx:if='{{list.length==0}}'>
+    <view style="height:10vh"></view>
+    <image src="{{uploadpath}}resource/{{res.mieyou}}" class="icon-200"></image>
+    <view style="height:10rpx;"></view>
+    <view>暂无内容</view>
+  </view>
+
+  <view style="height: 150rpx;"></view>
+
+<custom-tab-bar></custom-tab-bar>
+

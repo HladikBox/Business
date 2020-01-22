@@ -1,0 +1,87 @@
+<!--pages/yuyue/yuyue.wxml-->
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">预约到访</view>
+</cu-custom>
+
+<view class=" bg-white">
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">姓名</view>
+    <view class="flex-1"></view>
+
+
+    <input class='ipt' bindinput="name" placeholder-class='pc' value='{{name}}' name="aa" placeholder='请输入'></input>
+  </view>
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">手机电话</view>
+    <view class="flex-1"></view>
+
+
+    <input class='ipt' bindinput="shouji" placeholder-class='pc' value='{{shouji}}' name="aa" placeholder='请输入'></input>
+  </view>
+
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">处理事项</view>
+    <view class="flex-1"></view>
+
+
+    <input class='ipt' bindinput="shixian" placeholder-class='pc' value='{{shixian}}' name="aa" placeholder='请输入'></input>
+  </view>
+
+    <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">随行人数</view>
+    <view class="flex-1"></view>
+
+
+    <input class='ipt' bindinput="renshu" placeholder-class='pc' value='{{renshu}}' name="aa" placeholder='请输入'></input>
+  </view>
+
+
+
+  <picker  value="{{index1}}" range="{{shifou}}" bindchange="bindshifou">
+    <view class="  xbk flex-row flex-center">
+
+      <view class="h5" style="color:#404858">是否客户随同</view>
+      <view class="flex-1"></view>
+      <view class="h5" style="color:#CCCCCC">{{shifou[index1]}}</view>
+
+      <image class="icon-10 margin-left-10 " src="{{uploadpath}}resource/{{res.wodeyou}}"></image>
+    </view>
+  </picker>
+
+  <view bindtap="pickerShow" class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">预约到访时间</view>
+    <view class="flex-1"></view>
+    <view class="h5" style="color:#CCCCCC">{{shijian}}</view>
+     <image  class="icon-10 margin-left-10 " src="{{uploadpath}}resource/{{res.wodeyou}}"></image>
+
+  </view>
+
+
+</view>
+
+
+<timePicker pickerShow="{{isPickerShow}}" id="picker" wx:if="{{isPickerRender}}" bind:hidePicker="pickerHide" bind:setPickerTime="setPickerTime"
+  config="{{pickerConfig}}"></timePicker>
+
+
+<view style="height:150rpx"></view>
+<view class="bom bg-white ">
+  <view class="flex-row flex-center padding-20">
+
+    <view class="flex-1"></view>
+
+    <view class="queren" bindtap="tijiao">保存并提交</view>
+    <view class="flex-1"></view>
+
+  </view>
+
+</view>

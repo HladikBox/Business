@@ -1,0 +1,129 @@
+   {
+    "pages": [
+      "pages/home/home",
+      "pages/selecthouse/selecthouse",
+      "pages/login/login",
+      "pages/register/register",
+      "pages/product/product",
+      "pages/productinfo/productinfo",
+      "pages/my/my",
+      "pages/myyuyue/myyuyue",
+      "pages/yonjinbiaodan/yonjinbiaodan",
+      "pages/myyonjin/myyonjin",
+      "pages/yiminrengou/yiminrengou",
+      "pages/yuyue/yuyue",
+      "pages/yuyuexianqin/yuyuexianqin",
+      "pages/tixian/tixian",
+      "pages/add/add",
+      "pages/myqudao/myqudao",
+      "pages/tixianjilu/tixianjilu",
+      "pages/chanpinrengou/chanpinrengou",
+      "pages/baoxianinfo/baoxianinfo",
+      "pages/auth/auth",
+      "pages/index/index",
+      "pages/yimininfo/yimininfo",
+      "pages/activity/activity",
+      "pages/activitydetail/activitydetail",
+      "pages/search/search",
+      "pages/zixun/zixun",
+      "pages/lurukehu/lurukehu",
+      "pages/orderinfo/orderinfo",
+      "pages/yonjinxianqin/yonjinxianqin",
+      "pages/gonzuotai/gonzuotai",
+      "pages/zhuanti/zhuanti",
+      "pages/shoucan/shoucan",
+      "pages/myorder/myorder",
+      "pages/myrenzhen/myrenzhen",
+      "pages/xiaoxitonzhi/xiaoxitonzhi",
+      "pages/mykehu/mykehu",
+      "pages/qudaoinfo/qudaoinfo",
+      "pages/tijiaorenzhen/tijiaorenzhen",
+      "pages/renzhentijiao/renzhentijiao",
+      "pages/shezhi/shezhi",
+      "pages/chenjiaokehu/chenjiaokehu",
+      "pages/feedback/feedback",
+      "pages/kehuziliao/kehuziliao",
+      "pages/aboutbantop/aboutbantop",
+      "pages/pengyouquan/pengyouquan",
+      "pages/zhuanwenzhan/zhuanwenzhan",
+      "pages/yaoqing/yaoqing",
+      "pages/baoming/baoming",
+      "pages/successfulpayment/successfulpayment",
+      "pages/zhifuchengong/zhifuchengongming",
+      "pages/dingdandetail/dingdandetail",
+      "pages/activitysuccess/activitysuccess",
+      "pages/search2/search2",
+      "pages/zixundetail/zixundetail",
+      "pages/forgetpassword/forgetpassword",
+      "pages/tiaokuan/tiaokuan",
+      "pages/mybank/mybank",
+      "pages/mydata/mydata",
+      "pages/xitoninfo/xitoninfo",
+      "pages/addbank/addbank",
+      "pages/xitonxiaoxiinfo/xitonxiaoxiinfo",
+      
+      "pages/friendwenzhan/friendwenzhan",
+      "pages/changpinyouhui/changpinyouhui",
+      "pages/yongjinjiangli/yongjinjiangli",
+      "pages/shuikanlewo/shuikanlewo"
+    ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    },
+    "window": {
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": true,
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTextStyle": "black",
+      "navigationStyle": "custom"
+    },
+    "tabBar": {
+      "color": "#d0d2d6",
+      "custom": true,
+      "selectedColor": "#07264a",
+      "backgroundColor": "#FFFFFF",
+      "list": [
+        {
+          "iconPath": "/images/icons/shouye.png",
+          "selectedIconPath": "/images/icons/shouye1.png",
+          "pagePath": "pages/home/home",
+          "text": "首页",
+          "img1": "images/icons/shouye.png",
+          "img2": "images/icons/shouye1.png"
+        },
+        {
+          "iconPath": "/images/icons/chanpin.png",
+          "selectedIconPath": "/images/icons/chanpin1.png",
+          "pagePath": "pages/product/product",
+          "text": "产品",
+          "img1": "images/icons/chanpin.png",
+          "img2": "images/icons/chanpin1.png"
+        },
+        {
+          "iconPath": "/images/icons/huodon.png",
+          "selectedIconPath": "/images/icons/huodon1.png",
+          "pagePath": "pages/activity/activity",
+          "text": "活动",
+          "img1": "images/icons/huodon.png",
+          "img2": "images/icons/huodon1.png"
+        },
+        {
+          "iconPath": "/images/icons/wode.png",
+          "selectedIconPath": "/images/icons/wode1.png",
+          "pagePath": "pages/my/my",
+          "text": "我的",
+          "img1": "images/icons/wode.png",
+          "img2": "images/icons/wode1.png"
+        }
+      ]
+    },
+    "usingComponents": {
+      "custom-tab-bar": "/components/custom-tab-bar/index",
+      "navBar": "/components/navBar/navBar",
+      "cu-custom": "/colorui/components/cu-custom",
+      "timePicker": "/components/timePicker/timePicker"
+    },
+    "sitemapLocation": "sitemap.json"
+  }

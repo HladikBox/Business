@@ -1,0 +1,29 @@
+/* pages/zhuanwenzhan/zhuanwenzhan.wxss */
+
+.tt {
+  width: 688rpx;
+  height: 240rpx;
+  background: #f7f8fa;
+  font-size: 14px;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(204, 204, 204, 1);
+  opacity: 1;
+  text-align: center;
+}
+
+.bian {
+  width: 688rpx;
+  height: 96rpx;
+  background: rgba(67, 107, 152, 1);
+  opacity: 1;
+  border-radius: 8rpx;
+  font-size:14px;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:96rpx;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  margin: 32rpx;
+}

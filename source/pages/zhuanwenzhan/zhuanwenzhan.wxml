@@ -1,0 +1,16 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">朋友圈助手</view>
+</cu-custom>
+
+
+<view style="background:#F7F8FA;height:100vh;">
+<view class="  margin-top-32  bg-white ">
+<view class="  padding-left-32">
+ <input class="tt" placeholder="粘贴微信文章链接"></input>
+</view>
+  <view class="bian">编辑并转发</view>
+  <view style="height:48rpx;"></view>
+</view>
+
+</view>

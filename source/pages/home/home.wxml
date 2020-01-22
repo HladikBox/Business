@@ -1,0 +1,409 @@
+<!-- 
+<navBar  iconTheme="" color="#ffffff" background='rgba(0,0,0,0)'  bindback="handlerGobackClick" bindhome="handlerGohomeClick" ></navBar> -->
+
+
+
+<!-- 顶部轮播 -->
+<swiper class="screen-swiper square-dot" indicator-dots='true' autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:500rpx;'>
+	<swiper-item wx:for="{{indexbanner}}" wx:key="k">
+		<image src='{{uploadpath}}indexbanner/{{item.img}}' style="width:100vw;height:500rpx; " bindtap='bannerGo' id="{{item.id}}" class=''></image>
+	</swiper-item>
+</swiper>
+<!-- 搜索 -->
+<view class="flex-row flex-center" style="width:100vw;">
+	<view class=" kuai flex-row ">
+
+		<view class="flex-1"></view>
+
+		<view>
+			<view class="sousuo  flex-row flex-center" bindtap="search">
+
+				<view class="h6 margin-left-20 flex-1" style="color:#CCCCCC">请输入您要搜索的内容</view>
+
+				<view class="margin-right-30">
+					<image class="icon-15" src="{{uploadpath}}resource/{{res.sousuo}}"></image>
+				</view>
+			</view>
+
+			<view class="flex-row flex-center margin-top">
+
+				<view bindtap="gonzuotai" class="flex-1 flex-row flex-column">
+					<view>
+						<image class="icon-25" src="{{uploadpath}}resource/{{res.gonzuotai}}"></image>
+					</view>
+					<view class="margin-top-20 f-22" style="color:#404858">工作台</view>
+				</view>
+				<view class="flex-1 flex-row flex-column" bindtap="zixun">
+					<view>
+						<image class="icon-25" src="{{uploadpath}}resource/{{res.zixun}}"></image>
+					</view>
+					<view class="margin-top-20 f-22" style="color:#404858">资讯</view>
+				</view>
+				<view class="flex-1 flex-row flex-column" bindtap="kecheng" data-kc='课程'>
+					<view>
+						<image class="icon-25" src="{{uploadpath}}resource/{{res.kecheng}}"></image>
+					</view>
+					<view class="margin-top-20 f-22" style="color:#404858">课程</view>
+				</view>
+
+				<view class="flex-1 flex-row flex-column" bindtap="fuwu">
+
+					<view>
+						<image class="icon-25" src="{{uploadpath}}resource/{{res.zengzhi}}"></image>
+					</view>
+
+					<view class="margin-top-20 f-22" style="color:#404858">增值服务</view>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="flex-1"></view>
+
+	</view>
+
+</view>
+
+
+<!-- 头条快讯 -->
+<view class="padding-30 toutiao flex-row flex-center">
+	<view>
+		<image class="toutiaoimg" src="{{uploadpath}}resource/{{res.toutiaokuaixun}}"></image>
+	</view>
+
+	<swiper class="kuaixun" autoplay='true' circular='true' vertical='true'>
+		<swiper-item wx:for="{{zixunlist}}" wx:key='k'>
+			<view class="h6  chaochu" data-current="{{item.id}}" bindtap='zixundetail'>{{item.title}}</view>
+		</swiper-item>
+	</swiper>
+
+
+	<view class='new'>new</view>
+	<view class="flex-1"></view>
+	<view>
+		<image class="youimg" src="{{uploadpath}}resource/{{res.you}}"></image>
+	</view>
+</view>
+<!-- 本月活动 -->
+<view class="padding-30  flex-row flex-center" style="padding-top:10rpx;padding-bottom:10rpx">
+
+  <view class="hd1 flex-row flex-center" bindtap="youhui" data-yh='yh'>
+
+		<view class="margin-left-20">
+			<view class="h5 txt-bold" style="color:#2F3543">本月产品优惠</view>
+			<view class="h7 " style="color:#404858">Product</view>
+		</view>
+
+		<view>
+			<image class="cpimg" src="{{uploadpath}}resource/{{res.chanpinyouhui}}"></image>
+
+		</view>
+
+  </view>
+  <view class="flex-1"></view>
+  <view class="hd2 flex-row flex-center"  bindtap="youhui" data-yh='yj'>
+
+		<view class="margin-left-20">
+			<view class="h5 txt-bold" style="color:#2F3543">本月佣金奖励</view>
+			<view class="h7 " style="color:#404858">Commission</view>
+		</view>
+
+		<view>
+			<image class="cpimg" src="{{uploadpath}}resource/{{res.yongjinjiangli	}}"></image>
+
+		</view>
+
+	</view>
+</view>
+
+<view class="padding-30  flex-row flex-center" style="padding-top:10rpx">
+
+	<view class="hd3 flex-row flex-center" bindtap="peixun" data-px='培训'>
+
+		<view class="margin-left-20">
+			<view class="h5 txt-bold" style="color:#2F3543">本月培训预告</view>
+			<view class="h7 " style="color:#404858">Training</view>
+		</view>
+
+		<view>
+			<image class="cpimg" src="{{uploadpath}}resource/{{res.peixunbaogao}}"></image>
+
+		</view>
+
+	</view>
+	<view class="flex-1"></view>
+	<view class="hd4 flex-row flex-center" bindtap="zhanhui" data-zh='会展'>
+
+		<view class="margin-left-20">
+			<view class="h5 txt-bold" style="color:#2F3543">本月展会活动</view>
+			<view class="h7 " style="color:#404858">Exhibition</view>
+		</view>
+
+		<view>
+			<image class="cpimg" src="{{uploadpath}}resource/{{res.zhanhuihuodon}}"></image>
+
+		</view>
+
+	</view>
+</view>
+<!-- 朋友圈一键转发 -->
+<view class="hui"></view>
+
+<view class="flex-row flex-center" bindtap="pengyou">
+
+	<view class="margin-left-40">
+		<image class="icon-60" src="{{uploadpath}}resource/{{res.pengyouquan}}"></image>
+	</view>
+	<view class="f-32 margin-left-10" style="color:#404858">朋友圈助手</view>
+	<view class="f-32" style="color:#CDAE7F">一键转发</view>
+	<view class="flex-1"></view>
+	<view class="margin-right-40">
+		<image class="pyqyou" src="{{uploadpath}}resource/{{res.you}}"></image>
+	</view>
+</view>
+
+<view class="hui"></view>
+
+
+<!-- 项目列表 -->
+<view class="flex-row margin-top-20">
+	<view class="flex-1"></view>
+	<view class="tab flex-row">
+		<view bindtap="tabselect" id='1' class="{{tab==1?'tab-item':'notab-item'}} ">项目前期</view>
+		<view bindtap="tabselect" id='2' class="{{tab==2?'tab-item':'notab-item'}} ">项目中期</view>
+		<view bindtap="tabselect" id='3' class="{{tab==3?'tab-item':'notab-item'}} ">项目后</view>
+	</view>
+	<view class="flex-1"></view>
+</view>
+
+<!-- 房产列表 -->
+<view wx:for="{{tuijianlist}}" wx:key='k' wx:if="{{tab==1}}">
+	<view class="flex-row flex-center padding-40">
+		<view class="h34 txt-bold" style="color:#161616">{{item.name}}</view>
+		<view class="flex-1"></view>
+		<view data-id="{{item.country_id}}" data-name="{{item.csname}}"  bindtap="fanchanchanpin" class="h6" style="color:#777777">更多</view>
+		<image class="youimg margin-left-5" src="{{uploadpath}}resource/{{res.you}}"></image>
+	</view>
+
+	<view class="shadow bg-white">
+		<swiper class="screen-swiper square-dot " autoplay='false' interval='5000' duration='200' circular='true' class="fcbock">
+			<swiper-item data-id="{{idxx.haha.id}}" bindtap="productinfo" wx:for="{{item.list}}" wx:key="k" wx:for-item="idxx">
+				<view class="fcbock ">
+					<view class="bg-top" style='background-image:url({{uploadpath}}houseproject/{{idxx.haha.img}});background-size:100% 100%;'>
+						<view class="flex-row  ">
+							<view class="flex-1"></view>
+							<view class="zonjia flex-row flex-bottom ">
+								<view class="flex-1"></view>
+								<view class="h16" style="color:#D8B66E">总价</view>
+								<view class="h16" style="color:#D8B66E">￥</view>
+								<view style="color:#D8B66E;margin-top:5rpx;">{{idxx.haha.pricesection_num}}</view>
+								<view class="h16" style="color:#D8B66E">万起</view>
+								<view class="flex-1"></view>
+							</view>
+
+						</view>
+
+						<view class="bg-bottom">
+							<view class="padding-top-10 margin-left-20">
+								<view class="h5" style="color:#D8B66E">{{idxx.haha.name}}</view>
+
+								<view class="h6 chaochu" style="color:#FFFFFF;width:500rpx">{{idxx.haha.introduction}}</view>
+
+							</view>
+
+						</view>
+
+
+					</view>
+					<view class="flex-row   flex-center margin-top-10">
+
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">6</text>
+								<text class="h6" style="color:#D8B66E">%</text>
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">平均净收益</view>
+							<view class="bad margin-top-5">佣金比例{{idxx.haha.commissionrate}}%</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.priceincrease}}</text>
+								<text class="h6" style="color:#D8B66E">%</text>
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">近一年涨幅</view>
+							<view class="bad margin-top-5">佣金收入{{idxx.haha.commissionincome}}万</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.downpayments}}</text>
+								<text class="h6" style="color:#D8B66E">%</text>
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">首付比例</view>
+							<view class="bad margin-top-5">结佣时间{{idxx.haha.settlementdate}}天</view>
+
+						</view>
+
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+</view>
+<!-- 移民列表 -->
+<view wx:for="{{yiminlist}}" wx:key='k' wx:if="{{tab==2}}">
+	<view class="flex-row flex-center padding-40">
+		<view class="h34 txt-bold" style="color:#161616">{{item.name}}</view>
+		<view class="flex-1"></view>
+		<view data-id="{{item.country_id}}" data-name="{{item.csname}}"  bindtap="yiminchanpin" class="h6" style="color:#777777">更多</view>
+		<image class="youimg margin-left-5" src="{{uploadpath}}resource/{{res.you}}"></image>
+	</view>
+
+	<view class="shadow bg-white">
+		<swiper class="screen-swiper square-dot " autoplay='false' interval='5000' duration='200' circular='true' class="fcbock">
+			<swiper-item data-id="{{idxx.haha.id}}" bindtap="yimininfo" wx:for="{{item.list}}" wx:key="k" wx:for-item="idxx">
+				<view class="fcbock ">
+					<view class="bg-top" style='background-image:url({{uploadpath}}immigrantproject/{{idxx.haha.img}});background-size:100% 100%;'>
+						<view class="flex-row  ">
+							<view class="flex-1"></view>
+							<view class="zonjia flex-row flex-bottom ">
+								<view class="flex-1"></view>
+								<view class="h16" style="color:#D8B66E">总价</view>
+								<view class="h16" style="color:#D8B66E">￥</view>
+								<view style="color:#D8B66E;margin-top:5rpx;">{{idxx.haha.yiminfeiyon}}</view>
+								<view class="h16" style="color:#D8B66E"></view>
+								<view class="flex-1"></view>
+							</view>
+
+						</view>
+
+						<view class="bg-bottom">
+							<view class="padding-top-10 margin-left-20">
+								<view class="h5" style="color:#D8B66E">{{idxx.haha.name}}</view>
+
+								<view class="h6 chaochu" style="color:#FFFFFF;width:500rpx">{{idxx.haha.projectintroduction}}</view>
+
+							</view>
+
+						</view>
+
+
+					</view>
+					<view class="flex-row   flex-center margin-top-10">
+
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.banlizhouqi}}</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">办理周期</view>
+							<view class="bad margin-top-5">佣金比例{{idxx.haha.commissionrate}}%</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.touzijiner}}</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">投资金额</view>
+							<view class="bad margin-top-5">佣金收入{{idxx.haha.commissionincome}}万</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.yiminfeiyon}}</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">移民费用 </view>
+							<view class="bad margin-top-5">结佣时间{{idxx.haha.settlementdate}}天</view>
+
+						</view>
+
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+</view>
+<!-- 保险列表 -->
+<view wx:for="{{baoxianlist}}" wx:key='k' wx:if="{{tab==3}}">
+	<view class="flex-row flex-center padding-40">
+		<view class="h34 txt-bold" style="color:#161616">{{item.name}}</view>
+		<view class="flex-1"></view>
+		<view data-id="{{item.country_id}}" data-name="{{item.csname}}"  bindtap="baoxianchanpin" class="h6" style="color:#777777">更多</view>
+		<image class="youimg margin-left-5" src="{{uploadpath}}resource/{{res.you}}"></image>
+	</view>
+
+	<view class="shadow bg-white">
+		<swiper class="screen-swiper square-dot " autoplay='false' interval='5000' duration='200' circular='true' class="fcbock">
+			<swiper-item data-id="{{idxx.haha.id}}" bindtap="baoxianinfo" wx:for="{{item.list}}" wx:key="k" wx:for-item="idxx">
+				<view class="fcbock ">
+					<view class="bg-top" style='background-image:url({{uploadpath}}insuranceproject/{{idxx.haha.img}});background-size:100% 100%;'>
+						<view class="flex-row  ">
+							<view class="flex-1"></view>
+							<view class="zonjia flex-row flex-bottom ">
+								<view class="flex-1"></view>
+								<view class="h16" style="color:#D8B66E">总价</view>
+								<view class="h16" style="color:#D8B66E">￥</view>
+								<view style="color:#D8B66E;margin-top:5rpx;">{{idxx.haha.price}}</view>
+								<view class="h16" style="color:#D8B66E"></view>
+								<view class="flex-1"></view>
+							</view>
+
+						</view>
+
+						<view class="bg-bottom">
+							<view class="padding-top-10 margin-left-20">
+								<view class="h5" style="color:#D8B66E">{{idxx.haha.name}}</view>
+
+								<view class="h6 chaochu" style="color:#FFFFFF;width:500rpx">{{idxx.haha.projectintroduction}}</view>
+
+							</view>
+
+						</view>
+
+
+					</view>
+					<view class="flex-row   flex-center margin-top-10">
+
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.jiaofeiqixian}}起</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">缴费期限</view>
+							<view class="bad margin-top-5">佣金比例{{idxx.haha.commissionrate}}%</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.zuidibaoe}}</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">最低保额</view>
+							<view class="bad margin-top-5">佣金收入{{idxx.haha.commissionincome}}万</view>
+
+						</view>
+						<view class="flex-1 flex-row flex-column">
+							<view>
+								<text class="h3" style="color:#D8B66E">{{idxx.haha.baozhannianxian}}</text>
+
+							</view>
+							<view class="h6 margin-top-5" style="color:#595959">保障年限</view>
+							<view class="bad margin-top-5">结佣时间{{idxx.haha.settlementdate}}天</view>
+
+						</view>
+
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+</view>
+
+<view style="height:200rpx"></view>
+<custom-tab-bar></custom-tab-bar>

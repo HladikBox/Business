@@ -1,0 +1,90 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+  <view slot="content">通知消息</view>
+</cu-custom>
+
+
+<view  bindtap="xiaoxiinfo" data-id="B"  class="bg-white padding-30 margin-top-20 flex-row flex-center">
+ <view wx:if="{{wddindanxiaoxi.length!=0}}" class="hondian">{{wddindanxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.ddxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">订单通知</view>
+      <view class="flex-1"></view>
+      <view wx:if="{{dindanxiaoxi.length!=0}}" class="h6" style="color:#777777">{{dindanxiaoxi[0].xiaoxi_date_formatting}}</view>
+     
+    </view>
+    <view wx:if="{{dindanxiaoxi.length!=0}}" class="h6" style="color:#777777">{{dindanxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{dindanxiaoxi.length==0}}" class="h6" style="color:#777777">暂无消息</view>
+  </view>
+</view>
+
+<view  bindtap="xiaoxiinfo" data-id="A"   class="bg-white padding-30 margin-top-20 flex-row flex-center">
+ <view wx:if="{{wdxitonxiaoxi.length!=0}}" class="hondian">{{wdxitonxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.xtxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">系统通知</view>
+      <view class="flex-1"></view>
+     <view wx:if="{{xitonxiaoxi.length!=0}}" class="h6" style="color:#777777">{{xitonxiaoxi[0].xiaoxi_date_formatting}}</view>
+    </view>
+    <view wx:if="{{xitonxiaoxi.length!=0}}" class="h6 chaochu" style="color:#777777;width:400rpx">{{xitonxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{xitonxiaoxi.length==0}}" class="h6 chaochu" style="color:#777777;width:400rpx">暂无消息</view>
+  </view>
+</view>
+
+<view bindtap="xiaoxiinfo" data-id="C"   class="bg-white padding-30 margin-top-20 flex-row flex-center">
+<view wx:if="{{wdhuodonxiaoxi.length!=0}}" class="hondian">{{wdhuodonxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.hdxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">活动通知</view>
+      <view class="flex-1"></view>
+     <view wx:if="{{xitonxiaoxi.length!=0}}" class="h6" style="color:#777777">{{huodonxiaoxi[0].xiaoxi_date_formatting}}</view>
+    </view>
+     <view wx:if="{{huodonxiaoxi.length!=0}}" class="h6 chaochu" style="color:#777777;width:400rpx">{{huodonxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{huodonxiaoxi.length==0}}" class="h6 chaochu" style="color:#777777;width:400rpx">暂无消息</view>
+  </view>
+</view>
+
+<view  bindtap="xiaoxiinfo" data-id="D"   class="bg-white padding-30 margin-top-20 flex-row flex-center">
+<view wx:if="{{wdchanpinxiaoxi.length!=0}}" class="hondian">{{wdchanpinxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.cpxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">产品通知</view>
+      <view class="flex-1"></view>
+    <view wx:if="{{chanpinxiaoxi.length!=0}}" class="h6" style="color:#777777">{{chanpinxiaoxi[0].xiaoxi_date_formatting}}</view>
+    </view>
+       <view wx:if="{{chanpinxiaoxi.length!=0}}" class="h6 chaochu" style="color:#777777;width:400rpx">{{chanpinxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{chanpinxiaoxi.length==0}}" class="h6 chaochu" style="color:#777777;width:400rpx">暂无消息</view>
+  </view>
+</view>
+
+
+<view   bindtap="xiaoxiinfo" data-id="E"  class="bg-white padding-30 margin-top-20 flex-row flex-center">
+<view wx:if="{{wdqudaoxiaoxi.length!=0}}" class="hondian">{{wdqudaoxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.qdxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">渠道通知</view>
+      <view class="flex-1"></view>
+        <view wx:if="{{qudaoxiaoxi.length!=0}}" class="h6" style="color:#777777">{{qudaoxiaoxi[0].xiaoxi_date_formatting}}</view>
+    </view>
+      <view wx:if="{{qudaoxiaoxi.length!=0}}" class="h6 chaochu" style="color:#777777;width:400rpx">{{qudaoxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{qudaoxiaoxi.length==0}}" class="h6 chaochu" style="color:#777777;width:400rpx">暂无消息</view>
+  </view>
+</view>
+
+<view  bindtap="xiaoxiinfo" data-id="F"   class="bg-white padding-30 margin-top-20 flex-row flex-center">
+<view wx:if="{{wdyonjinxiaoxi.length!=0}}" class="hondian">{{wdyonjinxiaoxi.length}}</view>
+  <image src="{{uploadpath}}resource/{{res.yjxx}}" class="bf-icon"></image>
+  <view class="flex-1 margin-left-20">
+    <view class="flex-row flex-center ">
+      <view style="color:#161616">佣金通知</view>
+      <view class="flex-1"></view>
+       <view wx:if="{{yonjinxiaoxi.length!=0}}" class="h6" style="color:#777777">{{yonjinxiaoxi[0].xiaoxi_date_formatting}}</view>
+    </view>
+    <view wx:if="{{yonjinxiaoxi.length!=0}}" class="h6 chaochu" style="color:#777777;width:400rpx">{{yonjinxiaoxi[0].xianxi}}</view>
+    <view wx:if="{{yonjinxiaoxi.length==0}}" class="h6 chaochu" style="color:#777777;width:400rpx">暂无消息</view>
+  </view>
+</view>

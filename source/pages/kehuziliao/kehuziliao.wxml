@@ -1,0 +1,631 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">客户资料</view>
+</cu-custom>
+
+
+<view class=" bg-white">
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">姓名</view>
+    <view class="flex-1"></view>
+
+    <view class="h26" style="color:#777777">{{kehuinfo.name}}</view>
+
+  </view>
+
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">手机</view>
+    <view class="flex-1"></view>
+    <view class="h26" style="color:#777777">{{kehuinfo.shouji}}</view>
+  </view>
+
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">微信</view>
+    <view class="flex-1"></view>
+    <view class="h26" style="color:#777777">{{kehuinfo.weixin}}</view>
+
+  </view>
+
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">邮箱</view>
+    <view class="flex-1"></view>
+    <view class="h26" style="color:#777777">{{kehuinfo.youxian}}</view>
+
+  </view>
+  <view class=" xbk flex-row flex-center">
+
+    <view class="h5" style="color:#404858">项目类型</view>
+    <view class="flex-1"></view>
+    <view class="h26" style="color:#777777">{{kehuinfo.leixin_name}}</view>
+
+  </view>
+
+
+
+
+</view>
+
+<view style="height:32rpx;"></view>
+
+
+<!-- 房产 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="0"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>跟进流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks'>
+        <view class="  {{(kehuinfo.kaishi_value=='Y' || ks==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi_value=="Y" || ks==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jsgj'>
+       <view class="  {{(kehuinfo.jieshaogj_value=='Y' || jsgj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshaogj_value=="Y" || jsgj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >介绍国家</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshaogjshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.jieshaogj_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jscs'>
+       <view class="  {{(kehuinfo.jieshaocs_value=='Y' || jscs==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshaocs_value=="Y" || jscs==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >介绍城市</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshaocsshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.jieshaocs_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jsxm'>
+        <view class="  {{(kehuinfo.jieshaoxm_value=='Y' || jsxm==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshaoxm_value=="Y" || jsxm==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >介绍项目</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshaoxmshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.jieshaoxm_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jshx'>
+         <view class="  {{(kehuinfo.jieshaohx_value=='Y' || jshx==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshaohx_value=="Y" || jshx==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >介绍户型</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshaohxshijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.jieshaohx_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='khhq'>
+         <view class="  {{(kehuinfo.kehuyusuanhuoqu_value=='Y' || khhq==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kehuyusuanhuoqu_value=="Y" || khhq==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户预约获取</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kehuyusuanhuoqushijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kehuyusuanhuoqu_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+       <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='fxsm'>
+      <view class="  {{(kehuinfo.touzifenxishuoming_value=='Y' || fxsm==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.touzifenxishuoming_value=="Y" || fxsm==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >投资分析说明 购买流程说明 费用说明</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.touzifenxishuomingshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.touzifenxishuoming_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+       <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='kf'>
+        <view class="  {{(kehuinfo.kanfang_value=='Y' || kf==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kanfang_value=="Y" || kf==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >看房</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kanfangshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.kanfang_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js'>
+       <view class="  {{(kehuinfo.jieshu_value=='Y' || js==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu_value=="Y" || js==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshushijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 移民 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="1"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>跟进流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks'>
+        <view class="  {{(kehuinfo.kaishi_value=='Y' || ks==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi_value=="Y" || ks==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jbxx'>
+       <view class="  {{(kehuinfo.jibenxinxi_value=='Y' || jbxx==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jibenxinxi_value=="Y" || jbxx==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户基本信息是否收集</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jibenxinxishijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.jibenxinxi_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymgj'>
+       <view class="  {{(kehuinfo.quedingyiminguojia_value=='Y' || ymgj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.quedingyiminguojia_value=="Y" || ymgj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >移民国家是否确定</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.quedingyiminguojiashijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.quedingyiminguojia_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymxm'>
+        <view class="  {{(kehuinfo.quedingyiminxiangmu_value=='Y' || ymxm==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.quedingyiminxiangmu_value=="Y" || ymxm==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >移民项目是否确定</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.quedingyiminxiangmushijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.quedingyiminxiangmu_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymtj'>
+         <view class="  {{(kehuinfo.tiaojian_value=='Y' || ymtj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.tiaojian_value=="Y" || ymtj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >移民申办条件、费用、流程介绍</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.tiaojianshijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.tiaojian_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymkc'>
+         <view class="  {{(kehuinfo.yiminkaochaxiangmu_value=='Y' || ymkc==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.yiminkaochaxiangmu_value=="Y" || ymkc==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >考察项目</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.yiminkaochaxiangmushijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.yiminkaochaxiangmu_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js'>
+       <view class="  {{(kehuinfo.jieshu_value=='Y' || js==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu_value=="Y" || js==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshushijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+<!-- 保险 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="2"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>跟进流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks'>
+        <view class="  {{(kehuinfo.kaishi_value=='Y'  || ks==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi_value=="Y" || ks==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jbxx'>
+       <view class="  {{(kehuinfo.jibenxinxi_value=='Y'  || jbxx==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jibenxinxi_value=="Y"  || jbxx==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户基本信息是否收集</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jibenxinxishijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.jibenxinxi_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='bxcp'>
+       <view class="  {{(kehuinfo.baoxiantuojian_value=='Y' || bxcp==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.baoxiantuojian_value=="Y" || bxcp==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >保险产品是否推荐</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.baoxiantuojianshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.baoxiantuojian_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='khpg'>
+        <view class="  {{(kehuinfo.pingguyupipei_value=='Y' || khpg==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.pingguyupipei_value=="Y" || khpg==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户评估及产品匹配</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.pingguyupipeishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.pingguyupipei_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='bxjhs'>
+         <view class="  {{(kehuinfo.chubaoxianjihuashu_value=='Y' || bxjhs==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.chubaoxianjihuashu_value=="Y" || bxjhs==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >出保险计划书</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.chubaoxianjihuashushijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.chubaoxianjihuashu_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='yyqy'>
+         <view class="  {{(kehuinfo.yuyueqianyue_value=='Y' || yyqy==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.yuyueqianyue_value=="Y" || yyqy==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >预约签约时间</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.yuyueqianyueshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.yuyueqianyue_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js'>
+       <view class="  {{(kehuinfo.jieshu_value=='Y' || js==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu_value=="Y" || js==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshushijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+<view style="height:32rpx;"></view>
+<!-- 房产 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="0"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>购买流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks2'>
+        <view class="  {{(kehuinfo.kaishi2_value=='Y' || ks2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi2_value=="Y" || ks2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishi2shijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi2_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='xdqdgb'>
+       <view class="  {{(kehuinfo.xiadingqinadinggoubiao_value=='Y' || xdqdgb==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.xiadingqinadinggoubiao_value=="Y" || xdqdgb==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >下定、签订购表</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.xiadingqinadinggoubiaoshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.xiadingqinadinggoubiao_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='htfsk'>
+       <view class="  {{(kehuinfo.hetongshoufuku_value=='Y' || htfsk==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.hetongshoufuku_value=="Y" || htfsk==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >合同、付首款</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.hetongshoufukushijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.hetongshoufuku_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='khsfk'>
+        <view class="  {{(kehuinfo.zhifushoufukuan_value=='Y' || khsfk==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.zhifushoufukuan_value=="Y" || khsfk==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户付首款</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.zhifushoufukuanshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.zhifushoufukuan_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='qdght'>
+         <view class="  {{(kehuinfo.qiandinggouhetong_value=='Y' || qdght==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.qiandinggouhetong_value=="Y" || qdght==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >签订购合同</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.qiandinggouhetongshijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.qiandinggouhetong_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jhhtz'>
+         <view class="  {{(kehuinfo.jiaohuanhetongzhong_value=='Y' || jhhtz==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jiaohuanhetongzhong_value=="Y" || jhhtz==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >交换合同中</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jiaohuanhetongzhongshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.jiaohuanhetongzhong_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+       <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jhht'>
+      <view class="  {{(kehuinfo.jiaohuanhetongwancheng_value=='Y' || jhht==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jiaohuanhetongwancheng_value=="Y" || jhht==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >交换合同完成</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jiaohuanhetongwanchengshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.jiaohuanhetongwancheng_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+       <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='sfdk'>
+        <view class="  {{(kehuinfo.shifoudaikuan_value=='Y' || sfdk==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.shifoudaikuan_value=="Y" || sfdk==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >是否贷款</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.shifoudaikuanshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.shifoudaikuan_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+ <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ddjf'>
+        <view class="  {{(kehuinfo.dengdaijiafang_value=='Y' || ddjf==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.dengdaijiafang_value=="Y" || ddjf==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >等待交房</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.dengdaijiafangshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.dengdaijiafang_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+ <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='jfwc'>
+        <view class="  {{(kehuinfo.jiaofangwancheng_value=='Y' || jfwc==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jiaofangwancheng_value=="Y" || jfwc==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >交房完成</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jiaofangwanchengshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.jiaofangwancheng_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js2'>
+       <view class="  {{(kehuinfo.jieshu2_value=='Y' || js2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu2_value=="Y" || js2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshu2shijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 移民 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="1"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>购买流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks2'>
+        <view class="  {{(kehuinfo.kaishi2_value=='Y' || ks2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi2_value=="Y" || ks2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishi2shijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi2_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='xdqydb'>
+       <view class="  {{(kehuinfo.xiadingqianyudingbiao_value=='Y' || xdqydb==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.xiadingqianyudingbiao_value=="Y" || xdqydb==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >下定、签预定表</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.xiadingqianyudingbiaoshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.xiadingqianyudingbiao_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='qdzsht'>
+       <view class="  {{(kehuinfo.qiandinghetongbingzhifufuwufei_value=='Y' || qdzsht==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.qiandinghetongbingzhifufuwufei_value=="Y" || qdzsht==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >签订正式合同并支付首期服务费</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.qiandinghetongbingzhifufuwufeishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.qiandinghetongbingzhifufuwufei_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymsqcl'>
+        <view class="  {{(kehuinfo.yiminshenqingcailiaozhunbei_value=='Y' || ymsqcl==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.yiminshenqingcailiaozhunbei_value=="Y" || ymsqcl==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >移民申请材料准备</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.yiminshenqingcailiaozhunbeishijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.yiminshenqingcailiaozhunbei_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='dlqdsq'>
+         <view class="  {{(kehuinfo.dengluqiandingshenqing_value=='Y' || dlqdsq==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.dengluqiandingshenqing_value=="Y" || dlqdsq==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >登陆签订申请</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.dengluqiandingshenqingshijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.dengluqiandingshenqing_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='sftzl'>
+         <view class="  {{(kehuinfo.shifoutouzileiyimin_value=='Y' || sftzl==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.shifoutouzileiyimin_value=="Y" || sftzl==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >是否投资类移民</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.shifoutouzileiyiminshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.shifoutouzileiyimin_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='hpsw'>
+         <view class="  {{(kehuinfo.huopishouqu_value=='Y' || hpsw==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.huopishouqu_value=="Y" || hpsw==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >获批、收取尾期服务费</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.huopishouqushijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.huopishouqu_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='ymbj'>
+         <view class="  {{(kehuinfo.yiminbanjie_value=='Y' || ymbj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.yiminbanjie_value=="Y" || ymbj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >移民办结</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.yiminbanjieshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.yiminbanjie_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js2'>
+       <view class="  {{(kehuinfo.jieshu2_value=='Y' || js2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu2_value=="Y" || js2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshu2shijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 保险 -->
+<view class="bg-white" wx:if='{{kehuinfo.leixin=="2"}}'>
+  <view>
+    <view class="h5" style='padding:18rpx 32rpx;'>购买流程</view>
+    <view style='padding-left:64rpx;'>
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;" bindtap="kaishi" id='ks2'>
+        <view class="  {{(kehuinfo.kaishi2_value=='Y'  || ks2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kaishi2_value=="Y" || ks2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >开始</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kaishi2shijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.kaishi2_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='sgbx'>
+       <view class="  {{(kehuinfo.suogoubaoxian_value=='Y'  || sgbx==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.suogoubaoxian_value=="Y"  || sgbx==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >所购保险</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.suogoubaoxianshijian}}</view>
+        </view>
+      </view>
+     <view class="{{kehuinfo.suogoubaoxian_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='sftj'>
+       <view class="  {{(kehuinfo.sftijian_value=='Y' || sftj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.sftijian_value=="Y" || sftj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >是否体检</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.sftijianshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.sftijian_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='qdbxht'>
+        <view class="  {{(kehuinfo.qiandingzhengshibaoxain_value=='Y' || qdbxht==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.qiandingzhengshibaoxain_value=="Y" || qdbxht==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >签订正式保险合同</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.qiandingzhengshibaoxainshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.qiandingzhengshibaoxain_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='khsdbd'>
+         <view class="  {{(kehuinfo.kehushoudaobaodan_value=='Y' || khsdbd==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.kehushoudaobaodan_value=="Y" || khsdbd==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >客户收到保单</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.kehushoudaobaodanshijian}}</view>
+        </view>
+      </view>
+    <view class="{{kehuinfo.kehushoudaobaodan_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+         <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='blwj'>
+         <view class="  {{(kehuinfo.banliwanjie_value=='Y' || blwj==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.banliwanjie_value=="Y" || blwj==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >办理完结</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.banliwanjieshijian}}</view>
+        </view>
+      </view>
+      <view class="{{kehuinfo.banliwanjie_value=='Y'?'margin-13':'margin-18 '}}" style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);"></view>
+
+      <view class="flex-row flex-bottom" style="color:#BFBFBF;margin-top:-6rpx;"  bindtap="kaishi" id='js2'>
+       <view class="  {{(kehuinfo.jieshu2_value=='Y' || js2==true)?'box3':'box '}}"></view>
+        <view wx:if='{{kehuinfo.jieshu2_value=="Y" || js2==true}}' class="box2"></view>
+        <view style="margin-left:26rpx;">
+          <view class="h6" >结束</view>
+          <view class="f-22" style="color:#BFBFBF;margin-top:4rpx;">{{kehuinfo.jieshu2shijian}}</view>
+        </view>
+      </view>
+      <!-- <view style="width:4rpx;height:82rpx;background:rgba(247,248,250,1);margin:-40rpx 0 0 8rpx;"></view> -->
+      <view style="height:40rpx"></view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<view style="height:150rpx"></view>
+<view class="bom bg-white ">
+  <view class="flex-row flex-center padding-20">
+
+    <view class="flex-1"></view>
+
+    <view class="queren1" bindtap="shanchu" >删除</view>
+    <view class="queren margin-left-40" bindtap="tijiao">保存</view>
+    <view class="flex-1"></view>
+
+  </view>
+
+</view>

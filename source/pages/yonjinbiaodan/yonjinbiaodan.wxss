@@ -1,0 +1,26 @@
+page{
+
+  background: #F7F8FA;
+}
+.xian {
+  width: 48rpx;
+  height: 4rpx;
+  background: #161616;
+  margin-top: 20rpx;
+}
+
+.black {
+  color: #161616;
+}
+
+.k {
+ 
+  margin-top: 24rpx;
+}
+.sousuo {
+  margin-top: 30rpx;
+  width: 688rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}

@@ -1,0 +1,32 @@
+<view style="background:#07264A;width:100vw; height:100vh;">
+  <view class="height-200"></view>
+
+  <view class="text-center">
+    <image src="{{uploadpath}}resource/{{res.loginlogo}}" class="imgs"></image>
+  </view>
+  <view class="height-88"></view>
+  <view class="flex-row flex-column ">
+    <view class="inp flex-row padding-left-32 ">
+      <image src="{{uploadpath}}resource/{{res.loginname}}" style="" class="icon-24"></image>
+      <input class="flex-1" bindinput="mobileFn" placeholder='请输入手机号' maxlength="11"></input>
+    </view>
+    <view class="inp flex-row padding-left-32 ">
+      <image src="{{uploadpath}}resource/{{res.loginpwd}}" style="" class="icon-24"></image>
+      <input class="flex-1" bindinput="pwdFn" type="password" placeholder='请输入密码'></input>
+      <view class="h6 padding-right-32 " bindtap="forgetpwd" style="line-height:72rpx;color:#425468;">忘记密码</view>
+    </view>
+    <view class="dl" bindtap="denglu">登录</view>
+  </view>
+
+  <view class="" style="background-image:url({{uploadpath}}resource/{{res.loginp}});background-size:100% 100%;height:640rpx;">
+    <view style="height:16rpx;"></view>
+    <view class="flex-row flex-center txt-white ">
+      <view class="flex-1"></view>
+      <view class="h5">还没有账号？</view>
+      <view class="h5" style="color:#268AFF;" bindtap="zhuce">立即注册</view>
+      <view class="flex-1"></view>
+    </view>
+    <!-- <image src="{{uploadpath}}resource/{{res.loginp}}" style="width:100vw;height:640rpx;"></image>   -->
+  </view>
+
+</view>

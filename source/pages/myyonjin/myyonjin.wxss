@@ -1,0 +1,47 @@
+page {
+  background: #f7f8fa;
+}
+
+.bg-top {
+  background: #07264a;
+  width: 100vw;
+  height: 368rpx;
+}
+
+.xian1 {
+  height: 80rpx;
+  width: 2rpx;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tx {
+  font-size: 28rpx;
+  color: #fff;
+  padding: 8rpx 76rpx 8rpx 76rpx;
+  border-radius: 32rpx;
+  border: 1rpx solid #fff;
+}
+
+.xian {
+  width: 48rpx;
+  height: 4rpx;
+  background: #161616;
+  margin-top: 20rpx;
+}
+
+.black {
+  color: #161616;
+}
+
+.k {
+  margin-top: 24rpx;
+}
+.bolc{
+ margin-left:30rpx;
+ margin-right: 30rpx;
+ padding-bottom: 30rpx;
+ padding-top:30rpx;
+
+border-bottom: 1rpx solid #F5F5F5;
+
+}

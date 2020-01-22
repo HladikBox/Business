@@ -1,0 +1,101 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">添加银行卡</view>
+</cu-custom>
+<view style="height:20rpx;"></view>
+<view class="padding-left-68 padding-right-64" style="color:#404858;" wx:if="{{bankdetail==null}}">
+
+  <view class="flex-row flex-center">
+    <view class="h5">账户名</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindname" placeholder="请输入"></input>
+  </view>
+  <view class="line"></view>
+
+<view class="flex-row flex-center">
+    <view class="h5">银行卡号</view>
+    <!-- <view class="flex-1"></view> -->
+    <input class="text-right h5 flex-1" bindinput="bindbanknum" placeholder="请输入"></input>
+    <view class="h5 sb margin-left-10" bindtap="asdasd">识别</view>
+  </view>
+  <view class="line"></view>
+
+  <view class="flex-row flex-center">
+    <view class="h5">开户行</view>
+    <view class="flex-1"></view>
+    <!-- <picker range='{{banktype}}' mode='selector' bindchange='pickerchange' id='id' range-key='name'> -->
+      <!-- <view class='h5 txt-black' wx:if='{{name==null}}'>{{name}}</view> -->
+      <input placeholder='请输入'  name='name' disabled='{{true}}' class='txt-black text-right h5 ' value='{{name}}' placeholder-class='h5 txt-gray'></input>
+    <!-- </picker> -->
+  </view>
+  <view class="line"></view>
+
+ <view class="flex-row flex-center">
+    <view class="h5">开户支行</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindkaihu" placeholder="请输入"></input>
+  </view>
+ <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">卡片类型</view>
+    <view class="flex-1"></view>
+    <!-- <input class="text-right h5" bindinput="bindzh" placeholder="请输入"></input> -->
+     <!-- <picker range='{{zhs}}' mode='selector' bindchange='pickerchange2' id='id' range-key='zhname'> -->
+      <!-- <view class='h5 txt-black' wx:if='{{zhname==null}}'>{{zhname}}</view> -->
+      <input placeholder='请输入' name='zhname' disabled='{{true}}' class='txt-black text-right h5 ' value='{{zhname}}' placeholder-class='h5 txt-gray'></input>
+    <!-- </picker> -->
+  </view>
+  <view class="line"></view>
+  
+  <view style="height:800rpx;"></view>
+  <view class="tijiao" bindtap="tijiao">保存并提交</view>
+</view>
+
+
+<view class="padding-left-68 padding-right-64" style="color:#404858;" wx:if="{{bankdetail!=null}}">
+
+  <view class="flex-row flex-center">
+    <view class="h5">账户名</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindname" value="{{usernames}}" ></input>
+  </view>
+  <view class="line"></view>
+
+  <view class="flex-row flex-center">
+    <view class="h5">银行卡号</view>
+    <!-- <view class="flex-1"></view> -->
+    <input class="text-right h5 flex-1" value="{{banknums}}" bindinput="bindbanknum" ></input>
+    <view class="h5 sb margin-left-10" bindtap="asdasd">识别</view>
+  </view>
+  <view class="line"></view>
+
+  <view class="flex-row flex-center">
+    <view class="h5">开户行</view>
+    <view class="flex-1"></view>
+    <!-- <picker range='{{banktype}}' mode='selector' bindchange='pickerchange' id='id' range-key='name'> -->
+      <!-- <view class='h5 txt-black' wx:if='{{name==null}}'>{{name}}</view> -->
+    
+      <input placeholder='请输入' name='zhname' disabled='{{true}}' class='txt-black text-right h5 ' value='{{bankdetail.banklei || name}}' placeholder-class='h5 txt-gray'></input>
+    <!-- </picker> -->
+  </view>
+  <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">开户支行</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindkaihu" value='{{bankdetail.kaihu || kaihus}}'></input>
+  </view>
+ <view class="line"></view>
+  <view class="flex-row flex-center">
+    <view class="h5">卡片类型</view>
+    <view class="flex-1"></view>
+    <!-- <input class="text-right h5" bindinput="bindzh" placeholder="请输入"></input> -->
+     <!-- <picker range='{{zhs}}' mode='selector' bindchange='pickerchange2' id='id' range-key='zhname'> -->
+      <!-- <view class='h5 txt-black' wx:if='{{zhname==null}}'>{{zhname}}</view> -->
+       <input placeholder='请输入'  name='name' disabled='{{true}}' class='txt-black text-right h5 ' value='{{bankdetail.banktype || zhname}}' placeholder-class='h5 txt-gray'></input>
+    <!-- </picker> -->
+  </view>
+  <view class="line"></view>
+
+  <view style="height:800rpx;"></view>
+  <view class="tijiao" bindtap="tijiao2">保存并提交</view>
+</view>

@@ -1,0 +1,80 @@
+page{
+
+  background: #F7F8FA;
+}
+.xbk{
+border-bottom: 1rpx solid #F7F8FA;
+margin-left:30rpx;
+margin-right: 30rpx;
+padding-top:30rpx;
+padding-bottom: 30rpx;
+}
+.pdd{
+
+padding:30rpx;
+ border:1rpx dashed  #E0E0E0;
+
+}
+.zp{
+
+width: 176rpx;
+height: 176rpx;
+
+}
+.icon-10{
+width: 12rpx;
+height: 24rpx;
+}
+.paizhaoshifan{
+
+  width: 540rpx;
+  height: 284rpx;
+}
+.bom{
+
+  height:142rpx;
+  width: 100vw;
+  
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.queren{
+
+  width:686rpx;
+  height: 76rpx;
+  background: #07264A;
+  border-radius: 50rpx;
+  color:#FFFFFF;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  text-align: center;
+}
+.bq{
+
+   width:120rpx;
+  text-align: center;
+  height: 48rpx;
+  margin-right: 10rpx;
+  border-radius: 8rpx;
+  border:1rpx solid #404858;
+  font-size: 24rpx;
+  color:#404858;
+  line-height: 48rpx;
+  margin-top:20rpx
+}
+
+.xzbq{
+
+  width:120rpx;
+ text-align: center;
+ height: 48rpx;
+ margin-right: 10rpx;
+ border-radius: 8rpx;
+ border:1rpx solid #404858;
+ font-size: 24rpx;
+ color:#FFFFFF;
+ background: #2E4470;
+ line-height: 48rpx;
+ margin-top:20rpx
+}

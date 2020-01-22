@@ -1,0 +1,57 @@
+/* pages/register/register.wxss */
+
+.height-200 {
+  height: 400rpx;
+}
+
+.imgs {
+  width: 338rpx;
+  height: 98rpx;
+}
+
+.inp {
+  width: 560rpx;
+  height: 72rpx;
+  background: #ffffff;
+  border-radius: 36rpx;
+  margin-bottom: 32rpx; 
+ 
+}
+.inp input {
+  height: 72rpx;
+  color: #07264A;
+  font-size: 24rpx;
+}
+.inp image {
+  margin: 25rpx 12rpx 0;
+}
+
+.icon-24 {
+  width: 24rpx;
+  height: 24rpx;    
+}
+.height-88 {
+  height: 88rpx;
+}
+
+.margin-left-16 {
+  margin-left: 16rpx;
+}
+
+.dl {
+  width: 560rpx;
+  height: 72rpx;
+  background: #268AFF;
+  border-radius: 36rpx;
+  margin-bottom: 44rpx; 
+  color: #ffffff;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  text-align: center;
+}
+
+.po {
+  position: absolute;
+  bottom: 24%;
+}
+

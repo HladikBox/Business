@@ -1,0 +1,25 @@
+Page{
+background: #F7F8FA;
+}
+.chakan{
+width: 112rpx;
+height: 48rpx;
+font-size: 24rpx;
+color:#FFFFFF;
+background: #07264A;
+border-radius: 24rpx;
+line-height: 48rpx;
+text-align: center;
+}
+.quxiao{
+width: 112rpx;
+height: 48rpx;
+font-size: 24rpx;
+color:#07264A;
+background: #FFFFFF;
+border-radius: 24rpx;
+line-height: 48rpx;
+border: 1rpx solid #07264A;
+text-align: center;
+margin-left:10rpx;
+}

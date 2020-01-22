@@ -1,0 +1,65 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">个人订单</view>
+</cu-custom>
+
+<!-- 未支付 -->
+
+<view bindtap="orderinfo" id="{{item.id}}" wx:for="{{orderlist}}" wx:key='k' class="margin-top-20 bg-white">
+
+	<view class="flex-row flex-center padding-30">
+
+		<view class="h5" style="color:#404858">订单号：{{item.orderno}}</view>
+		<view class="flex-1"></view>
+		<view wx:if="{{item.orderstatus_name=='未支付'}}" class="h5" style="color:#F37474">{{item.orderstatus_name}}</view>
+		<view wx:if="{{item.orderstatus_name=='已支付'}}" class="h5" style="color:#404858">{{item.orderstatus_name}}</view>
+	</view>
+	<view class="xian"></view>
+	<view class="padding-30">
+		<view class="flex-row flex-center ">
+			<view class="h26" style="color:#404858">产品名称</view>
+			<view class="flex-1"></view>
+			<view wx:if="{{item.ordertype=='A'}}" class="h26" style="color:#404858">{{item.houseproject_id_name}}</view>
+			<view wx:if="{{item.ordertype=='B'}}" class="h26" style="color:#404858">{{item.immigrantproject_id_name}}</view>
+		</view>
+		<view class="flex-row flex-center margin-top-20 ">
+			<view class="h26" style="color:#404858">投资人</view>
+			<view class="flex-1"></view>
+			<view class="h26" style="color:#404858">{{item.kehu_name}}</view>
+		</view>
+		<view class="flex-row flex-center  margin-top-20 ">
+			<view class="h26" style="color:#404858">联系方式</view>
+			<view class="flex-1"></view>
+			<view class="h26" style="color:#404858">{{item.kehu_shouji}}</view>
+		</view>
+
+
+	</view>
+	<view class="xian"></view>
+
+	<view wx:if="{{item.orderstatus_name=='未支付'}}" class="padding-30 flex-row flex-center">
+		<view class="h5" style="color:#07264A">定金:</view>
+		<view class="h5 margin-left-20" style="color:#F37474">￥{{item.amount}}</view>
+
+		<view class="flex-1"></view>
+		<view id="{{item.id}}" class="h26" style="color:#07264A">取消订单</view>
+		<view class="quzhifu margin-left-20">去支付</view>
+	</view>
+
+	<view wx:if="{{item.orderstatus_name=='已支付'}}" class="padding-30 flex-row flex-center">
+		<view class="h5" style="color:#07264A">定金:</view>
+		<view class="h5 margin-left-20" style="color:#07264A">￥10000</view>
+
+		<view class="flex-1"></view>
+
+		<view class="yiwanchen margin-left-20">已完成</view>
+	</view>
+</view>
+
+<!-- 已支付 -->
+
+<view wx:if='{{orderlist.length==0}}' class="flex-row flex-column">
+<view style="height:200rpx;"></view>
+  <image src="{{uploadpath}}resource/{{res.mieyou}}" ></image>
+  <view class="margin-top-20">暂无数据</view>
+</view>

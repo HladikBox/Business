@@ -1,0 +1,159 @@
+/* pages/search2/search2.wxss */
+
+.sousuo {
+  width: 688rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}
+
+.jilu {
+  width: 216rpx;
+  height: 64rpx;
+  border: 2rpx solid #ddd;
+  background: #f7f8fa;
+  color: #595959;
+  border-radius: 30rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 26rpx;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.line {
+  width: 100vw;
+  height: 2rpx;
+  background: #ddd;
+  margin-top: 64rpx;
+}
+
+.lines {
+  width: 100vw;
+  height: 2rpx;
+  background: rgba(247, 248, 250, 1);
+  opacity: 1;
+  margin: 16rpx 0;
+}
+
+.margin-48 {
+  margin: 0 45rpx;
+}
+
+.tab-h {
+  height: 100rpx;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 100rpx;
+  white-space: nowrap;
+  z-index: 99;
+}
+
+.tab-item {
+  margin: 0 48rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #000;
+  font-weight: bold;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 40rpx;
+  background: #000;
+  position: absolute;
+  bottom: 10rpx;
+  left: 6rpx;
+  border-radius: 16rpx;
+}
+
+.active {
+  color: #000;
+  font-weight: bold;
+  position: relative;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 40rpx;
+  background: #000;
+  position: absolute;
+  bottom: -16rpx;
+  left: 6rpx;
+  border-radius: 16rpx;
+}
+
+.acimg {
+  width: 144rpx;
+  height: 96rpx;
+}
+
+.margin-bottom-28 {
+  margin-bottom: 28rpx;
+}
+
+.type {
+  width: 60rpx;
+  height: 32rpx;
+  /* background: #F37474; *//* line-height: 32rpx; */
+  text-align: center;
+  /* color: #ffffff; */
+  margin-bottom: 18rpx;
+  z-index: 9999;
+  border-radius: 4rpx;
+}
+
+.txt-2 {
+  /* background: #F37474; */
+  color: #f37474;
+  border: 2rpx solid #f37474;
+}
+
+.txt-3 {
+  /* background: #D8B66E; */
+  color: #d8b66e;
+  border: 2rpx solid #d8b66e;
+}
+
+.txt-4 {
+  /* background: #72D4A9; */
+  color: #72d4a9;
+  border: 2rpx solid#72D4A9;
+}
+
+.txt-5 {
+  background: #88cce2;
+  color: #88cce2;
+  border: 2rpx solid #88cce2;
+}
+
+.margin-left-24 {
+  margin-left: 24rpx;
+}
+
+.aa {
+  height: 112rpx;
+  background: rgba(247, 248, 250, 1);
+  opacity: 1;
+}
+
+.imgs {
+  width: 120rpx;
+  height: 88rpx;
+}
+
+.margin-left-12 {
+  margin-left: 12rpx;
+}
+
+.padding-left-16 {
+  padding-left: 16rpx;
+}

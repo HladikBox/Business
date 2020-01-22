@@ -1,0 +1,56 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">资讯</view>
+</cu-custom>
+<!-- <view class="height-150"></view> -->
+
+<view class="flex-row flex-center margin-top bg-white" style="width:100vw">
+
+  <view wx:for="{{type}}" class="flex-1" wx:key="k" wx:for-index="idx">
+
+    <view class="margin-60 h5 txt-59  {{idx==seq?'active':''}}" data-current="{{idx}}" data-currentID='{{item.id}}' bindtap="switchnav">{{item.name}}</view>
+
+  </view>
+
+
+</view>
+
+
+<view class="height-1"></view>
+<view style="background:#F7F8FA;height:100%;">
+
+  <view wx:for="{{list}}" wx:key="k" class="margin-top-16 bg-white padding-right-32" >
+  <view style="height:48rpx;"></view>
+    <view class="flex-row flex-center padding-left-32"  data-current="{{item}}" bindtap="detail" >
+      <!-- <image src="{{uploadpath}}member/{{item.member_avatarUrl}}" style="padding-left:0rpx !important;" class="icon-66 "></image> -->
+      <!-- <view class="flex-1"></view> -->
+      <view class="txt-bold flex-1 chaochu" style='color:#161616;'>{{item.title}}</view>
+      <view class="h6" style='color:#CCCCCC;'>{{item.publictime}}</view>
+    </view>
+    <view class=" padding-left-32">
+      <view   data-current="{{item}}"  bindtap="detail" class="margin-bottom-32 margin-top-20 h5" style="color:#777777;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;">{{item.jianjie}}</view>
+      <view class="flex-row margin-bottom-30"   data-current="{{item}}"  bindtap="detail">
+        <image wx:for="{{item.photolist}}" wx:key="k" src="{{uploadpath}}consuphoto/{{item.photo}}" class="icon-80 margin-right-10"></image>
+      </view>
+      <view class="flex-row padding-bottom-26">
+        <view class="flex-row" style="color:#5B5E63;" data-currentid="{{item}}" bindtap="dianzhan">
+          <image src="{{uploadpath}}resource/{{res.weidianzhan}}" wx:if='{{item.dian==false}}' class="icon-15"></image>
+          <image src="{{uploadpath}}resource/{{res.dianzhan}}" wx:if='{{item.dian}}' class="icon-15"></image>
+          <view class="h6" style="line-height:30rpx;margin-right:30rpx;margin-left:10rpx;">{{item.dianzhan}}</view>
+        </view>
+        <view class=" flex-row" style="color:#5B5E63;"  data-current="{{item}}" bindtap="detail2">
+          <image src="{{uploadpath}}resource/{{res.pinlun}}" class="icon-15"></image>
+          <view class="h6" style="line-height:30rpx;margin-left:10rpx;">{{item.pinlun}}</view>
+        </view>
+        <view class="flex-1"></view>
+        <button class=' clear-button' hover-class='bg_gray' data-currentid="{{item.id}}" open-type="share" style='border-radius:0;border:0;'>
+          <image src="{{uploadpath}}resource/{{res.zhaunfa}}" class="icon-15"></image>
+        </button>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
+

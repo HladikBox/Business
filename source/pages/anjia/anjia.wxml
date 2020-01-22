@@ -1,0 +1,52 @@
+<!--增值服务-安家服务-->
+<cu-custom  isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">安家服务</view>
+</cu-custom>
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">国内手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">国外手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="gwphone" type="number" placeholder="请输入国外手机号码" />
+      </view>
+    </view>
+
+    <!-- 图片上传开始 -->
+    <view class='input-item'>
+      <view class='input-image-t'>护照图片</view>
+    </view>
+    <view class=' input-image-c'>
+      <view class=' icon-v' wx:for="{{htimages}}" wx:key="k" wx:for-index="idx">
+        <image src='{{uploadpath}}ajhuzhao/{{item}}' wx:if='{{idx<20}}' id="{{idx}}" bindtap='htminusImg' class='icon-img'></image>
+      </view>
+      <view class=' picture_item ' bindtap='htuploadimg' wx:if='{{htimages.length<20}}'>
+        <view class="addicon">+</view>
+        <view class="addtext">图片</view>
+      </view>
+    </view>
+    <view class="input-item" style="flex-flow: column;">
+      <view class="input-left">备注信息</view>
+      <view class="input-right">
+        <textarea class="input-tet" name="beizhu" placeholder="备注信息" />
+      </view>
+    </view>
+
+
+    <!-- end 图片上传 -->
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

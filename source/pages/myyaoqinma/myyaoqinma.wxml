@@ -1,0 +1,10 @@
+<!--pages/myyaoqinma/myyaoqinma.wxml-->
+<text>pages/myyaoqinma/myyaoqinma.wxml</text><cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">我的认证</view>
+</cu-custom>
+<view class="flex-row flex-column" style="margin-top:220rpx;">
+  
+  <view class="h1" style="color:#777777">{{memberinfo.yaoqinma}}</view>
+  <view class="lijirenzhen margin-top" bindtap="yaoqinma">复制邀请码</view>
+</view>

@@ -1,0 +1,152 @@
+.kuai {
+  background: #fff;
+  width: 94vw;
+  height: 300rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 3vw;
+  margin-top: 80rpx;
+  box-shadow: 10rpx 15rpx 15rpx #d5d5d5;
+}
+
+.toutiao {
+  margin-top: 230rpx;
+}
+
+.sousuo {
+  margin-top: 30rpx;
+  width: 640rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}
+
+.kuaixun {
+  width: 420rpx;
+  margin-left: 20rpx;
+  color: #404858;
+  height: 96rpx;
+  line-height: 96rpx; 
+}
+
+.hd1 {
+  width: 336rpx;
+  height: 160rpx;
+  background: rgba(243, 116, 116, 0.1);
+}
+
+.hd2 {
+  width: 336rpx;
+  height: 160rpx;
+  background: rgba(216, 182, 110, 0.1);
+}
+
+.hd3 {
+  width: 336rpx;
+  height: 160rpx;
+  background: rgba(114, 212, 169, 0.1);
+}
+
+.hd4 {
+  width: 336rpx;
+  height: 160rpx;
+  background: rgba(136, 204, 226, 0.1);
+}
+
+.cpimg {
+  width: 128rpx;
+  height: 140rpx;
+}
+
+.toutiaoimg {
+  width: 96rpx;
+  height: 24rpx;
+}
+
+.new {
+  width: 44rpx;
+  height: 20rpx;
+  border-radius: 96rpx;
+  background: #ff4646;
+  font-size: 12rpx;
+  color: #fff;
+  line-height: 20rpx;
+  text-align: center;
+}
+.youimg{
+  width: 11rpx;
+  height: 20rpx;
+}
+.hui{
+ width: 100vw;
+ height: 20rpx;
+ background: #F7F8FA;
+}
+.pyqyou{
+
+  width: 16rpx;
+  height: 32rpx;
+}
+.tab{
+
+width: 688rpx;
+height:64rpx;
+border-radius: 612rpx;
+border:2rpx solid #DDDDDD;
+background: #F7F8FA;
+
+}
+.tab-item{
+  width: 228rpx;
+  height: 56rpx;
+  border-radius: 454rpx;
+  background: #BEA174;
+  font-size:24rpx;
+  color:white;
+  line-height: 56rpx;
+  margin-top:2rpx;
+  margin-left:2rpx;
+
+}
+.notab-item{
+  width: 228rpx;
+  height: 56rpx;
+  
+
+  font-size:24rpx;
+  color:#404858;
+  line-height: 56rpx;
+  margin-top:2rpx;
+  margin-left:2rpx;
+}
+.bg-top{
+width:100vw;
+height: 288rpx;
+}
+.zonjia{
+
+  width: 160rpx;
+  height: 60rpx;
+  background: rgba(19, 30, 40, 0.8);
+  border-radius: 0rpx 16rpx 0rpx 16rpx;
+}
+.bg-bottom{
+
+background:rgba(0,0,0,0.6);
+ height: 92rpx;
+ width: 100vw;
+ margin-top:136rpx;
+
+}
+.fcbock{
+width: 100vw;
+height: 484rpx;
+}
+.bad{
+font-size: 20rpx;
+color:#83A7CF;
+padding:6rpx 12rpx 6rpx 12rpx;
+border:1rpx solid #83A7CF;
+border-radius: 8rpx;
+
+}

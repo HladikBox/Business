@@ -1,0 +1,49 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">活动报名</view>
+</cu-custom>
+
+<view class="flex-row flex-center">
+  <!-- <view class="flex-1"></view> -->
+  <view wx:for='{{aa}}' wx:key='k' wx:for-index="idx" class="flex-3 txt-co flex-1 text-center" data-current="{{idx}}" data-currentname="{{item.name}}" bindtap="switchnav">
+    <view class="h5 {{seq==idx?'active':''}}">{{item.name}}</view>
+    <view style='height:8rpx;'></view>
+    <view class=" {{seq==idx?'line':''}}"></view>
+  </view>
+</view>
+
+<view style="background:#F7F8FA;height:100vh;">
+  <view style="height:16rpx;"></view>
+  <view wx:for='{{list}}' wx:key='k' wx:for-index="idx" data-current="{{item}}" bindtap="tiaozhuan" class="bg-white padding-left-32 padding-right-30 padding-top-32">
+    <view class="flex-row  " style="position: relative;">
+      <view class="box" style="background-image:url({{uploadpath}}resource/{{res.kaocha1}});background-size: 100% 100%;" wx:if="{{item.activity_type_name=='考察'}}">{{item.activity_type_name}}</view>
+      <view class="box" style="background-image:url({{uploadpath}}resource/{{res.kechen}});background-size: 100% 100%;" wx:if="{{item.activity_type_name=='课程'}}">{{item.activity_type_name}}</view>
+      <view class="box" style="background-image:url({{uploadpath}}resource/{{res.huizhan}});background-size: 100% 100%;" wx:if="{{item.activity_type_name=='会展'}}">{{item.activity_type_name}}</view>
+      <view class="box" style="background-image:url({{uploadpath}}resource/{{res.peixun}});background-size: 100% 100%;" wx:if="{{item.activity_type_name=='培训'}}">{{item.activity_type_name}}</view>
+
+      <view style="height:146rpx">
+        <image src="{{uploadpath}}activity/{{item.activity_cover}}" class="imgs"></image>
+      </view>
+
+      <view class="margin-left-24 ">
+        <!-- <view style="height:10rpx;"></view> -->
+        <view class="h5 txt-bold" style="color#161616;">{{item.activity_id_name}}</view>
+        <view class="h7" style="height:58rpx;color:#777777;margin-top:8rpx;margin-bottom:10rpx;">{{item.activity_introduction}}</view>
+        <view class="f-22 padding-bottom-32" style="color:#CCCCCC;">{{item.baotime_dateformat}}</view>
+
+      </view>
+    </view>
+    <view class="bo"></view>
+  </view>
+  <view style="height:32rpx;"></view>
+  <view class="flex-row flex-column meiyou" wx:if='{{list.length>0}}'>~~ 没有更多内容 ~~</view>
+
+
+  <view class="flex-row flex-column" wx:if='{{list.length==0}}'>
+    <view style="height:10vh"></view>
+    <image src="{{uploadpath}}resource/{{res.mieyou}}" class="icon-200"></image>
+    <view style="height:10rpx;"></view>
+    <view>暂无内容</view>
+  </view>
+
+</view>

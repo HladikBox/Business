@@ -1,0 +1,64 @@
+<!--增值服务-代办签证-->
+<cu-custom  isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">代办签证</view>
+</cu-custom>
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+   <view class="input-item">
+      <view class="input-left">签证国家</view>
+      <view class="input-right">
+        <input class="input-txt" name="guojia"  placeholder="请输入国家" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">签证类型</view>
+      <view class="input-right">
+        <radio-group class="radio-group" name="leixing" >
+          <radio class="radio" wx:for-items="{{qzlx}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+            <text>{{item.value}}</text>
+          </radio>
+        </radio-group>
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">家庭(邮寄)地址</view>
+      <view class="input-right">
+        <input class="input-txt" name="addr" placeholder="请输入地址" />
+      </view>
+    </view>
+
+    <!-- 图片上传开始 -->
+    <view class='input-item'>
+      <view class='input-image-t'>护照图片</view>
+    </view>
+    <view class=' input-image-c'>
+      <view class=' icon-v' wx:for="{{htimages}}" wx:key="k" wx:for-index="idx">
+        <image src='{{uploadpath}}qzhuzhao/{{item}}' wx:if='{{idx<20}}' id="{{idx}}" bindtap='htminusImg' class='icon-img'></image>
+      </view>
+      <view class=' picture_item ' bindtap='htuploadimg' wx:if='{{htimages.length<20}}'>
+        <view class="addicon">+</view>
+        <view class="addtext">图片</view>
+
+      </view>
+    </view>
+    <!-- end 图片上传 -->
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

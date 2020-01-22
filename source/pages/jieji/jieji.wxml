@@ -1,0 +1,108 @@
+<!--增值服务-代办接机-->
+<cu-custom  isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">代办接机</view>
+</cu-custom>
+
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">接机航班号</view>
+      <view class="input-right">
+        <input class="input-txt" name="jiehao" placeholder="请输入接机航班号" />
+      </view>
+    </view>
+    <view class="input-item">
+      <view class="input-left">接机航班时间</view>
+      <view class="input-right">
+        <picker name="jiedate" mode="date" value="{{jiedate}}" start="2015-09-01" end="2090-09-01" bindchange="jieDateChange">
+          <view class="picker">
+            {{jiedate}}
+          </view>
+        </picker>
+        <picker mode="time"  name="jietime" value="{{jietime}}" start="09:01" end="21:01" bindchange="jieTimeChange">
+          <view class="picker">
+            {{jietime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">送机航班号</view>
+      <view class="input-right">
+        <input class="input-txt" name="songhao" placeholder="请输入接机航班号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">送机航班时间</view>
+      <view class="input-right">
+        <picker name="songdate" mode="date" value="{{songdate}}" start="2015-09-01" end="2090-09-01" bindchange="songDateChange">
+          <view class="picker">
+            {{songdate}}
+          </view>
+        </picker>
+        <picker mode="time" name="songtime" value="{{songtime}}" start="09:01" end="21:01" bindchange="songTimeChange">
+          <view class="picker">
+            {{songtime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+    <view class="input-item">
+      <view class="input-left">出行人数</view>
+      <view class="input-right">
+        <input class="input-txt" name="renshu" placeholder="请输入出行人数 " />
+      </view>
+    </view>
+
+
+    <view class="input-item">
+      <view class="input-left">行李箱数</view>
+      <view class="input-right">
+        <input class="input-txt" name="xingli" placeholder="请输入行李箱数" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">国外电话</view>
+      <view class="input-right">
+        <input class="input-txt" name="gwphone" placeholder="请输入国外电话" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">微信号</view>
+      <view class="input-right">
+        <input class="input-txt" name="weixin" placeholder="请输入微信号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">有无婴儿</view>
+      <view class="input-right">
+        <input class="input-txt" name="yinger" placeholder="有无婴儿" />
+      </view>
+    </view>
+
+
+
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

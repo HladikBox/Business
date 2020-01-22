@@ -1,0 +1,102 @@
+.topimg{
+  width: 100vw;
+  height: 576rpx;
+  
+}
+/* .nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+} */
+
+.lantiao{
+
+  width: 100%;
+  height: 8rpx;
+  background: rgba(131, 167, 207, 0.7);
+  position: static;
+  margin-top: -10rpx;
+  z-index: -1;
+}
+
+.border-bottom {
+  border-bottom: 1rpx solid #eee;
+}
+
+.icon-100 {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.tag {
+  color: #bda179;
+  font-size: 16rpx;
+  padding: 6rpx 10rpx 4rpx 10rpx;
+  background: rgba(190, 161, 116, 0.2);
+  border-radius: 8rpx;
+}
+
+.tag2 {
+  color: #83a7cf;
+  font-size: 16rpx;
+  padding: 6rpx 12rpx 4rpx 12rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  border: 2rpx solid #83a7cf;
+}
+
+.divx {
+  padding-left: 0rpx;
+  margin-left: 40rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.chenshi {
+  margin-top: -40rpx;
+  position: absolute;
+  width: 200rpx;
+  height: 32rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-size: 16rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 0 0 8rpx 8rpx;
+}
+
+.qqxz {
+
+  width: 100vw;
+  height: 400rpx;
+  background: #ffffff;
+  position: absolute;
+  z-index: 9999;
+}
+.zjxz{
+  width: 100vw;
+ 
+  background: #ffffff;
+  position: absolute;
+  z-index: 9999;
+}
+.fcpx{
+  width: 100vw;
+ 
+  background: #ffffff;
+  position: absolute;
+  z-index: 9999;
+}
+.zixunimg {
+  width: 208rpx;
+  height: 144rpx;
+}
+.biaoqian{
+  font-size: 20rpx;
+  color:white;
+  padding:1rpx 18rpx 1rpx 18rpx;
+  background: #88CCE2;
+  
+}

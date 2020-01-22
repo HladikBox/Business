@@ -1,0 +1,59 @@
+<!--增值服务-签单陪同-->
+<cu-custom  isBack="{{true}}" bgColor="bg-gradual-pink">
+  <view slot="content">签单陪同</view>
+</cu-custom>
+<form bindsubmit='formSubmit' bindreset="formReset">
+  <view class="input-items">
+    <view class="input-item">
+      <view class="input-left">客户姓名</view>
+      <view class="input-right">
+        <input class="input-txt" name="name" placeholder="请输入姓名" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">手机号码</view>
+      <view class="input-right">
+        <input class="input-txt" name="phone" type="number" maxlength="11" placeholder="请输入手机号" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">陪同国家</view>
+      <view class="input-right">
+        <input class="input-txt" name="guojia" type="text" placeholder="请输入陪同国家" />
+      </view>
+    </view>
+    <view class="input-item">
+      <view class="input-left">陪同城市</view>
+      <view class="input-right">
+        <input class="input-txt" name="chengshi" type="text" placeholder="请输入陪同城市" />
+      </view>
+    </view>
+
+    <view class="input-item">
+      <view class="input-left">陪同人数</view>
+      <view class="input-right">
+        <input class="input-txt" type="number" name="renshu" type="number" placeholder="请输入陪同人数" />
+      </view>
+    </view>
+
+    <view class="input-item" style="flex-flow: column;">
+      <view class="input-left">行程安排</view>
+      <view class="input-right">
+        <textarea class="input-tet" type="text" name="xingcheng" placeholder="填写行程安排" />
+      </view>
+    </view>
+
+    <view class="input-item" style="flex-flow: column;">
+      <view class="input-left">陪同要求</view>
+      <view class="input-right">
+        <textarea class="input-tet" type="text" name="yaoqiu" placeholder="填写陪同要求" />
+      </view>
+    </view>
+
+
+    <!-- end 图片上传 -->
+    <button form-type="submit" class='sub'>提交</button>
+  </view>
+</form>

@@ -1,0 +1,13 @@
+/* pages/shezhi/shezhi.wxss */
+.imgs {
+  width: 16rpx;
+  height: 32rpx;
+}
+
+.line {
+  height: 2rpx;
+  background: #F7F8FA;
+}
+view {
+  color: #404858;
+}

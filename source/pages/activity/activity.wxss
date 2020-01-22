@@ -1,0 +1,112 @@
+.sousuo {
+  width: 688rpx;
+  height: 64rpx;
+  background: #f7f8fa;
+  border-radius: 500rpx;
+}
+
+.txt-59 {
+  
+  color: #595959;
+}
+
+.margin-48 {
+  margin: 0 45rpx;
+}
+
+.active {
+ color: #000000;
+ font-weight: bold;
+ position: relative;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 40rpx;
+  background: #000000;
+  position: absolute;
+  bottom: -16rpx;
+  left: 6rpx;
+  border-radius: 16rpx;
+}
+
+.cont {
+  width: 334rpx;
+  height: 396rpx;
+  margin: 32rpx 10rpx 0rpx;
+  /* margin-right: 20rpx;
+  margin-top: 32rpx; */
+  background: #ffffff;
+  box-shadow: 0 0 12rpx #cccccc;
+
+}
+
+.imgs {
+  width: 334rpx;
+  height: 232rpx;
+}
+
+.type {
+  width: 88rpx;
+  height: 32rpx;
+  /* background: #F37474; */
+  line-height: 32rpx;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 18rpx;
+  z-index: 9999;
+}
+
+.pos {
+  position: relative;
+  bottom: 23rpx;
+}
+
+.txt-2 {
+  background: #F37474;
+}
+.txt-3 {
+  background: #D8B66E;
+}
+
+.txt-4 {
+  background: #72D4A9;
+}
+
+.txt-5 {
+  background: #88CCE2;
+}
+
+.icon-20 {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+
+.bo {
+  width: 95rpx;
+  height: 40rpx;
+  border: 2rpx solid #ccc;
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+
+.co {
+  color: #88CCE2;
+  border-color: #88CCE2;
+}
+
+.meiyou {
+  height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:24rpx;
+  color:rgba(221,221,221,1);
+  opacity:1;
+}

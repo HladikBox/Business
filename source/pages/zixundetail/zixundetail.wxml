@@ -1,0 +1,87 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">资讯</view>
+</cu-custom>
+
+<view style="height:100vh;">
+  <view class="padding-left-32 padding-right-30">
+    <view style="height:48rpx;"></view>
+    <view class="h4 txt-bold">{{detail.title}}</view>
+    <view class="h6" style="color:#CCCCCC;margin:20rpx 0 48rpx;">{{detail.publictime_formatting}}</view>
+    <!-- <view class="h5">{{detail.content}}</view> -->
+
+<import src="../../wxParse/wxParse.wxml" />
+
+    <view  class='nostyle padding-28 h5' >
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+   
+
+    <view>
+      <image wx:for="{{detail.photolist}}" wx:key="k" class="img margin-top-32" src="{{uploadpath}}consuphoto/{{item.photo}}"></image>
+    </view>
+  </view>
+  <view class="flex-row padding-p">
+    <view class="flex-row" style="color:#5B5E63;" bindtap="dianzhan">
+      <image src="{{uploadpath}}resource/{{res.weidianzhan}}" wx:if='{{dian==false}}' class="icon-15"></image>
+      <image src="{{uploadpath}}resource/{{res.dianzhan}}" wx:if='{{dian}}' class="icon-15"></image>
+      <view class="h6" style="line-height:30rpx;margin-right:30rpx;margin-left:10rpx;">{{detail.dianzhan}}</view>
+    </view>
+    <view class=" flex-row" style="color:#5B5E63;">
+      <image src="{{uploadpath}}resource/{{res.pinlun}}" class="icon-15"></image>
+      <view class="h6" style="line-height:30rpx;margin-left:10rpx;margin-right:30rpx;">{{detail.pinlun}}</view>
+    </view>
+
+    <button class=' clear-button flex-row' hover-class='bg_gray' data-currentid="{{detail.id}}" open-type="share" style='border-radius:0;border:0;color:#5B5E63;'>
+      <image src="{{uploadpath}}resource/{{res.xianmufenixan}}" class="icon-15"></image>
+      <view class="h6" style="line-height:30rpx;margin-left:10rpx;">{{detail.zhuannum}}</view>
+    </button>
+    <view class="flex-1"></view>
+  </view>
+  <view class="padding-left-32 padding-right-30 margin-top-32">
+    <view class="flex-row flex-bottom">
+      <view class="txt-bold">评论</view>
+      <view class="h6" style="color:#595959;margin-left:18rpx;">{{detail.pinlun}}个</view>
+    </view>
+    <view class="line"></view>
+    <view wx:for="{{pinlunlist}}" wx:key='k'>
+      <view class="flex-row flex-center"  bindtap="huifu" data-current="{{item}}">
+        <image src="{{uploadpath}}member/{{item.member_avatarUrl}}" class="icon-48"></image>
+        <view class="f-22 margin-left-16">{{item.member_id_name}}</view>
+        <view class="flex-1"></view>
+        <view class="h7">{{item.pin_time}}</view>
+      </view>
+      <view class="margin-left-96 h26"  bindtap="huifu" data-current="{{item}}">{{item.content}}</view>
+
+      <!-- 回复 -->
+      <view wx:if='{{item.huifu1.length>0}}'  class=" margin-left-96 huifu margin-top-20" >
+        <view wx:for="{{item.huifu1}}" wx:key='k' class="flex-row" style='width:100%;padding-right:24rpx;' >
+          <view class="h6 flex-1" style="color:#306FB5;margin-bottom:16rpx;">{{item.member_id_name}} : </view>
+   
+          <view class="h6 flex-5" style="color:#333333;margin-left:10rpx;margin-bottom:16rpx;width:100%; word-wrap:break-word;word-break:break-all;"> {{item.content}}</view>
+        </view>
+        <view wx:if='{{item.show==true && item.huifu2.length>1}}' bindtap="zhankai" data-current2="{{item}}" data-cc="zk" class='h6' style='color:#306FB5; '>展开{{item.huifu2.length}}条回复
+        <image src="{{uploadpath}}resource/{{res.shousuo}}" class="icon-8"></image>
+        </view>
+          <view wx:if='{{item.show==false && item.huifu2.length>1}}' bindtap="zhankai" data-current2="{{item}}" data-cc="sq"  class='h6' style='color:#306FB5; '>收起{{item.huifu2.length}}条回复
+        <image src="{{uploadpath}}resource/{{res.shouqi2}}" class="icon-8"></image>
+        </view>
+      </view>
+      <view style="height：16rpx;"></view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view style="height:150rpx"></view>
+
+</view>
+
+
+<view class="fixed">
+  <view class="flex-row flex-center  padding-left-32 padding-right-30 padding-bottom-20 ss">
+    <image src="{{uploadpath}}resource/{{res.xieping}}" class="icon-32"></image>
+    <view class="margin-5 h5" wx:if='{{aa!=""}}'>{{aa}}</view>
+    <input class="flex-1 margin-5 h5 txt-black" placeholder="写评论..." placeholder-style="color:rgba(204,204,204,1);" focus="{{inputShowed}}" value="{{contents}}" bindinput="inputFn"></input>
+    <image src="{{uploadpath}}resource/{{res.sendping}}" class="icon-64" bindtap="sendcontent"></image>
+  </view>
+  <view style="height:20%;background:#ffffff;"></view>
+</view>

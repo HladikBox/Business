@@ -1,0 +1,29 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content" class="txt-bold" style="color:#161616;">{{title}}详情</view>
+</cu-custom>
+<view style="height:20rpx;"></view>
+<view class="padding-left-68 padding-right-64">
+  <view class="flex-row flex-center">
+    <view class="h5">客户姓名</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindname" placeholder="请输入"></input>
+  </view>
+  <view class="line"></view>
+    <view class="flex-row flex-center">
+    <view class="h5">电话号码</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindmobile" placeholder="请输入" maxlength="11"></input>
+  </view>
+  <view class="line"></view>
+    <view class="flex-row flex-center">
+    <view class="h5">考察人数</view>
+    <view class="flex-1"></view>
+    <input class="text-right h5" bindinput="bindnum" placeholder="请输入" ></input>
+  </view>
+  <view class="line"></view>
+
+  <view style="height:1000rpx;"></view>
+  <view class="tijiao" bindtap="tijiao">提交</view>
+</view>
+

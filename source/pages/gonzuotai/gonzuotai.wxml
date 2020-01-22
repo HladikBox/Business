@@ -1,0 +1,64 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+  <view slot="content">工作台</view>
+</cu-custom>
+
+<!-- 头部 -->
+<view class="bg-white flex-row flex-center flex-wrap padding-bottom-60 ">
+  <view wx:if="{{xzlist.length==0}}" class="  konzhi-block flex-row flex-column">
+    <view>
+      <image class="icon-25" src="{{uploadpath}}resource/{{res.gonzuotai}}"></image>
+    </view>
+    <view class="margin-top-5 f-22" style="color:#404858">工作台</view>
+  </view>
+
+  
+ <view  data-current="{{item.name}}" bindtap="detail" data-id="{{item.id}}" wx:for="{{xzlist}}" wx:key="k" class="konzhi-block flex-row flex-column">
+   <view wx:if="{{item.name=='通知中心'&&memberinfo.weiduxiaoxi>0}}" class="hondian">{{memberinfo.weiduxiaoxi}}</view>
+    <view>
+      <image class="icon-25" src="{{uploadpath}}gonzuotai/{{item.photo}}"></image>
+    </view>
+    <view class="margin-top-20 f-22" style="color:#404858">{{item.name}}</view>
+
+  </view>
+
+  <view bindtap="add" class=" konzhi-block flex-row flex-column">
+    <view>
+      <image class="icon-25" src="{{uploadpath}}resource/{{res.add}}"></image>
+    </view>
+    <view class="margin-top-5 f-22" style="color:#404858">修改</view>
+  </view>
+
+
+
+</view>
+
+<view wx:if="{{add==true}}" class="bg-white flex-row flex-center flex-wrap padding-bottom-60 margin-top-20 ">
+
+
+  <view bindtap="xuanzhon" data-id="{{item.id}}" wx:for="{{gonzuotailist}}" wx:key="k" class="konzhi-block flex-row flex-column">
+    <image wx:if="{{item.xuanzhon==true}}" class="gou" src="{{uploadpath}}resource/{{res.gou}}"></image>
+
+    <view wx:if="{{item.xuanzhon==false}}" class="gou"></view>
+    <view>
+      <image class="icon-25" src="{{uploadpath}}gonzuotai/{{item.photo}}"></image>
+    </view>
+    <view class="margin-top-20 f-22" style="color:#404858">{{item.name}}</view>
+
+  </view>
+
+</view>
+
+<view style="height:150rpx"></view>
+<view wx:if="{{add==true}}" class="bom bg-white ">
+  <view class="flex-row flex-center padding-20">
+
+    <view class="flex-1"></view>
+
+    <view class="queren" bindtap="create">添加</view>
+    <view class="flex-1"></view>
+
+  </view>
+
+</view>
+<!-- 底部 -->

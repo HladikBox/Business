@@ -1,0 +1,227 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">我的认证</view>
+</cu-custom>
+<view wx:if="{{renzheninfo==undefined}}" class="flex-row flex-column" style="margin-top:220rpx;">
+	<image class="renzhenimg" src="{{uploadpath}}resource/{{res.dairenzhen}}"></image>
+	<view class="h6" style="color:#777777">完成认证,享受更多内容</view>
+	<view class="lijirenzhen margin-top" bindtap="lijirenzhen">立即认证</view>
+</view>
+
+<view wx:if="{{renzheninfo.shstatus=='A'}}">
+
+	<view class=" bg-white">
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">真实姓名</view>
+			<view class="flex-1"></view>
+
+
+			<view class='ipt'>{{renzheninfo.name}}</view>
+		</view>
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">证件类型</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idtype_name}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证号</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idnumber}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">本人照片</view>
+			<view class="flex-1"></view>
+			<image class="benren" src="{{uploadpath}}renzhen/{{renzheninfo.photo}}"></image>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证正面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.zhengmian}}"></image>
+
+		</view>
+
+
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证反面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.fanmian}}"></image>
+
+
+		</view>
+	</view>
+
+
+</view>
+
+<view wx:if="{{renzheninfo.shstatus=='B'}}">
+	<view class=" bg-white">
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">真实姓名</view>
+			<view class="flex-1"></view>
+
+
+			<view class='ipt'>{{renzheninfo.name}}</view>
+		</view>
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">证件类型</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idtype_name}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证号</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idnumber}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">本人照片</view>
+			<view class="flex-1"></view>
+			<image class="benren" src="{{uploadpath}}renzhen/{{renzheninfo.photo}}"></image>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证正面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.zhengmian}}"></image>
+
+		</view>
+
+
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证反面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.fanmian}}"></image>
+
+
+		</view>
+	</view>
+
+</view>
+
+<view wx:if="{{renzheninfo.shstatus=='C'}}">
+	<view class=" bg-white">
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">真实姓名</view>
+			<view class="flex-1"></view>
+
+
+			<view class='ipt'>{{renzheninfo.name}}</view>
+		</view>
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">证件类型</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idtype_name}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证号</view>
+			<view class="flex-1"></view>
+			<view class='ipt'>{{renzheninfo.idnumber}}</view>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">本人照片</view>
+			<view class="flex-1"></view>
+			<image class="benren" src="{{uploadpath}}renzhen/{{renzheninfo.photo}}"></image>
+
+		</view>
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证正面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.zhengmian}}"></image>
+
+		</view>
+
+
+
+		<view class=" xbk flex-row flex-center">
+
+			<view class="h5" style="color:#404858">身份证反面照片</view>
+			<view class="flex-1"></view>
+			<image class="sfz" src="{{uploadpath}}renzhen/{{renzheninfo.fanmian}}"></image>
+
+
+		</view>
+	</view>
+  <view class="padding-30 h6" style="color:#E94D3D" >
+  
+  <view class="h6">认证失败： </view>
+ <view class="h6 margin-top-10">证件照片模糊。请保证照片中的证件完整，字体清晰，亮度均匀，可以提高通过率</view>
+  </view>
+</view>
+
+
+
+
+<view style="height:150rpx"></view>
+<view wx:if="{{renzheninfo.shstatus=='C'}}" class="bom bg-white ">
+	<view class="flex-row flex-center padding-20">
+
+		<view class="flex-1"></view>
+
+		<view class="queren" bindtap="lijirenzhen">重新提交</view>
+		<view class="flex-1"></view>
+
+	</view>
+
+</view>
+
+<view wx:if="{{renzheninfo.shstatus=='B'}}" class="bom bg-white ">
+	<view class="flex-row flex-center padding-20">
+
+		<view class="flex-1"></view>
+
+		<view class="queren" bindtap="fanhui">确认</view>
+		<view class="flex-1"></view>
+
+	</view>
+
+</view>
+
+
+<view wx:if="{{renzheninfo.shstatus=='A'}}" class="bom bg-white ">
+	<view class="flex-row flex-center padding-20">
+
+		<view class="flex-1"></view>
+
+		<view class="queren">等待审核中</view>
+		<view class="flex-1"></view>
+
+	</view>
+
+</view>

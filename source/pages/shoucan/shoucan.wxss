@@ -1,0 +1,85 @@
+/* pages/shoucan/shoucan.wxss */
+
+.margin-right-32 {
+  margin-right: 32rpx;
+}
+
+view.active {
+  color: #161616;
+  font-size: 34rpx !important;
+  font-weight: bold;
+}
+.txt-59 {
+  color: #595959;
+}
+
+.icon-6 {
+  width: 12rpx;
+  height: 8rpx;
+}
+.icon-11 {
+  width: 22rpx;
+  height: 22rpx;
+}
+.margin-right-8 {
+  margin-right: 8rpx;
+}
+
+.margin-right-37 {
+  margin-right: 74rpx;
+}
+.margin-top-32 {
+  margin-top: 32rpx;
+}
+
+.line {
+  width: 100vw;
+  height: 2rpx;
+  background: #EEEEEE;
+  margin-top: 16rpx;
+}
+
+.imgs {
+  width: 208rpx;
+  height: 144rpx;
+}
+
+.margin-left-24 {
+  margin-left: 24rpx;
+}
+
+.lines {
+
+  width:2rpx;
+  height:16rpx;
+  background:#777777;
+  margin: 0 12rpx;
+}
+
+.txt-b{
+  color: #BDA179;
+}
+
+.fang {
+  /* height: 32rpx; */
+  /* line-height: 37rpx; */
+  padding: 6rpx 12rpx 4rpx 10rpx;
+  background:rgba(190,161,116,0.2); 
+  margin-right: 12rpx;
+}
+
+.bore {
+  height: 2rpx;
+  background: #EEEEEE;
+  margin-top: 32rpx;
+}
+
+.meiyou {
+  height: 24rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  line-height:24rpx;
+  color:rgba(221,221,221,1);
+  opacity:1;
+}

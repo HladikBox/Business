@@ -1,0 +1,161 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+
+	<view slot="content">订单详情</view>
+</cu-custom>
+
+<view class="topbg  flex-row flex-center">
+
+
+	<view class="h34" style="color:#FFFFFF">订单已生成</view>
+	<view class="flex-1"></view>
+	<view class="h3" style="color:#ffffff">${{orderinfo.amount}}</view>
+	<view class="h6 margin-left-10" style="color:#ffffff">{{orderinfo.orderstatus_name}}</view>
+</view>
+
+<view class="bg-white padding-30 flex-row flex-center">
+
+	<view wx:if="{{orderinfo.ordertype=='A'}}" class="h34" style="color:#161616">{{orderinfo.houseproject_name}}</view>
+
+	<view wx:if="{{orderinfo.ordertype=='B'}}" class="h34" style="color:#161616">{{orderinfo.immigrantproject_name}}</view>
+	<view class="flex-1"></view>
+	<view class="h6" style="color:#A0A0A0">订单号 {{orderinfo.orderno}}</view>
+
+</view>
+
+
+<view wx:if="{{orderinfo.ordertype=='A'}}" class="padding-30 bg-white " style="margin-top:2rpx">
+
+	<view class="flex-row flex-center">
+		<view class="h6" style="color:#777777">户型</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{fanchaninfo.huxin_name}}</view>
+	</view>
+
+
+
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">面积</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{fanchaninfo.mianji}} </view>
+	</view>
+
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">售价</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{fanchaninfo.shoujia}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">房间号</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{fanchaninfo.fanjianhao}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">房产编号</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{fanchaninfo.number}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">客户姓名</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.kehu_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">客户手机号</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.kehu_shouji}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">销售顾问</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.member_nickName}}</view>
+	</view>
+
+
+</view>
+
+<view wx:if="{{orderinfo.ordertype=='B'}}" class="padding-30 bg-white " style="margin-top:2rpx">
+
+	<view class="flex-row flex-center">
+		<view class="h6" style="color:#777777">移民类型</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{yimininfo.yiminleixin}}</view>
+	</view>
+
+
+
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">身份类型</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{yimininfo.shenfenleixin}} </view>
+	</view>
+
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">移民费用</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{yimininfo.yiminfeiyon}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">办理周期</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{yimininfo.banlizhouqi}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">移民国家</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{yimininfo.country_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">客户姓名</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.kehu_name}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">客户手机号</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.kehu_shouji}}</view>
+	</view>
+
+	<view class="flex-row flex-center margin-top-20">
+		<view class="h6" style="color:#777777">销售顾问</view>
+		<view class="flex-1"></view>
+		<view class="h6" style="color:#161616">{{orderinfo.member_nickName}}</view>
+	</view>
+
+
+</view>
+<!-- 
+<view class="padding-30 bg-white margin-top-10 flex-row flex-center">
+
+	<view class="h6" style="#595959">资料状态</view>
+	<view class="flex-1"></view>
+	<view class="h6" style="color:#4867AA">未完善</view>
+</view> -->
+
+<view style="height:150rpx"></view>
+<view wx:if="{{orderinfo.orderstatus=='A'}}" class="bom bg-white ">
+	<view class="flex-row flex-center padding-20">
+
+		<view class="h6" style="color:#000000">定金:</view>
+		<view class="h6 margin-left-20" style="color:#FF0027">￥</view>
+		<view class="f-36" style="color:#FF3333">{{orderinfo.amount}}</view>
+		<view class="flex-1"></view>
+
+		<view class="queren1" bindtap="quxiaodindan">取消订单</view>
+		<view class="queren margin-left-10" bindtap="zhifudinjin">支付定金</view>
+
+	</view>
+
+</view>
