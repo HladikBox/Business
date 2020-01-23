@@ -181,7 +181,7 @@
 	<view class="flex-row flex-center padding-40">
 		<view class="h34 txt-bold" style="color:#161616">{{item.name}}</view>
 		<view class="flex-1"></view>
-		<view data-id="{{item.country_id}}" data-name="{{item.csname}}"  bindtap="fanchanchanpin" class="h6" style="color:#777777">更多</view>
+		<view data-id="{{item.id}}" data-name="{{item.name}}"  bindtap="fanchanchanpin" class="h6" style="color:#777777">更多</view>
 		<image class="youimg margin-left-5" src="{{uploadpath}}resource/{{res.you}}"></image>
 	</view>
 

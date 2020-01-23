@@ -76,33 +76,7 @@ class Content extends AppBase {
     this.getfanchan();
     this.getyimin();
     this.getbaoxian();
-    this.getjiagequjian();
     this.getfanxin();
-
-  }
-  getfanxin() {
-
-    var api = new InstApi();
-    api.getfanxin({}, (fanxin) => {
-
-      this.Base.setMyData({
-        fanxin
-      })
-    })
-
-
-  }
-  getjiagequjian() {
-
-    var api = new InstApi();
-    api.getjiagequjian({}, (jiagequjianlist) => {
-
-      this.Base.setMyData({
-        jiagequjianlist
-      })
-
-    })
-
 
   }
   //查询移民列表的接口
@@ -112,53 +86,10 @@ class Content extends AppBase {
     console.log("牛逼plua");
     var api = new ProjectApi;
     var json = {};
-    var quanqiu1 = this.Base.getMyData().quanqiu1;
-    var suohuoshenfen = this.Base.getMyData().suohuoshenfen;
-    var yiminleibie = this.Base.getMyData().yiminleibie;
-    var paixu1 = this.Base.getMyData().paixu1;
-
-
-    var canshu = wx.getStorageSync('yimin')
-    console.log(canshu);
-    console.log("牛逼plua");
-    if (canshu != '') {
-      quanqiu1 = canshu
-      console.log("牛逼了");
-      this.Base.setMyData({
-        quanqiu1
-      });
-
-      wx.removeStorageSync('yimin')
-    }
-
-
-    if (quanqiu1 != null) {
-      json.country_id = quanqiu1.country_id
-    }
-
-
-  
-    if (suohuoshenfen != null) {
-      json.shenfenleixin = suohuoshenfen.shenfenleixin
-    }
-    if (yiminleibie != null) {
-      json.yiminleixin = yiminleibie.yiminleixin
-    }
-    if (paixu1 != null) {
-      json.orderby = paixu1.orderby
-    }
-    api.getyimin(json, (yiminlist) => {
+    
+    api.list({ projecttype: "B" }, (yiminlist) => {
       //拼接房型字符串
-      yiminlist.map((item) => {
-        var fanxintext = '';
-        item.biaoqian.map((item1, idx) => {
-          fanxintext += item1.name;
-          if (idx + 1 != item.biaoqian.length) {
-            fanxintext += '/';
-          }
-        })
-        item.fanxintext = fanxintext;
-      })
+      
       this.Base.setMyData({
 
         yiminlist: yiminlist
@@ -168,75 +99,13 @@ class Content extends AppBase {
   }
   //查询海外保险的接口
   getbaoxian() {
-    var canshu = wx.getStorageSync('baoxian')
-    console.log(canshu);
-    console.log("牛逼plua");
     var api = new ProjectApi;
-    var json = {};
-    var quanqiu2 = this.Base.getMyData().quanqiu2;
-    var baoxiangonsi = this.Base.getMyData().baoxiangonsi;
-    var baoxianleixin = this.Base.getMyData().baoxianleixin;
-    var baoxianpaixu = this.Base.getMyData().baoxianpaixu;
 
 
-    var canshu = wx.getStorageSync('baoxian')
-    console.log(canshu);
-    console.log("牛逼plua");
-    if (canshu != '') {
-      quanqiu2 = canshu
-      console.log("牛逼了");
-      this.Base.setMyData({
-        quanqiu2
-      });
-
-      wx.removeStorageSync('baoxian')
-    }
-
-    console.log(quanqiu2);
-    if (quanqiu2 != null) {
-      json.baoxianguojia_id = quanqiu2.baoxianguojia_id
-    }
-
-
-
-    console.log(baoxiangonsi);
-    if (baoxiangonsi != null) {
-      json.baoxiangonsi_id = baoxiangonsi.baoxiangonsi_id
-    }
-    console.log(baoxianleixin);
-    if (baoxianleixin != null) {
-      json.baoxianleixin_id = baoxianleixin.baoxianleixin_id
-    }
-    if (baoxianpaixu != null) {
-      json.orderby = baoxianpaixu.orderby
-
-      var canshu = wx.getStorageSync('chanpin')
-
-      console.log(canshu);
-      if (canshu != '') {
-
-        console.log("牛逼了");
-
-        wx.removeStorageSync('chanpin')
-      }
-
-
-    }
     var api = new ProjectApi;
-    api.getbaoxian(json, (baoxianlist) => {
+    api.list({projecttype:"C"}, (baoxianlist) => {
       //拼接房型字符串
-      baoxianlist.map((item) => {
-        var fanxintext = '';
-        item.biaoqian.map((item1, idx) => {
-          fanxintext += item1.name;
-          if (idx + 1 != item.biaoqian.length) {
-            fanxintext += '/';
-          }
-        })
-        item.fanxintext = fanxintext;
-      })
       this.Base.setMyData({
-
         baoxianlist: baoxianlist
       })
 
@@ -272,59 +141,9 @@ class Content extends AppBase {
 
 
     var api = new ProjectApi;
-    var json = {};
-    var quanqiu = this.Base.getMyData().quanqiu;
-    var zonjia = this.Base.getMyData().zonjia;
-    var leixin = this.Base.getMyData().leixin;
-    var paixu = this.Base.getMyData().paixu;
-    console.log(1313213);
-
-
-    var canshu = wx.getStorageSync('fanchan')
-
-    console.log(canshu);
-    if (canshu != '') {
-      quanqiu = canshu
-      console.log("牛逼了");
-      this.Base.setMyData({
-        quanqiu
-      });
-      wx.removeStorageSync('fanchan')
-    }
-
-
-    if (canshu != '') {
-      json.country_id = quanqiu.country_id
-    }
-
-
-    if (quanqiu != null && canshu == '') {
-      json.country_id = quanqiu.country_id,
-        json.city_id = quanqiu.city_id
-    }
-
-    if (zonjia != null) {
-      json.pricesection_id = zonjia.pricesection_id
-    }
-    if (leixin != null) {
-      json.iasd = leixin.housetype
-    }
-    if (paixu != null) {
-      json.orderby = paixu.orderby
-    }
-
-    api.gethouselist(json, (houselist) => {
+    api.list({projecttype:"A"}, (houselist) => {
       //拼接房型字符串
-      houselist.map((item) => {
-        var fanxintext = '';
-        item.fanxin.map((item1, idx) => {
-          fanxintext += item1.name;
-          if (idx + 1 != item.fanxin.length) {
-            fanxintext += '/';
-          }
-        })
-        item.fanxintext = fanxintext;
-      })
+      
 
       this.Base.setMyData({
 
@@ -446,11 +265,11 @@ class Content extends AppBase {
 
 
   }
-  baoxianinfo(e) {
+  projectinfo(e) {
     console.log(e);
 
     wx.navigateTo({
-      url: '/pages/baoxianinfo/baoxianinfo?id=' + e.currentTarget.dataset.id,
+      url: '/pages/projectinfo/projectinfo?id=' + e.currentTarget.dataset.id,
     })
 
 
@@ -1532,6 +1351,7 @@ body.xzbxlx=content.xzbxlx;
 body.baoxianshanchu = content.baoxianshanchu;
 body.baoxianguojiaquedin = content.baoxianguojiaquedin;
 body.baoxiangonsiquedin=content.baoxiangonsiquedin;
-body.baoxianleixinquedin=content.baoxianleixinquedin;
-body.baoxianpaixu=content.baoxianpaixu;
+body.baoxianleixinquedin = content.baoxianleixinquedin; 
+body.baoxianpaixu = content.baoxianpaixu;
+body.projectinfo = content.projectinfo;
 Page(body)

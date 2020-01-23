@@ -181,7 +181,7 @@ class Content extends AppBase {
   var json={country_id:id,name:name};
   console.log(json);
   
-  wx.setStorageSync('fanchan', json)
+  wx.setStorageSync('productstore', json)
   wx.switchTab({
     url: '/pages/product/product'
   })

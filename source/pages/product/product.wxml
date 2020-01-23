@@ -30,7 +30,7 @@
 </view>
 <!-- 开发商介绍 -->
 <view class=" margin-left-40 flex-row flex-center">
-	<view class="h34 txt-bold" style="color:#161616">开发商介绍</view>
+	<view class="h34 txt-bold" style="color:#161616">合作方</view>
 </view>
 <scroll-view scroll-x class="bg-white nav padding-20" scroll-with-animation scroll-left="{{scrollLeft}}">
 	<view>
@@ -39,13 +39,13 @@
 </scroll-view>
 <!-- 产品列表 -->
 <view class=" margin-left-40 flex-row flex-bottom">
-	<view bindtap="switchindex" id='1' class=" {{index==1?'h34':'h5'}} txt-bold" style="color:{{index==1?'#161616':'#595959'}}">海外房产</view>
-	<view bindtap="switchindex" id='2' class=" {{index==2?'h34':'h5'}} txt-bold margin-left-20" style="color:{{index==2?'#161616':'#595959'}}">海外移民</view>
-	<view bindtap="switchindex" id='3' class=" {{index==3?'h34':'h5'}} txt-bold margin-left-20" style="color:{{index==3?'#161616':'#595959'}}">海外保险</view>
+	<view bindtap="switchindex" id='1' class=" {{index==1?'h34':'h5'}} txt-bold" style="color:{{index==1?'#161616':'#595959'}}">项目前期</view>
+	<view bindtap="switchindex" id='2' class=" {{index==2?'h34':'h5'}} txt-bold margin-left-20" style="color:{{index==2?'#161616':'#595959'}}">项目中</view>
+	<view bindtap="switchindex" id='3' class=" {{index==3?'h34':'h5'}} txt-bold margin-left-20" style="color:{{index==3?'#161616':'#595959'}}">项目后期</view>
 </view>
 <!-- 房产列表 -->
 <view wx:if="{{index==1}}">
-	<view class="flex-row flex-center padding-20 margin-top-20 border-bottom">
+	<!-- <view class="flex-row flex-center padding-20 margin-top-20 border-bottom">
 		<view bindtap="qqxz" class="flex-1 flex-row flex-center">
 			<view class="flex-1"></view>
 			<view class="f-22" style="color:#595959">全球</view>
@@ -71,113 +71,31 @@
 			<image class="icon-10 margin-left-5" src="{{uploadpath}}resource/{{res.shaixuan}}"></image>
 			<view class="flex-1"></view>
 		</view>
-	</view>
-	<view wx:if="{{quanqiu!=null||zonjia!=null||leixin!=null||paixu!=null}}" class="xzbq padding-20 flex-row flex-center ">
+	</view> -->
+	
 
-		<view bindtap="fanchanshanchu" data-id="1" wx:if="{{quanqiu!=null}}" class="padding-20 h7 lable margin-left-20">{{quanqiu.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="fanchanshanchu" data-id="2" wx:if="{{zonjia!=null}}" class="padding-20 h7 lable margin-left-20">{{zonjia.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="fanchanshanchu" data-id="3" wx:if="{{leixin!=null}}" class="padding-20 h7 lable margin-left-20">{{leixin.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="fanchanshanchu" data-id="4" wx:if="{{paixu!=null}}" class="padding-20 h7 lable margin-left-20">{{paixu.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-
-	</view>
-
-	<!-- 全球选择 -->
-	<view wx:if="{{qqxz==true}}" class="flex-row  qqxz">
-		<scroll-view scroll-y style="width:208rpx">
-
-			<view bindtap="xzguojia" wx:for="{{swiperList}}" wx:key='k' data-id="{{item.id}}" class=" {{xzguojia==item.id?'xzguojia':'guojia'}}">{{item.name}}</view>
-		</scroll-view>
-		<scroll-view scroll-y class="flex-1">
-			<view wx:if="{{xzguojia!=undefined}}" bindtap="xzchenshi" data-id='0' class=" {{xzchenshi==0?'xzchenshi':'chengshi'}}">全国</view>
-			<view bindtap="xzchenshi" wx:for="{{chenshilist}}" wx:key='k' data-id="{{item.id}}"
-			 class=" {{xzchenshi==item.id?'xzchenshi':'chengshi'}}">{{item.name}}</view>
-		</scroll-view>
-	</view>
-	<!-- 价格选择 -->
-	<view wx:if="{{zjxz==true}}" class="zjxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">总价区间</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{jiagequjianlist}}" wx:key='k' bindtap="xzqj" data-id="{{item.id}}" class="{{item.id==xzqj?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view class="flex-row flex-center  margin-left-40">
-				<input class="sriput" placeholder="最低价格" placeholder-class="jgys"></input>
-				<view style="color:#CCCCCC;margin-left:3rpx;margin-right:3rpx">-</view>
-				<input class="sriput" placeholder="最高价格" placeholder-class="jgys"></input>
-				<view class="margin-left-20 f-22" style="color:#252F43">万</view>
-			</view>
-			<view class="flex-1"></view>
-			<view bindtap="jiagequedin" class=" jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 房型选择 -->
-	<view wx:if="{{fxxz==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">物业类型</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{fanxin}}" wx:key='k' bindtap="xzfx" data-id="{{item.id}}" class="{{item.id==xzfx?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="fanxinquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="fanxinquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 房产排序 -->
-	<view wx:if="{{fcpx==true}}" class="fcpx">
-		<view bindtap="fanchanpaixu" data-id="0" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">默认</view>
-		<view bindtap="fanchanpaixu" data-id="1" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">最新</view>
-		<view bindtap="fanchanpaixu" data-id="2" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">总价从低到高</view>
-		<view bindtap="fanchanpaixu" data-id="3" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">总价从高到低</view>
-		<view bindtap="fanchanpaixu" data-id="4" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">单价从高到低</view>
-		<view bindtap="fanchanpaixu" data-id="5" class="margin-left-40 margin-top-20 margin-bottom-10  f-22" style="color:#595959">单价从低到高</view>
-	</view>
 	<view catchtouchmove='true' bindtap="guanbi" wx:if="{{shaixuan==true}}" class="balckbg"></view>
-	<view wx:for="{{houselist}}" data-id="{{item.id}}" wx:key='k' bindtap="productinfo" class="padding-40 divx  flex-row flex-center">
+	<view wx:for="{{houselist}}" data-id="{{item.id}}" wx:key='k' bindtap="projectinfo" class="padding-40 divx  flex-row flex-center">
 		<view>
-			<image class="icon-100" src="{{uploadpath}}houseproject/{{item.cover}}"></image>
-			<view class="chenshi">{{item.country_name}}·{{item.city_name}}</view>
+			<image class="icon-100" src="{{uploadpath}}project/{{item.cover}}"></image>
+			<view class="chenshi">{{item.baoxianguojia_name}}</view>
 		</view>
 		<view class="flex-1">
 			<view class=" flex-1 flex-row flex-center margin-left-20">
 				<view>
-					<view class="h5" style="color:#161616">
+					<view class="h5 chaochu" style="color:#161616;width:250rpx">
 						{{item.name}}
 					</view>
 					<view class="h7" style="color:#595959">
-						{{item.housewear}} | {{item.areacovered}}
+						{{item.baozhannianxian}} | {{item.baoxianleixin}}
 					</view>
 				</view>
 				<view class="flex-1"></view>
 				<view class="txt-bold" style="color:#FF4466">
 
-					￥{{item.pricesection_num}}
-
-
-
-
-
-
-
-					<text class="h7" style="color:#FF4466">万起</text>
+					￥{{item.price}}
+					<text class="h7" style="color:#FF4466">起</text>
 				</view>
-			</view>
-			<view class="flex-row flex-1 flex-center margin-top-15  margin-left-20">
-				<view class="tag">近一年房价均涨{{item.priceincrease}}%</view>
-				<view class="flex-1"></view>
-				<view class="tag">年均租金{{item.annualrent}}%</view>
-				<view class="flex-1"></view>
-				<view class="tag">首付比例{{item.downpayments}}%</view>
 			</view>
 			<view class="flex-row flex-1 flex-center margin-top-15  margin-left-20">
 				<view class="h7" style="color:#777777">{{item.fanxintext}}</view>
@@ -195,117 +113,17 @@
 </view>
 <!-- 移民列表 -->
 <view wx:if="{{index==2}}">
-	<view class="flex-row flex-center padding-20 margin-top-20 border-bottom">
-		<view bindtap="qqxz1" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">全球</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-		<view bindtap="shsf" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">所获身份</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-		<view bindtap="ymlb" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">移民类别</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-
-		<view bindtap="ympx" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">排序</view>
-			<image class="icon-10 margin-left-5" src="{{uploadpath}}resource/{{res.shaixuan}}"></image>
-			<view class="flex-1"></view>
-		</view>
-	</view>
-	<view wx:if="{{quanqiu1!=null||suohuoshenfen!=null||yiminleibie!=null||paixu1!=null}}" class="xzbq padding-20 flex-row flex-center ">
-
-		<view bindtap="yiminshanchu" data-id="1" wx:if="{{quanqiu1!=null}}" class="padding-20 h7 lable margin-left-20">{{quanqiu1.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="yiminshanchu" data-id="2" wx:if="{{suohuoshenfen!=null}}" class="padding-20 h7 lable margin-left-20">{{suohuoshenfen.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="yiminshanchu" data-id="3" wx:if="{{yiminleibie!=null}}" class="padding-20 h7 lable margin-left-20">{{yiminleibie.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="yiminshanchu" data-id="4" wx:if="{{paixu1!=null}}" class="padding-20 h7 lable margin-left-20">{{paixu1.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-
-	</view>
-	<!-- 全球选择 -->
-	<!-- <view wx:if="{{qqxz1==true}}" class="flex-row  qqxz">
-		<scroll-view scroll-y style="width:208rpx">
-
-			<view bindtap="xzguojia1" wx:for="{{swiperList}}" wx:key='k' data-id="{{item.id}}" class=" {{xzguojia1==item.id?'xzguojia':'guojia'}}">{{item.name}}</view>
-		</scroll-view>
-		<scroll-view scroll-y class="flex-1">
-			<view wx:if="{{xzguojia1!=undefined}}" bindtap="xzchenshi1" data-id='0' class=" {{xzchenshi1==0?'xzchenshi':'chengshi'}}">全国</view>
-			<view bindtap="xzchenshi1" wx:for="{{chenshilist}}" wx:key='k' data-id="{{item.id}}" class=" {{xzchenshi1==item.id?'xzchenshi':'chengshi'}}">{{item.name}}</view>
-		</scroll-view>
-	</view> -->
+	
 
 
 	<view wx:if="{{qqxz1==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">全球</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{swiperList}}" wx:key='k' bindtap="xzguojia1" data-id="{{item.id}}" class="{{item.id==xzymgj?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="xzchenshi1" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="xzchenshi1" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 所获身份 -->
-	<view wx:if="{{shsf==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">所获身份</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-
-			<view bindtap="xzsf" data-id="1" class="{{1==xzsf?'jiage1':'jiage'}}">永久居民</view>
-			<view bindtap="xzsf" data-id="2" class="{{2==xzsf?'jiage1':'jiage'}}">居留签证</view>
-			<view bindtap="xzsf" data-id="3" class="{{3==xzsf?'jiage1':'jiage'}}">工作签证</view>
-			<view bindtap="xzsf" data-id="4" class="{{4==xzsf?'jiage1':'jiage'}}">入籍政策</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="shenfenquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="shenfenquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 移民类别 -->
-	<view wx:if="{{ymlb==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">移民类别</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-
-			<view bindtap="xzym" data-id="1" class="{{1==xzym?'jiage1':'jiage'}}">投资移民</view>
-			<view bindtap="xzym" data-id="2" class="{{2==xzym?'jiage1':'jiage'}}">商业移民</view>
-			<view bindtap="xzym" data-id="3" class="{{3==xzym?'jiage1':'jiage'}}">技术移民</view>
-			<view bindtap="xzym" data-id="4" class="{{4==xzym?'jiage1':'jiage'}}">签证</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="yiminquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="yiminquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 移民排序 -->
-	<view wx:if="{{ympx==true}}" class="fcpx">
-		<view bindtap="yiminpaixu" data-id="0" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">佣金比例从低到高</view>
-		<view bindtap="yiminpaixu" data-id="1" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">佣金比例从高到低</view>
-
+		
 	</view>
 	<view catchtouchmove='true' bindtap="guanbi1" wx:if="{{shaixuan1==true}}" class="balckbg"></view>
-	<view wx:for="{{yiminlist}}" data-id="{{item.id}}" wx:key='k' bindtap="yimininfo" class="padding-40 divx  flex-row flex-center">
+	<view wx:for="{{yiminlist}}" data-id="{{item.id}}" wx:key='k' bindtap="projectinfo" class="padding-40 divx  flex-row flex-center">
 		<view>
-			<image class="icon-100" src="{{uploadpath}}immigrantproject/{{item.cover}}"></image>
-			<view class="chenshi">{{item.country_name}}</view>
+			<image class="icon-100" src="{{uploadpath}}project/{{item.cover}}"></image>
+			<view class="chenshi">{{item.baoxianguojia_name}}</view>
 		</view>
 		<view class="flex-1">
 			<view class=" flex-1 flex-row flex-center margin-left-20">
@@ -314,20 +132,13 @@
 						{{item.name}}
 					</view>
 					<view class="h7" style="color:#595959">
-						{{item.yiminleixin}} | {{item.shenfenleixin}}
+						{{item.baozhannianxian}} | {{item.baoxianleixin}}
 					</view>
 				</view>
 				<view class="flex-1"></view>
 				<view class="txt-bold" style="color:#FF4466">
 
-					￥{{item.yiminfeiyon}}
-
-
-
-
-
-
-
+					￥{{item.price}}
 					<text class="h7" style="color:#FF4466">起</text>
 				</view>
 			</view>
@@ -347,110 +158,16 @@
 </view>
 <!-- 保险列表 -->
 <view wx:if="{{index==3}}">
-	<view class="flex-row flex-center padding-20 margin-top-20 border-bottom">
-		<view bindtap="qqxz2" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">全球</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-		<view bindtap="bxgs" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">公司</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-		<view bindtap="bxlx" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">类型</view>
-			<image class="icon-min margin-left-5" src="{{uploadpath}}resource/{{res.bottom}}"></image>
-			<view class="flex-1"></view>
-		</view>
-
-		<view bindtap="bxpx" class="flex-1 flex-row flex-center">
-			<view class="flex-1"></view>
-			<view class="f-22" style="color:#595959">排序</view>
-			<image class="icon-10 margin-left-5" src="{{uploadpath}}resource/{{res.shaixuan}}"></image>
-			<view class="flex-1"></view>
-		</view>
-	</view>
-
-
-	<view wx:if="{{quanqiu2!=null||baoxiangonsi!=null||baoxianleixin!=null||baoxianpaixu!=null}}" class="xzbq padding-20 flex-row flex-center ">
-
-		<view bindtap="baoxianshanchu" data-id="1" wx:if="{{quanqiu2!=null}}" class="padding-20 h7 lable margin-left-20">{{quanqiu2.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="baoxianshanchu" data-id="2" wx:if="{{baoxiangonsi!=null}}" class="padding-20 h7 lable margin-left-20">{{baoxiangonsi.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="baoxianshanchu" data-id="3" wx:if="{{baoxianleixin!=null}}" class="padding-20 h7 lable margin-left-20">{{baoxianleixin.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-		<view bindtap="baoxianshanchu" data-id="4" wx:if="{{baoxianpaixu!=null}}" class="padding-20 h7 lable margin-left-20">{{baoxianpaixu.name}}
-			<image class="cha" src="{{uploadpath}}resource/{{res.cha}}"></image>
-		</view>
-
-
-	</view>
-	<!-- 全球选择 -->
-<view wx:if="{{qqxz2==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">全球</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{baoxianguojialist}}" wx:key='k' bindtap="xzbxgj" data-id="{{item.id}}" class="{{item.id==xzbxgj?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="baoxianguojiaquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="baoxianguojiaquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 保险公司 -->
-	<view wx:if="{{bxgs==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">公司类型</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{baoxiangonsilist}}" wx:key='k' bindtap="xzbxgs" data-id="{{item.id}}" class="{{item.id==xzbxgs?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="baoxiangonsiquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="baoxiangonsiquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 保险类型 -->
-<view wx:if="{{bxlx==true}}" class="fxxz">
-		<view style="color:#252F43" class="f-22 padding-top-20 padding-left-20 margin-left-40">保险类型</view>
-		<view style="margin-top:4rpx;padding-bottom:30rpx" class="flex-row flex-center flex-wrap  bg-white margin-left-40">
-			<view wx:for="{{baoxianleixinlist}}" wx:key='k' bindtap="xzbxlx" data-id="{{item.id}}" class="{{item.id==xzbxlx?'jiage1':'jiage'}}">{{item.name}}</view>
-		</view>
-		<view class="flex-row flex-center" style="border-top:1rpx solid #F7F8FA">
-			<view bindtap="baoxianleixinquedin" data-id='0' class=" flex-1 bxlx">不限类型</view>
-			<view bindtap="baoxianleixinquedin" data-id='1' class=" flex-1 jgqd">确定</view>
-		</view>
-	</view>
-	<!-- 保险排序 -->
-	<view wx:if="{{bxpx==true}}" class="fcpx">
-		<view bindtap="baoxianpaixu" data-id="0" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">佣金比例从低到高</view>
-		<view bindtap="baoxianpaixu" data-id="1" class="margin-left-40 margin-top-20 margin-bottom-10 f-22" style="color:#595959">佣金比例从高到低</view>
-
-	</view>
-	<view catchtouchmove='true' bindtap="guanbi2" wx:if="{{shaixuan2==true}}" class="balckbg"></view>
-
-	<view wx:for="{{baoxianlist}}" data-id="{{item.id}}" wx:key='k' bindtap="baoxianinfo" class="padding-40 divx  flex-row flex-center">
+	
+	<view wx:for="{{baoxianlist}}" data-id="{{item.id}}" wx:key='k' bindtap="projectinfo" class="padding-40 divx  flex-row flex-center">
 		<view>
-			<image class="icon-100" src="{{uploadpath}}insuranceproject/{{item.cover}}"></image>
+			<image class="icon-100" src="{{uploadpath}}project/{{item.cover}}"></image>
 			<view class="chenshi">{{item.baoxianguojia_name}}</view>
 		</view>
 		<view class="flex-1">
 			<view class=" flex-1 flex-row flex-center margin-left-20">
 				<view>
 					<view class="h5 chaochu" style="color:#161616;width:250rpx">
-
-
-
-
-
 						{{item.name}}
 					</view>
 					<view class="h7" style="color:#595959">
@@ -461,13 +178,6 @@
 				<view class="txt-bold" style="color:#FF4466">
 
 					￥{{item.price}}
-
-
-
-
-
-
-
 					<text class="h7" style="color:#FF4466">起</text>
 				</view>
 			</view>

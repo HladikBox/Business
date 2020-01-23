@@ -153,23 +153,11 @@ class Content extends AppBase {
       this.Base.info("请选择预约到访时间");
       return
     }
-    var immigrantproject_id = this.Base.options.immigrantproject_id;
-    var houseproject_id = this.Base.options.houseproject_id;
-    var insuranceproject_id = this.Base.options.insuranceproject_id;
-
-    if (immigrantproject_id == undefined) {
-      immigrantproject_id = -1;
-    }
-    if (houseproject_id == undefined) {
-      houseproject_id = -1;
-    }
-    if (insuranceproject_id == undefined) {
-      insuranceproject_id = -1;
-    }
+    var project_id = this.Base.options.project_id;
 
     var json = {
       name: name, shouji: shouji, shixian: shixian, renshu: renshu, shifou: shifou, shijian: shijian,
-      houseproject_id: houseproject_id, immigrantproject_id: immigrantproject_id, insuranceproject_id: insuranceproject_id
+      project_id
     }
 
 

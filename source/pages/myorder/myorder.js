@@ -52,11 +52,23 @@ class Content extends AppBase {
  console.log(e);
 
   }
-  orderinfo(e)
+  goProject(e)
   {
     var id = e.currentTarget.id;
     wx.navigateTo({
-      url: '/pages/orderinfo/orderinfo?id='+id,
+      url: '/pages/projectinfo/projectinfo?id='+id,
+    })
+  }
+  goKehu(e) {
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/kehuziliao/kehuziliao?id=' + id,
+    })
+  }
+  orderinfo(e) {
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/orderinfo/orderinfo?id=' + id,
     })
   }
 }
@@ -64,6 +76,8 @@ var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
-body.cancel = content.cancel;
-body.orderinfo=content.orderinfo;
+body.cancel = content.cancel; 
+body.orderinfo = content.orderinfo;
+body.goProject = content.goProject;
+body.goKehu = content.goKehu;
 Page(body)

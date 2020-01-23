@@ -1,0 +1,121 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+  <view slot="content">创建项目</view>
+</cu-custom>
+<!-- 房源信息 -->
+<view class="padding-30 h5" style="color:#777777">
+
+  项目类型
+
+</view>
+<view class="padding-30 bg-white" style="border-bottom:1rpx solid #F7F8FA">
+
+  <view class="flex-row flex-center">
+    <view class="txt-bold flex-1" style="color:#161616">{{yimininfo.name}}</view>
+  </view>
+
+
+  <view class=" flex-row flex-center margin-top-20">
+
+    <image class="hxt" src="{{uploadpath}}project/{{yimininfo.cover}}"></image>
+    <view class="flex-1"></view>
+    <view style="width:300rpx">
+
+      <view class=" flex-row ">
+        <view class="h6" style="color:#161616">阶段：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{yimininfo.projecttype_name}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">交付时间：</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{yimininfo.deliverytime}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">对接方式:</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{yimininfo.duijiefangshi}}</view>
+      </view>
+      <view class="margin-top-10 flex-row ">
+        <view class="h6" style="color:#161616">交付成果:</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#161616">{{yimininfo.jiaofuchengguo}}</view>
+      </view>
+
+
+    </view>
+
+  </view>
+</view>
+
+<view class="bg-white ">
+
+  <view class="flex-row flex-center padding-30">
+    <view class="flex-1"></view>
+    <view class="h5" style="color:#000000">预估成交金额：</view>
+    <view class="h5 margin-left-20" style="color:#FF0027">￥</view>
+    <view class="f-36" style="color:#FF3333">{{yimininfo.displayprice}}</view>
+  </view>
+</view>
+<!-- 客源信息 -->
+<view class="padding-30 h5 flex-row" style="color:#777777">
+
+  <view class="flex-1">客源信息</view>
+  <view class="txt-gray h6" bindtap="selectkehu">选择客户</view>
+
+</view>
+
+<view class=" bg-white">
+  <view class=" xbk flex-row flex-center">
+    <view class="h5" style="color:#404858">客户姓名</view>
+    <view class="flex-1"></view>
+    <view class="h5" style="color:#CCCCCC">{{kehuinfo==null?'':kehuinfo.name}}</view>
+  </view>
+  <view class=" xbk flex-row flex-center">
+    <view class="h5" style="color:#404858">客户电话</view>
+    <view class="flex-1"></view>
+    <view class="h5" style="color:#CCCCCC">{{kehuinfo==null?'':kehuinfo.shouji}}</view>
+  </view>
+  <view class=" xbk flex-row flex-center">
+    <view class="h5" style="color:#404858">客户公司职位</view>
+    <view class="flex-1"></view>
+    <view class="h5" style="color:#CCCCCC">{{kehuinfo==null?'':kehuinfo.company}} {{kehuinfo==null?'':kehuinfo.position}}</view>
+  </view>
+</view>
+
+<view class="padding-30 h5 flex-row" style="color:#777777">
+  <view class="flex-1">项目资料</view>
+</view>
+<view class=" bg-white">
+  <view class=" xbk flex-row flex-center">
+    <view class="h5 margin-right" style="color:#404858">项目需求</view>
+    <view class="h5 flex-row" >
+      <textarea class="text-right" bindinput="xuqiu" maxlength="500" style="height:100rpx" placeholder="请填写项目资料"></textarea>
+    </view>
+  </view>
+</view>
+<view class=" bg-white">
+  <view class=" xbk flex-row flex-center">
+    <view class="h5 margin-right" style="color:#404858">相关资料</view>
+    <view class="h5 flex-1" >
+      <view class="flex-row margin-top-5" wx:for="{{ziliao}}" wx:key='k' wx:for-index='idx'>
+        <view class="flex-1"></view>
+        <view class="txt-primary h6">{{item.filename}}</view>
+        <view class="margin-left h6" id='{{idx}}' bindtap="deleteziliao">x</view>
+      </view>
+      <view class="text-right h6 margin-top" bindtap="uploadziliao" wx:if="{{ziliao.length<5}}">上传资料</view>
+    </view>
+  </view>
+</view>
+
+<view style="height:150rpx"></view>
+<view class="bom bg-white ">
+  <view class="flex-row flex-center padding-20">
+
+    <view class="flex-1"></view>
+
+    <view class="queren" bindtap="create">创建项目</view>
+    <view class="flex-1"></view>
+
+  </view>
+
+</view>

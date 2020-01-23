@@ -3,7 +3,7 @@
 		<navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
 			<text class='cuIcon-back' style="color:#ffffff"></text>
 		</navigator>
-		<view class='content' style='top:{{StatusBar}}px;color:#ffffff'>房产详情</view>
+		<view class='content' style='top:{{StatusBar}}px;color:#ffffff'>专题详情</view>
 	</view>
 </view>
 

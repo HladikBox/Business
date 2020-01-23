@@ -13,7 +13,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    //options.id=5;
+    //options.id=3;
     super.onLoad(options);
   }
   onMyShow() {
@@ -104,11 +104,33 @@ class Content extends AppBase {
     })
 
   }
+  goProject(e) {
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/projectinfo/projectinfo?id=' + id,
+    })
+  }
+  goKehu(e) {
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/kehuziliao/kehuziliao?id=' + id,
+    })
+  }
+  lookfile(e){
+    console.log(e);
+    var uploadpath=this.Base.getMyData().uploadpath;
+    var file=e.currentTarget.dataset.file;
+    var url=uploadpath+"project/"+file;
+    this.Base.download(url, ()=>{}, true);
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad; 
 body.onMyShow = content.onMyShow;
-body.quxiaodindan=content.quxiaodindan;
-body.zhifudinjin=content.zhifudinjin;
+body.quxiaodindan = content.quxiaodindan; 
+body.zhifudinjin = content.zhifudinjin;
+body.goProject = content.goProject;
+body.goKehu = content.goKehu;
+body.lookfile = content.lookfile;
 Page(body)

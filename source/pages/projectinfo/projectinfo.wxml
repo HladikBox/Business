@@ -1,0 +1,453 @@
+<view class='cu-custom'>
+  <view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back' style="color:#ffffff"></text>
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;color:#ffffff'>房产详情</view>
+  </view>
+</view>
+
+
+
+
+<scroll-view scroll-y="{{true}}" style="height: calc( 100vh - 142rpx )">
+<!-- 顶部轮播 -->
+<swiper bindchange="qiehuanlunbo" autoplay='false' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:500rpx;'>
+  <swiper-item wx:for="{{houseinfo.lunbo}}" wx:key="k">
+    <image src='{{uploadpath}}houselunbo/{{item.photo}}' style="width:100vw;height:500rpx; " bindtap='bannerGo' id="{{item.id}}" class=''></image>
+  </swiper-item>
+</swiper>
+
+<view class="index">{{indexcurrent+1}}/{{houseinfo.lunbo.length}}</view>
+
+<!-- 酒店介绍 -->
+
+<view class="padding-40">
+
+  <view class="flex-row flex-center">
+
+    <view class="flex-4">
+      <view class="txt-bold" style="color:#161616">{{houseinfo.name}}</view>
+      <view class="h6 margin-top-10" style="color:#A0A0A0;">{{houseinfo.introduction}}</view>
+    </view>
+    <!-- <view class="flex-1"></view> -->
+    <view class="flex-row  flex-center dinweiblock flex-1">
+
+      <view>
+        <image class="dinweiicon" src="{{uploadpath}}resource/{{res.dinwei}}"></image>
+      </view>
+      <view class="f-22 margin-left-10 flex-row flex-column " style="color:#595959">
+        <view class="f-22">{{houseinfo.country_name}}</view>
+        <view class="f-22">{{houseinfo.city_name}}</view>
+      </view>
+
+
+    </view>
+
+  </view>
+  
+
+</view>
+
+
+<!-- 优惠信息 -->
+
+<view class="padding-40" style="padding-top:0rpx;" wx:if='{{houseinfo.changpinyh=="是"}}'>
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">优惠信息</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+  <view style="height:28rpx;"></view>
+  <view style="width:688rpx;height:144rpx;background:#FDF7F7;padding-left:48rpx;border-radius:8rpx;" class="flex-row flex-center">
+    <view style="height:32rpx;"></view>
+    <view>
+      <view class="flex-row flex-center">
+        <view class="h26" style="color:#161616;">{{houseinfo.youhuicontent}}</view>
+        <view class="h26" style="color:#FF0027;margin: 0 8rpx;">{{houseinfo.youhzhek}}</view>
+        <!-- <view class="h26" style="color:#161616;">折</view> -->
+      </view>
+      <view style="height:12rpx;"></view>
+      <view class="f-22" style="color:#595959;">{{houseinfo.youhuitime}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="youhui">
+      <image src="{{uploadpath}}resource/{{res.youhui}}" class="icon-21"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 佣金详情 -->
+
+<view class="padding-40" style="padding-top:0rpx;">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">佣金详情</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+  <view class="flex-row flex-center num1block margin-top">
+
+
+    <view class="flex-1 text-center ">
+      <view class="flex-row flex-bottom ">
+        <view class="flex-1"></view>
+        <view class="f-36" style="color:#D8B66E">{{houseinfo.commissionrate}}</view>
+        <view class="h6" style="color:#D8B66E">%</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="h6  margin-top-5" style="color:#A0A0A0">佣金比例</view>
+    </view>
+    <view class="xian"></view>
+    <view class="flex-1 text-center ">
+      <view class="flex-row flex-bottom ">
+        <view class="flex-1"></view>
+        <view class="f-36" style="color:#D8B66E">{{houseinfo.commissionincome}}</view>
+        <view class="h6" style="color:#D8B66E">万起</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="h6 margin-top-5" style="color:#A0A0A0">佣金收入</view>
+    </view>
+    <view class="xian"></view>
+    <view class="flex-1 text-center ">
+      <view class="flex-row flex-bottom ">
+        <view class="flex-1"></view>
+        <view class="f-36" style="color:#D8B66E">{{houseinfo.settlementdate}}</view>
+        <view class="h6" style="color:#D8B66E">天</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="h6  margin-top-5" style="color:#A0A0A0">结佣时间</view>
+    </view>
+
+
+  </view>
+
+  <view class="margin-top-20 h6 text-center" style="color:#777777">佣金说明</view>
+
+  <view wx:if="{{houseinfo.id!=undefined}}" class="flex-row flex-center">
+
+    <view class="flex-1 centered">
+      <canvas-ring class="h7" title="占佣金总额" Number="5" canvasWidth="92" lineColor="#83A7CF" valueColor="#5394DB" id="canvasRing" value="{{houseinfo.ziyoukehu}}"></canvas-ring>
+
+    </view>
+    <view class="flex-1 centered">
+      <canvas-ring class="h7" title="占佣金总额" Number="5" canvasWidth="92" lineColor="#83A7CF" valueColor="#5394DB" id="canvasRing1" value="{{houseinfo.pintaikehu}}"></canvas-ring>
+    </view>
+
+    <view class="flex-1 centered">
+      <canvas-ring class="h7" title="占佣金总额" Number="5" canvasWidth="92" lineColor="#83A7CF" valueColor="#5394DB" id="canvasRing2" value="{{houseinfo.tigonkehu}}"></canvas-ring>
+    </view>
+
+
+
+  </view>
+
+  <view class="flex-row flex-center">
+
+    <view class="flex-1 h7 text-center" style="color:#A0A0A0"> 自有客户成交</view>
+    <view class="flex-1 h7 text-center" style="color:#A0A0A0">平台客户成交</view>
+    <view class="flex-1 h7 text-center" style="color:#A0A0A0">提供客户成交</view>
+  </view>
+
+  <view style="height:52rpx;" wx:if='{{houseinfo.yognjinjl=="是"}}'></view>
+  <view style="width:688rpx;height:144rpx;background:#FFF7F4;padding-left:48rpx;border-radius:8rpx;" class="flex-row flex-center" wx:if='{{houseinfo.yognjinjl=="是"}}'>
+    <view style="height:32rpx;"></view>
+    <view>
+      <view class="flex-row flex-center">
+        <view class="h26" style="color:#161616;">{{houseinfo.yongjincontent}}</view>
+        <view class="h26" style="color:#FF0027;margin: 0 8rpx;">{{houseinfo.yjjiangli}}</view>
+        <!-- <view class="h26" style="color:#161616;">现金</view> -->
+      </view>
+      <view style="height:12rpx;"></view>
+      <view class="f-22" style="color:#595959;">{{houseinfo.yongjintime}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="youhui">
+      <image src="{{uploadpath}}resource/{{res.jiangli}}" class="icon-1530"></image>
+    </view>
+  </view>
+
+</view>
+<!-- 项目介绍 -->
+
+<view class="padding-40" style="padding-top:0rpx;">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">项目介绍</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+
+  <import src="../../wxParse/wxParse.wxml" />
+
+  <view class='nostyle h6  padding-top-20' style="color:#777D89; opacity: 0.7;font-size:24rpx; word-break: normal;background: #ffffff;">
+    <template  is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <!-- <view class="margin-top-20 h6" style="color:#777D89">{{houseinfo.projectintroduction}}</view> -->
+</view>
+
+<!-- 项目详情 -->
+
+<view class="padding-40" style="padding-top:0rpx;">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">项目详情</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+  
+  <view class='nostyle h6  padding-top-20' style="color:#777D89; opacity: 0.7;font-size:24rpx; word-break: normal;background: #ffffff;">
+    <template  is="wxParse" data="{{wxParseData:detail.nodes}}" />
+  </view>
+
+</view>
+<!-- 项目卖点 -->
+<view class="padding-40" style="padding-top:0rpx;">
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">项目卖点</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+
+  <text class="margin-top-20 h6" style="color:#8898B9">
+	{{houseinfo.sellingpoint}}
+	</text>
+
+</view>
+
+<!-- 购房流程 -->
+<view class="padding-40" style="padding-top:0rpx">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">购房流程</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+  <view class="height-40"></view>
+  <view wx:if="{{!zhankai}}" wx:for="{{liuchen}}" wx:key='k' wx:for-index="idx">
+
+    <view class="flex-row flex-center">
+
+
+      <image class="liuchenimg" src="{{uploadpath}}purchaseprocessterm/{{item.photo}}"></image>
+
+      <view class="margin-left-20">
+
+        <view class="h26" style="color:#161616">{{item.name}}</view>
+        <view class="h7 chaochu margin-top-5" style="color:#A0A0A0;width:500rpx;">{{item.content}}</view>
+
+      </view>
+
+    </view>
+
+    <view wx:if="{{liuchen.length!=idx+1}}" class="xian3"></view>
+
+  </view>
+
+
+  <view wx:if="{{zhankai}}" wx:for="{{houseinfo.liuchen}}" wx:key='k' wx:for-index="idx">
+
+    <view class="flex-row flex-center">
+
+
+      <image class="liuchenimg" src="{{uploadpath}}purchaseprocessterm/{{item.photo}}"></image>
+
+      <view class="margin-left-20">
+
+        <view class="h26" style="color:#161616">{{item.name}}</view>
+        <view class="h7  margin-top-5" style="color:#A0A0A0;width:500rpx;">{{item.content}}</view>
+
+      </view>
+
+    </view>
+
+    <view style="height:80rpx"></view>
+
+  </view>
+
+  <view wx:if="{{!zhankai}}" class="flex-row flex-center margin-top-20">
+    <view class="flex-1"></view>
+
+    <view bindtap="zhankai" class="h6" style="color:#88CCE2">展开查看全部流程</view>
+
+    <image class="icon-15" src="{{uploadpath}}resource/{{res.liuchenxia}}"></image>
+    <view class="flex-1"></view>
+
+  </view>
+
+  <view wx:if="{{zhankai}}" class="flex-row flex-center margin-top-20">
+    <view class="flex-1"></view>
+
+    <view bindtap="shouqi" class="h6" style="color:#88CCE2">收起</view>
+
+    <image class="icon-15" src="{{uploadpath}}resource/{{res.liuchenxia}}"></image>
+    <view class="flex-1"></view>
+
+  </view>
+
+</view>
+<!-- 购房费用 -->
+<view class="padding-40" style="padding-top:0rpx">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">费用说明</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+
+  <text class="h6 margin-top-20" style="color:#777777">
+	{{houseinfo.costintroduction}}
+	</text>
+
+</view>
+
+<!-- 项目资料 -->
+
+<view class="padding-40" style="padding-top:0rpx">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">交付成果</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+
+
+  
+  <view class='nostyle h6  padding-top-20' style="color:#777D89; opacity: 0.7;font-size:24rpx; word-break: normal;background: #ffffff;">
+    <template  is="wxParse" data="{{wxParseData:projectinformation.nodes}}" />
+  </view>
+
+</view>
+
+
+
+<!-- 开发商介绍 -->
+<view bindtap="kaifashaninfo" wx:if='{{item.developers_id!="0"}}' id="{{item.developers_id}}" class="padding-40" style="padding-top:0rpx">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">开发商介绍</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+
+  <view class="f-22 margin-top-10" style="color:#777777">
+  {{houseinfo.developers_content}}</view>
+  <image src="{{uploadpath}}developers/{{houseinfo.developers_photo}}" class="chenshijieshao"></image>
+
+</view>
+
+<!-- 广告 -->
+<view class="xian2"></view>
+<view>
+  <image src="{{uploadpath}}resource/{{res.guanggao}}" style="width:100vw;height:240rpx"></image>
+</view>
+<view class="xian2"></view>
+
+<!-- 相关资讯 -->
+<view class="padding-40" style="padding-top:20rpx">
+
+  <view class="flex-row flex-center">
+
+    <view class="h5   txt-bold" style="color:#161616">相关资讯</view>
+    <view class="t1"></view>
+    <view class="flex-1"></view>
+  </view>
+  <view bindtap="gotozixun" data-id="{{item.id}}" wx:for="{{zixunlist}}" wx:key='k' class=" margin-top-20 flex-row flex-center">
+
+    <image class="zixunimg" src="{{uploadpath}}consultation/{{item.cover}}"></image>
+    <view class="margin-left-20">
+
+      <view class="h5" style="color:#161616">{{item.title}}</view>
+      <view class="h7 margin-top-5 chaochu" style="color:#595959;width:400rpx">{{item.content}}</view>
+      <view class="flex-row margin-top-5 flex-center">
+        <view class="biaoqian">#{{item.consultationtype_name}}</view>
+        <view class="h7 margin-left-40" style="color:#A0A0A0">{{item.publictime_dateformat}} </view>
+      </view>
+
+
+
+    </view>
+
+
+  </view>
+
+</view>
+</scroll-view>
+<!-- 底部 -->
+<view style="height:150rpx"></view>
+<view class="bom">
+  <view class="flex-row ">
+
+    <view class="flex-row flex-center margin-top-20 " style="width:500rpx">
+
+
+      <view class="flex-1 flex-row flex-center">
+        <view class="flex-1"></view>
+
+        <button class="clear-button" open-type="contact">
+          <view class="flex-row flex-column">
+            <view>
+              <image class="icon-15" src="{{uploadpath}}resource/{{res.xianmuzixun}}"></image>
+            </view>
+            <view class="h7" style="color:#777777">咨询</view>
+          </view>
+        </button>
+
+        <view class="flex-1"></view>
+      </view>
+      <view class="xian4"></view>
+
+      <view bindtap="yuyue" class="flex-1 flex-row flex-center">
+        <view class="flex-1"></view>
+        <view class="flex-row flex-column">
+          <view>
+            <image class="icon-15" src="{{uploadpath}}resource/{{res.yuyue}}"></image>
+          </view>
+          <view class="h7" style="color:#777777">预约</view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="xian4"></view>
+
+      <view class="flex-1 flex-row flex-center">
+        <view class="flex-1"></view>
+        <button class="clear-button" open-type="share">
+          <view class="flex-row flex-column">
+            <view>
+              <image class="icon-15" src="{{uploadpath}}resource/{{res.xianmufenixan}}"></image>
+            </view>
+            <view class="h7" style="color:#777777">分享</view>
+          </view>
+        </button>
+        <view class="flex-1"></view>
+      </view>
+      <view class="xian4"></view>
+
+      <view bindtap="shoucan" class="flex-1 flex-row flex-center">
+        <view class="flex-1"></view>
+        <view class="flex-row flex-column">
+          <view>
+            <image wx:if="{{shoucan==false}}" class="icon-15" src="{{uploadpath}}resource/{{res.shoucan}}"></image>
+            <image wx:if="{{shoucan!=false}}" class="icon-15" src="{{uploadpath}}resource/{{res.shoucan2}}"></image>
+          </view>
+          <view class="h7" style="color:#777777">收藏</view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+
+
+    </view>
+    <view bindtap="selecthouse" class="zxxf margin-top-20">创建项目</view>
+
+  </view>
+
+</view>

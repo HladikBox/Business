@@ -25,34 +25,16 @@
 
 <view wx:if="{{tab==0}}">
 
-	<view wx:for="{{ziyoukehu}}" data-id="{{item.id}}" bindtap="kehuziliao" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
+	<view wx:for="{{ziyoukehu}}" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
 
-		<view>
-			<view class="h5 txt-bold" style="color:#404858">{{item.name}}</view>
+		<view class="flex-1"  data-id="{{item.id}}" bindtap="kehuziliao">
+			<view class="h5 txt-bold" style="color:#404858">{{item.name}} {{item.company}} {{item.position}}</view>
 			<view class="h6 margin-top-20" style="color:#404858;  opacity: 0.8">手机：{{item.shouji}}</view>
 			<view class="h6" style="color:#404858;  opacity: 0.8">微信：{{item.weixin}} </view>
 			<view class="h6" style="color:#404858;  opacity: 0.8">邮箱：{{item.youxian}}</view>
 
 		</view>
-		<view class="flex-1"></view>
-
-		<view wx:if="{{item.leixin=='0'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.fanchan}}"></image>
-			<view class="h6 margin-top-10" style="color:#D8B66E">房产</view>
-
-		</view>
-		<view wx:if="{{item.leixin=='1'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.yimin}}"></image>
-			<view class="h6 margin-top-10" style="color:#FF8C8B">移民</view>
-
-		</view>
-		<view wx:if="{{item.leixin=='2'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.baoxian}}"></image>
-			<view class="h6 margin-top-10" style="color:#5FADFE">保险</view>
-
-		</view>
-
-
+    <view class="txt-primary" data-kehu_id="{{item.id}}" bindtap="select" wx:if="{{options.select=='1'}}">选择</view>
 	</view>
 
 
@@ -61,38 +43,17 @@
 
 <view wx:if="{{tab==1}}">
 
-	<view wx:for="{{pintaikehu}}" data-id="{{item.id}}"  bindtap="kehuziliao" wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
-		<view>
-			<view class="h5 txt-bold" style="color:#404858">{{item.name}}</view>
+	<view wx:for="{{pintaikehu}}"  wx:key='k' class="padding-30 margin-top-20 bg-white flex-row flex-center">
+		<view class="flex-1"  data-id="{{item.id}}" bindtap="kehuziliao">
+			<view class="h5 txt-bold" style="color:#404858">{{item.name}} {{item.company}} {{item.position}}</view>
 			<view class="h6 margin-top-20" style="color:#404858;  opacity: 0.8">手机：{{item.shouji}}</view>
 			<view class="h6" style="color:#404858;  opacity: 0.8">微信：{{item.weixin}} </view>
 			<view class="h6" style="color:#404858;  opacity: 0.8">邮箱：{{item.youxian}}</view>
 
 		</view>
-		<view class="flex-1"></view>
-
-		<view wx:if="{{item.leixin=='0'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.fanchan}}"></image>
-			<view class="h6 margin-top-10" style="color:#D8B66E">房产</view>
-
-		</view>
-		<view wx:if="{{item.leixin=='1'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.yimin}}"></image>
-			<view class="h6 margin-top-10" style="color:#FF8C8B">移民</view>
-
-		</view>
-		<view wx:if="{{item.leixin=='2'}}" class="flex-row flex-column">
-			<image class="imga" src="{{uploadpath}}resource/{{res.baoxian}}"></image>
-			<view class="h6 margin-top-10" style="color:#5FADFE">保险</view>
-
-		</view>
-
-
+    <view class="txt-primary" data-kehu_id="{{item.id}}" bindtap="select" wx:if="{{options.select=='1'}}">选择</view>
 
 	</view>
-
-
-
 </view>
 
 

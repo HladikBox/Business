@@ -13,7 +13,7 @@
     </view>
     <view class="line"></view>
     <view class="flex-row " style="padding: 20rpx 0;" bindtap="guanyu">
-      <view class="h5">关于邦拓</view>
+      <view class="h5">关于云易创</view>
       <view class="flex-1"></view>
       <image src="{{uploadpath}}resource/{{res.arrowleft}}" class="imgs"></image>
     </view>

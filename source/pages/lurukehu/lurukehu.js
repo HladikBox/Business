@@ -33,6 +33,8 @@ class Content extends AppBase {
       leixin: leixin,
       shifou: shifou,
       jianyi: '',
+      company: '',
+      position: '',
       kehu: kehu,
       index1:0
 
@@ -66,6 +68,16 @@ class Content extends AppBase {
       jianyi: e.detail.value
     })
   }
+  company(e) {
+    this.Base.setMyData({
+      company: e.detail.value
+    })
+  }
+  position(e) {
+    this.Base.setMyData({
+      position: e.detail.value
+    })
+  }
   bindleixin(e) {
 
     console.log(e);
@@ -93,6 +105,8 @@ class Content extends AppBase {
     var kehu = this.Base.options.id;
     var beizhu = this.Base.getMyData().beizhu;
     var index1 = this.Base.getMyData().index1;
+    var company = this.Base.getMyData().company;
+    var position = this.Base.getMyData().position;
 
     if (name == '') {
       this.Base.info("请输入姓名");
@@ -110,10 +124,6 @@ class Content extends AppBase {
     //   this.Base.info("请输入邮箱");
     //   return
     // }
-    if (index == undefined) {
-      this.Base.info("请选择项目类型");
-      return
-    }
     if (index1 == undefined) {
       this.Base.info("请选择销售协作");
       return
@@ -121,7 +131,7 @@ class Content extends AppBase {
 
     var api = new MemberApi();
 
-    api.addkehu({ name: name, shouji: shouji, weixin: weixin, youxian: youxian, leixin: index, beizhu: beizhu, shifou: index1, kehuleixin: kehu }, (res) => {
+    api.addkehu({ name: name, shouji: shouji, weixin: weixin, youxian: youxian, leixin: index, beizhu: beizhu, shifou: index1, kehuleixin: kehu,company,position }, (res) => {
           
           console.log(res);
 
@@ -133,10 +143,6 @@ class Content extends AppBase {
       }
 
     })
-
-
-
-
 
   }
 
@@ -153,4 +159,6 @@ body.jianyi = content.jianyi;
 body.bindleixin = content.bindleixin;
 body.bindshifou = content.bindshifou;
 body.tijiao = content.tijiao;
+body.company = content.company;
+body.position = content.position;
 Page(body)

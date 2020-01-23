@@ -46,7 +46,7 @@ class Content extends AppBase {
 
 
     var api = new ProjectApi;
-    api.gethouselist({ country_id:this.Base.options.id}, (houselist) => {
+    api.zhuantiproject({ zhuanti_id:this.Base.options.id}, (houselist) => {
       //拼接房型字符串
       houselist.map((item) => {
         var fanxintext = '';

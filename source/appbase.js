@@ -463,6 +463,44 @@ export class AppBase {
       }
     });
   }
+  uploadMessageFIle(modul, callback){
+    wx.chooseMessageFile({
+      count: 10,
+      type: 'image',
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        console.log(res);
+        const tempFilePaths = res.tempFiles;
+        var filename = tempFilePaths[0].name;
+        wx.uploadFile({
+          url: ApiConfig.GetFileUploadAPI(), //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0].path,
+          name: 'file',
+          formData: {
+            'module': modul,
+            "field": "file"
+          },
+          success: function (res) {
+            console.log(res);
+            var data = res.data
+            if (data.substr(0, 7) == "success") {
+              data = data.split("|");
+              var photo = data[2];
+              callback({ file: photo, filename: filename});
+            } else {
+              console.error(res.data);
+              wx.showToast({
+                title: '上传失败，请重试',
+                icon: 'warn',
+                duration: 2000
+              })
+            }
+            //do something
+          }
+        });
+      }
+    })
+  }
   uploadImage(modul, callback, count = 1, completecallback) {
     wx.chooseImage({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有

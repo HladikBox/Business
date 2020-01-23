@@ -247,7 +247,7 @@ class Content extends AppBase {
       console.log(ret)
     })
     return {
-      title: '邦拓小程序',
+      title: '小程序',
       path: 'pages/zixundetail/zixundetail?id=' + that.Base.options.id, // 路径，传递参数到指定页面。
       // imageUrl: '../../imgs/xx.png', // 分享的封面图
       success: function (res) {
